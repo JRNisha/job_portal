@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\CandidateProfile;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CandidateProfile;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CompanyListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,14 @@ Route::get('/', function () {
 
 
 
-    Route::get('/create_candidate_profile',[CandidateProfile::class,'create_candidate_profile'])->name('create.candidate.profile');
+    Route::get('/create_candidate_profile',[CandidateProfile::class,'createcandidateprofile'])->name('create.candidate.profile');
+//company
+    Route::get('/company_list',[CompanyListController::class,'companylist'])->name('company.list');
+    Route::get('/about_company',[CompanyListController::class,'aboutcompany'])->name('about.company');
+    Route::post('/company/profile',[CompanyListController::class,'companyprofile'])->name('company.profile');
 
 
+//job category
+    Route::get('/job/category',[CategoryController::class,'category'])->name('job.category');
+    Route::get('/job/category/list',[CategoryController::class,'categoryList'])->name('job.category.list');
+    Route::post('/job/category/show',[CategoryController::class,'categoryShow'])->name('job.category.show');

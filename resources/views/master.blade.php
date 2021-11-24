@@ -17,8 +17,21 @@
 
 
 
+
+
+
+
+
+
+
         @include('backend.admin.fixed.header')
         <div id="layoutSidenav">
+
+
+
+
+
+
             @include('backend.admin.fixed.sidebar')
 
 
@@ -26,7 +39,7 @@
             <div id="layoutSidenav_content">
                 <main>
 
-                    @yield('contents')
+                    @yield('content')
 
                 </main>
                 <footer class="py-4 bg-light mt-auto">
