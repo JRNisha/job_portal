@@ -18,6 +18,14 @@ class CompanyListController extends Controller
     public function companyprofile(Request $request)
     {
         //dd($request->all());
+        $request->validate([
+
+            'name'=>'required',
+            'email'=>'required',
+            'address'=>'required',
+            'type'=>'required',
+
+        ]);
         try{
             Company::create([
                 'id'=>$request->id,

@@ -4,9 +4,16 @@
 <div class="container" style="margin-top: 20px">
 
 
+
+    {{-- message showing --}}
     @if(session()->has('msg'))
         <p class="alert alert-success">{{session()->get('msg')}}</p>
     @endif
+
+
+
+
+
 
     <a class="button" href="{{ route('about.company') }}">
         <div class="d-grid gap-2 col-2 mx-auto">

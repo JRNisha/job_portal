@@ -4,6 +4,23 @@
 <div class="container">
 
 
+    @if(session()->has('msg'))
+    <p class="alert alert-success">{{session()->get('msg')}}</p>
+@endif
+
+
+
+{{-- validation --}}
+@if ($errors->any())
+<div class="alert alert-danger">
+<ul>
+    @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+    @endforeach
+</ul>
+</div>
+@endif
+
     <form action="{{ route('company.profile') }}" method="POST">
         @csrf
 

@@ -18,6 +18,10 @@ class CategoryController extends Controller
        public function categoryShow(Request $request)
     {
         //dd($request->all());
+        $request->validate([
+            'name'=>'required',
+            'type'=>'required'
+        ]);
         try{
             JobCategory::create([
 
