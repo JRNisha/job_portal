@@ -1,9 +1,9 @@
-@extends('master')
+@extends('backend.admin.master')
 @section('content')
 
 <div class="container" style="margin-top: 20px">
 
-   
+
 
 
     <a class="button" href="{{ route('job.category.list') }}">

@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use Throwable;
 use App\Models\Company;
 use Illuminate\Http\Request;
-use Throwable;
+use App\Http\Controllers\Controller;
 
 class CompanyListController extends Controller
 {
