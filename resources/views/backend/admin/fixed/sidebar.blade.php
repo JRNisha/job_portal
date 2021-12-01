@@ -6,14 +6,14 @@
                 <br>
                 <br>
 
-                <a class="nav-link" href="index.html">
+                {{-- <a class="nav-link" href="index.html">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
                 <a class="nav-link" href="index.html">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Admin
-                </a>
+                </a> --}}
 
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
@@ -64,7 +64,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Recruiter
                 </a>
-                <a class="nav-link" href="{{ route('job.post.form') }}">
+                <a class="nav-link" href="">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Job Post
                 </a>
@@ -191,9 +191,13 @@
         <br>
         <br>
         <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="sb-sidenav-footer">
-            <div class="small">Logged in as:</div>
-            Admin
+            <div class="small">Online Job Portal Management System</div>
+
         </div>
     </nav>
 </div>

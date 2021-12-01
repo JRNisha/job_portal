@@ -1,12 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\CandidateProfile;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\JobPostController;
+use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Website\PostAJobController;
 use App\Http\Controllers\Admin\CompanyListController;
+use App\Http\Controllers\Website\CompanyDetailsController;
+use App\Http\Controllers\Website\EmployerDetailsController;
+use App\Http\Controllers\Website\CandidateDetailsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +25,10 @@ use App\Http\Controllers\Admin\CompanyListController;
 
 //website
 Route::get('/',[HomeController::class,'home']);
-
+Route::get('/post/job/form',[PostAJobController::class,'postJobForm'])->name('post.job');
+Route::get('/create/company/profile',[CompanyDetailsController::class,'companyProfileForm'])->name('create.company.profile');
+Route::get('/create/candidate/profile',[CandidateDetailsController::class,'candidateProfileForm'])->name('create.candidate.profile');
+Route::get('/create/employer/profile',[EmployerDetailsController::class,'employerProfileForm'])->name('create.employer.profile');
 
 
 
@@ -49,8 +56,7 @@ Route::get('/',[HomeController::class,'home']);
     Route::post('/job/category/show',[CategoryController::class,'categoryShow'])->name('job.category.show');
 
 
-//job post
-    Route::get('/job/post/form',[JobPostController::class,'form'])->name('job.post.form');
+
 
 //  })
 // ;

@@ -1,3 +1,61 @@
+ @extends('frontend.master')
+ @section('content')
+ <main>
+ <!-- hero-area start -->
+ <section class="hero-area pos-rel">
+    <div class="hero-shape d-none d-lg-block">
+        <span class="circle"></span>
+        <span class="circle circle-yellow"></span>
+        <span class="shape-plus">+</span>
+    </div>
+    <div class="hero-slider">
+        <div class="single-slider slider-height d-flex align-items-center align-items-xl-end"
+            data-background="{{ url('frontend/assets/img/slider/01.jpg') }}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-9 col-md-11">
+                        <div class="hero-content pos-rel mt-125">
+                            <div class="hero-dot-shape d-none d-lg-block">
+                                <img src="{{url('/frontend/assets/img/shape/dot-shape.png')  }}" alt="">
+                            </div>
+                            <div class="hero-slider-caption">
+                                <h2 data-animation="fadeInUp" data-delay=".7s"><span>2560</span> Thousands Dream
+                                Jobs Available Now</h2>
+                                <div class="job-hero-form">
+                                    <form action="#">
+                                        <select>
+                                            <option value="1">Job Categories</option>
+                                            <option value="1">Web Design</option>
+                                            <option value="1">Logo Design</option>
+                                            <option value="1">Banner Design</option>
+                                            <option value="1">WP Developer</option>
+                                            <option value="1">Linux Expert</option>
+                                        </select>
+                                        <div class="job-input">
+                                            <input type="text" placeholder="Locations">
+                                        </div>
+                                        <button>Find Jobs <i class="far fa-arrow-right"></i></button>
+                                    </form>
+                                </div>
+                                <div class="hero-profile mt-45">
+                                    <h3>Popular Profile</h3>
+                                    <a href="about.html"><img src="{{ url('frontend/assets/img/slider/hero-profile-img.png') }}" alt="profile"></a>
+                                    <h3>3k+ Jobs Done</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 d-none d-xl-block">
+                        <div class="slider-img">
+                            <img src="{{url('/frontend/assets/img/slider/me.png')  }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- categories-area-start -->
 <div class="categories-area pt-80 grey-bg pb-50">
     <div class="container">
@@ -5,7 +63,7 @@
             <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
                 <div class="section-title text-center ml-50 mr-50 mb-45">
                     <h2>Popular Categories</h2>
-                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur</p>
+
                 </div>
             </div>
         </div>
@@ -148,7 +206,7 @@
             <div class="col-xl-5">
                 <div class="section-title">
                     <h2>35k+ Recent Jobs Available</h2>
-                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur</p>
+
                 </div>
             </div>
             <div class="col-xl-7">
@@ -466,7 +524,7 @@
                     <div class="services__content">
                         <h2>Post Your Jobs</h2>
                         <p>But must expla to you how all this mistaken idea of denouncing pleure and praising pain was born</p>
-                        <a href="contact.html" class="b-btn b-btn-green">Apply Job <i class="far fa-arrow-right"></i></a>
+                        <a href="{{ route('post.job') }}" class="b-btn b-btn-green">Post Job <i class="far fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -768,4 +826,5 @@
 <!-- login register modal end -->
 
 </main>
+@endsection
 

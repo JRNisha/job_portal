@@ -5,7 +5,7 @@
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Job Board Website</title>
+        <title>Job Portal</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
         <!-- Place favicon.png in the root directory -->
 
 		<!-- CSS here -->
-        <link rel="stylesheet" href="{{ url('frontend/assets/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{url('frontend/assets/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{url('frontend/assets/css/owl.carousel.min.css')}}">
         <link rel="stylesheet" href="{{url('frontend/assets/css/animate.min.css')}}">
         <link rel="stylesheet" href="{{url('frontend/assets/css/magnific-popup.css')}}">
@@ -43,89 +43,15 @@
         <!-- header-ends -->
 
         <!-- sidebar area start -->
-        <section class="sidebar__area">
-            <div class="sidebar__shape" data-background="{{ url('frontend/assets/img/shape/hexa.png') }}"></div>
-            <div class="sidebar__wrapper">
-                <div class="sidebar__close">
-                    <button class="sidebar__close-btn" id="sidebar__close-btn">
-                        <span><i class="fal fa-times"></i></span>
-                        <span>close</span>
-                    </button>
-                </div>
-                <div class="sidebar__content">
-                    <div class="logo mb-40">
-                        <a href="index.html">
-                            <img src="{{ url('frontend/assets/img/logo/logo-white.png') }}" alt="logo">
-                        </a>
-                    </div>
-                    <div class="mobile-menu d-block"></div>
-                    <div class="hedder-button mt-30">
-                        <a class="h-btn h-btn-2 mb-15" href="#"><i class="far fa-user-circle"></i> Sign In</a>
-                        <a class="h-btn h-btn-green h-btn-white" href="#"><i class="far fa-lock-alt"></i> Log In</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="body-overlay"></div>
+
+
         <!-- sidebar area end -->
 
-        <main>
 
-            <!-- hero-area start -->
-            <section class="hero-area pos-rel">
-                <div class="hero-shape d-none d-lg-block">
-                    <span class="circle"></span>
-                    <span class="circle circle-yellow"></span>
-                    <span class="shape-plus">+</span>
-                </div>
-                <div class="hero-slider">
-                    <div class="single-slider slider-height d-flex align-items-center align-items-xl-end"
-                        data-background="{{ url('frontend/assets/img/slider/01.jpg') }}">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-7 col-lg-9 col-md-11">
-                                    <div class="hero-content pos-rel mt-125">
-                                        <div class="hero-dot-shape d-none d-lg-block">
-                                            <img src="{{url('/frontend/assets/img/shape/dot-shape.png')  }}" alt="">
-                                        </div>
-                                        <div class="hero-slider-caption">
-                                            <h2 data-animation="fadeInUp" data-delay=".7s"><span>2560</span> Thousands Dream
-                                            Jobs Available Now</h2>
-                                            <div class="job-hero-form">
-                                                <form action="#">
-                                                    <select>
-                                                        <option value="1">Job Categories</option>
-                                                        <option value="1">Web Design</option>
-                                                        <option value="1">Logo Design</option>
-                                                        <option value="1">Banner Design</option>
-                                                        <option value="1">WP Developer</option>
-                                                        <option value="1">Linux Expert</option>
-                                                    </select>
-                                                    <div class="job-input">
-                                                        <input type="text" placeholder="Locations">
-                                                    </div>
-                                                    <button>Find Jobs <i class="far fa-arrow-right"></i></button>
-                                                </form>
-                                            </div>
-                                            <div class="hero-profile mt-45">
-                                                <h3>Popular Profile</h3>
-                                                <a href="about.html"><img src="{{ url('frontend/assets/img/slider/hero-profile-img.png') }}" alt="profile"></a>
-                                                <h3>3k+ Jobs Done</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-5 d-none d-xl-block">
-                                    <div class="slider-img">
-                                        <img src="{{url('/frontend/assets/img/slider/me.png')  }}" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-           @include('frontend.pages.home')
+
+
+
+           @yield('content')
 
             <!-- hero-area end -->
 
