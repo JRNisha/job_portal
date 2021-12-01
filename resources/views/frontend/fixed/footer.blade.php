@@ -9,7 +9,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-lg-6 col-md-7">
                         <div class="footer__copyright-text">
-                            <p>© Copyright 2021 <a href="index.html">Job Portal</a> All Rights Reserved.</p>
+                            <p>© Copyright 2021 <a href="index.html">Jannat Rosul Nisha</a> All Rights Reserved.</p>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-5">

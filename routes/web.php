@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\Admin\CandidateController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CandidateProfile;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\JobPostController;
 use App\Http\Controllers\Website\HomeController;
+use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\EmployerController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Website\PostAJobController;
 use App\Http\Controllers\Admin\CompanyListController;
 use App\Http\Controllers\Website\CompanyDetailsController;
@@ -29,8 +33,9 @@ Route::get('/post/job/form',[PostAJobController::class,'postJobForm'])->name('po
 Route::get('/create/company/profile',[CompanyDetailsController::class,'companyProfileForm'])->name('create.company.profile');
 Route::get('/create/candidate/profile',[CandidateDetailsController::class,'candidateProfileForm'])->name('create.candidate.profile');
 Route::get('/create/employer/profile',[EmployerDetailsController::class,'employerProfileForm'])->name('create.employer.profile');
+Route::post('/create/employer/profile/store',[EmployerDetailsController::class,'employerProfileStore'])->name('store.employer.profile');
 
-
+Route::get('/create/employer/profile/show',[EmployerDetailsController::class,'employerProfileShow'])->name('show.employer.profile');
 
 
 //admin
@@ -54,9 +59,11 @@ Route::get('/create/employer/profile',[EmployerDetailsController::class,'employe
     Route::get('/job/category',[CategoryController::class,'category'])->name('job.category');
     Route::get('/job/category/list',[CategoryController::class,'categoryList'])->name('job.category.list');
     Route::post('/job/category/show',[CategoryController::class,'categoryShow'])->name('job.category.show');
-
-
-
-
+//Dashboard
+Route::get('/admin',[DashboardController::class,'dashboard'])->name('dashboard');
+//cards
+Route::get('/company/list/card',[CompanyController::class,'companyCard'])->name('company.card');
+Route::get('/employer/list/card',[EmployerController::class,'employerCard'])->name('employer.card');
+Route::get('/candidate/list/card',[CandidateController::class,'candidateCard'])->name('candidate.card');
 //  })
 // ;
