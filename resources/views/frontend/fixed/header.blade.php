@@ -75,8 +75,8 @@
                         </div>
                         <div class="header-btn d-none d-lg-block">
                             <div class="hedder-button">
-                                <a class="h-btn d-lg-none d-xl-inline-block" href="#" data-toggle="modal" data-target="#registerModal"><i class="far fa-user-circle"></i> Sign In</a>
-                                <a class="h-btn h-btn-green" href="#" data-toggle="modal" data-target="#registerModal"><i class="far fa-lock-alt"></i> Log In</a>
+                                <a class="h-btn d-lg-none d-xl-inline-block" href="{{ route('signin.form') }}"><i class="far fa-user-circle"></i> Sign In</a>
+                                <a class="h-btn h-btn-green" href="{{ route('login.form') }}"><i class="far fa-lock-alt"></i> Log In</a>
                             </div>
                         </div>
                         <div class="sidebar__menu d-lg-none">

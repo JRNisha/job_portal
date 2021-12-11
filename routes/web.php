@@ -15,6 +15,8 @@ use App\Http\Controllers\Admin\CompanyListController;
 use App\Http\Controllers\Website\CompanyDetailsController;
 use App\Http\Controllers\Website\EmployerDetailsController;
 use App\Http\Controllers\Website\CandidateDetailsController;
+use App\Http\Controllers\Website\LoginController;
+use App\Http\Controllers\Website\SigninController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +32,24 @@ use App\Http\Controllers\Website\CandidateDetailsController;
 //website
 Route::get('/',[HomeController::class,'home']);
 Route::get('/post/job/form',[PostAJobController::class,'postJobForm'])->name('post.job');
+
+//Login
+Route::get('/login',[LoginController::class,'login'])->name('login.form');
+//Signin
+Route::get('/signin',[SigninController::class,'signin'])->name('signin.form');
+//company
 Route::get('/create/company/profile',[CompanyDetailsController::class,'companyProfileForm'])->name('create.company.profile');
+Route::post('/create/company/profile/store',[CompanyDetailsController::class,'companyProfileStore'])->name('store.company.profile');
+Route::get('/create/company/profile/show',[CompanyDetailsController::class,'companyProfileShow'])->name('show.company.profile');
+
+
+//candidate
 Route::get('/create/candidate/profile',[CandidateDetailsController::class,'candidateProfileForm'])->name('create.candidate.profile');
+Route::post('/create/candidate/profile/store',[CandidateDetailsController::class,'candidateProfileStore'])->name('store.candidate.profile');
+Route::get('/create/candidate/profile/show',[CandidateDetailsController::class,'candidateProfileShow'])->name('show.candidate.profile');
+
+
+//employer
 Route::get('/create/employer/profile',[EmployerDetailsController::class,'employerProfileForm'])->name('create.employer.profile');
 Route::post('/create/employer/profile/store',[EmployerDetailsController::class,'employerProfileStore'])->name('store.employer.profile');
 

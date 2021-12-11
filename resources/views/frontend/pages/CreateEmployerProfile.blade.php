@@ -52,8 +52,8 @@
                     </div>
 
 
-                <div class="form-group col-12">
-                  <button type="submit" class="btn btn-primary">Sign in</button>
+                <div class="text-center w-100 py-4">
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
         </div>

@@ -22,7 +22,7 @@ class EmployerDetailsController extends Controller
 
 
       public function employerProfileStore(Request $request){
-        //dd($request->all());
+       // dd($request->all());
           $request->validate([
           'email'=>'required',
           'password'=>'required',

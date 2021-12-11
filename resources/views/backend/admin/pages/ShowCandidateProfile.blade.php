@@ -7,35 +7,39 @@
 @if(session()->has('msg'))
 <p class="alert alert-success">{{session()->get('msg')}}</p>
 @endif
-<h1 class="text-center w-100 py-4">Registered Employer List</h1>
+
+
+<h1 class="text-center w-100 py-4">Registered Candidate List</h1>
     <table class="table table-bordered table-dark">
         <thead>
           <tr>
             <th scope="col">Serial</th>
-            <th scope="col">Employer Name</th>
+            <th scope="col">Company Name</th>
             <th scope="col">Email</th>
             <th scope="col">Password</th>
             <th scope="col">Mobile Number</th>
             <th scope="col">Address</th>
-            <th scope="col">Status </th>
+            <th scope="col">Image</th>
+            <th scope="col">Upload CV</th>
+            <th scope="col">Gender</th>
 
 
           </tr>
         </thead>
         <tbody>
 
-@foreach ( $employerProfileShow as $key=>$employer)
+@foreach ( $candidateProfileShow as $key=>$candidate)
 <tr>
     <td>{{ $key+1 }}</td>
-    <td>{{  $employer-> name }}</td>
-    <td>{{  $employer-> email }}</td>
-    <td>{{  $employer-> password }}</td>
-    <td>{{  $employer-> mobile }}</td>
-    <td>{{  $employer-> address }}</td>
-    <td>
-        <a class="btn btn-success btn-sm" >Approve</a>
-        <a class="btn btn-danger btn-sm" style="margin-left: 15px;">Reject</a>
-    </td>
+    <td>{{  $candidate->name }}</td>
+    <td>{{  $candidate->email }}</td>
+    <td>{{  $candidate->password }}</td>
+    <td>{{  $candidate->type }}</td>
+    <td>{{  $candidate->address }}</td>
+    <td>{{  $candidate->image }}</td>
+    <td>{{  $candidate->cv }}</td>
+    <td>{{  $candidate->gender }}</td>
+
 
   </tr>
 @endforeach
@@ -44,7 +48,7 @@
      <tbody>
       </table>
 
-      {{  $employerProfileShow->links() }}
+      {{  $candidateProfileShow->links() }}
 
 </div>
 
