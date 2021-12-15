@@ -24,12 +24,12 @@
 @endif
 
         <div class="row mt-5">
-             <h1 class="text-center w-100 py-4" >Create Candidate Profile</h1>
-             <form action="{{ route('store.candidate.profile') }}" method="POST" class="row g-3">
+             <h1 class="text-center w-100 py-4" style="color:slateblue">Create Candidate Profile</h1>
+             <form action="{{ route('store.candidate.profile') }}" method="POST" class="row g-3" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group col-md-12">
                     <label for="inputEmail4" class="form-label">Candidate Name</label>
-                    <input name="name" type="email" class="form-control" id="inputEmail4">
+                    <input name="name" type="text" class="form-control" id="inputEmail4">
                   </div>
 
                 <div class="form-group col-md-6">
@@ -43,7 +43,7 @@
 
                 <div class="form-group col-12">
                   <label for="inputMobileNumber" class="form-label">*Mobile Number</label>
-                  <input name="mobile" type="text" class="form-control" id="inputMobileNumber" placeholder="">
+                  <input name="mobile" type="number" class="form-control" id="inputMobileNumber" placeholder="">
                 </div>
 
 

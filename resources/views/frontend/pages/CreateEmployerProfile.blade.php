@@ -25,7 +25,7 @@
     @endif
 
         <div class="row mt-5">
-             <h1 class="text-center w-100 py-4" >Create Employer Profile</h1>
+             <h1 class="text-center w-100 py-4" style="color:slateblue">Create Employer Profile</h1>
              <form action="{{ route('store.employer.profile') }}" method="POST" class="row g-3">
                 @csrf
                 <div class="form-group col-md-12">

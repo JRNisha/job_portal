@@ -14,7 +14,7 @@
         <thead>
           <tr>
             <th scope="col">Serial</th>
-            <th scope="col">Company Name</th>
+            <th scope="col">Candidate Name</th>
             <th scope="col">Email</th>
             <th scope="col">Password</th>
             <th scope="col">Mobile Number</th>
@@ -27,16 +27,20 @@
           </tr>
         </thead>
         <tbody>
-
+{{-- @dd($candidateProfileShow) --}}
 @foreach ( $candidateProfileShow as $key=>$candidate)
 <tr>
     <td>{{ $key+1 }}</td>
     <td>{{  $candidate->name }}</td>
     <td>{{  $candidate->email }}</td>
     <td>{{  $candidate->password }}</td>
-    <td>{{  $candidate->type }}</td>
+    <td>{{  $candidate->mobile }}</td>
     <td>{{  $candidate->address }}</td>
-    <td>{{  $candidate->image }}</td>
+    <td>
+        <img width="100px" src=" {{url('/uploads/candidate/'.$candidate->image)}}" style="border-radius: 4px;" width="500px;" alt="candidate">
+    </td>
+
+   {{-- <td>{{  $candidate->image }}</td> --}}
     <td>{{  $candidate->cv }}</td>
     <td>{{  $candidate->gender }}</td>
 

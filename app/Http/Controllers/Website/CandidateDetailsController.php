@@ -6,7 +6,7 @@ use Throwable;
 use App\Models\Candidate;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Models\User;
 
 class CandidateDetailsController extends Controller
 {
@@ -17,8 +17,8 @@ class CandidateDetailsController extends Controller
 
 
     public function candidateProfileShow(){
-        $candidateProfileShow = Candidate:: orderBy('id','desc')->paginate(5);
-        return view('backend.admin.pages.ShowEmployerProfile',compact('candidateProfileShow'));
+        $candidateProfileShow = User:: orderBy('id','desc')->paginate(5);
+        return view('backend.admin.pages.ShowCandidateProfile',compact('candidateProfileShow'));
     }
 
 
@@ -31,17 +31,44 @@ public function candidateProfileStore(Request $request){
 
 
         ]);
+        $imagename = '';
+
+            // for image
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            // $cv = $request->file('cv');
+
+            $imagename = date('Ymdhms').'.'.$image->getClientOriginalExtension();
+            // $cvname = date('Ymdhms').'.'.$image->getClientOriginalExtension();
+            // dd($cvname);
+            $image->storeAs('/uploads/candidate/',$imagename);
+            // $image->storeAs('/uploads/cv/',$cvname);
+
+        }
+
+        $cvname = '';
+        // for cv
+        if ($request->hasFile('cv')) {
+            // $image = $request->file('image');
+            $cv = $request->file('cv');
+
+            // $imagename = date('Ymdhms').'.'.$image->getClientOriginalExtension();
+            $cvname = date('Ymdhms').'.'.$cv->getClientOriginalExtension();
+            // $image->storeAs('/uploads/candidate/',$imagename);
+            $cv->storeAs('/uploads/cv/',$cvname);
+
+        }
 
  try{
-     Candidate::create([
+     User::create([
 
       'name'=>$request->name,
       'email'=>$request->email,
       'password'=>$request->password,
       'mobile'=>$request->mobile,
       'address'=>$request->address,
-      'image'=>$request->image,
-      'cv'=>$request->cv,
+      'image'=>$imagename,
+      'cv'=>$cvname,
       'gender'=>$request->gender,
 
      ]);
@@ -53,9 +80,3 @@ public function candidateProfileStore(Request $request){
  }
 
 }
-
-
-
-
-
-

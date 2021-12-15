@@ -20,8 +20,8 @@ class CreateCandidatesTable extends Migration
             $table->string('password');
             $table->integer('mobile');
             $table->string('address');
-            $table->file('image');
-            $table->file('cv');
+            $table->string('image');
+            $table->string('cv');
             $table->string('gender');
             $table->timestamps();
         });
