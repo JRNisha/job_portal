@@ -36,7 +36,10 @@ Route::get('/',[HomeController::class,'home']);
 Route::get('/post/job/form',[PostAJobController::class,'postJobForm'])->name('post.job');
 Route::post('/posted/job/store',[PostAJobController::class,'postJobStore'])->name('post.job.store');
 Route::get('/posted/job/show',[PostAJobController::class,'postJobShow'])->name('post.job.show');
-
+//job details showing on website
+Route::get('/job/details/{job_id}',[PostAJobController::class,'jobDetailsShow'])->name('job.details.show');
+//Browse all jobs
+Route::get('/browse/jobs/',[PostAJobController::class,'browseJobs'])->name('browse.jobs');
 //Login
 Route::get('/login',[LoginController::class,'login'])->name('login.form');
 //Signin

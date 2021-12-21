@@ -8,7 +8,7 @@
 <p class="alert alert-success">{{session()->get('msg')}}</p>
 @endif
 <h1 class="text-center w-100 py-4">Registered Employer List</h1>
-    <table class="table table-bordered table-dark">
+    <table class="table">
         <thead>
           <tr>
             <th scope="col">Serial</th>

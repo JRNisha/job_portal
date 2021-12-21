@@ -206,18 +206,18 @@
         <div class="row align-items-center mb-45">
             <div class="col-xl-5">
                 <div class="section-title">
-                    <h2>35k+ Recent Jobs Available</h2>
+                    <h2>Recent Jobs Available</h2>
 
                 </div>
             </div>
             <div class="col-xl-7">
                 <div class="section-btn text-left text-md-right">
-                    <a class="b-btn" href="job-grid.html">Browse All Jobs <i class="far fa-arrow-right"></i></a>
+                    <a class="b-btn" href="{{ route('browse.jobs') }}">Browse All Jobs <i class="far fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
+            {{-- <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
                 <div class="job-wrapper mb-30">
                     <div class="banck-icon">
                         <i class="flaticon-dashboard"></i>
@@ -246,8 +246,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
+            </div> --}}
+
+
+            {{-- <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
                 <div class="job-wrapper mb-30">
                     <div class="banck-icon">
                         <i class="flaticon-job-search-3"></i>
@@ -276,8 +278,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
+            </div> --}}
+            {{-- <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
                 <div class="job-wrapper mb-30">
                     <div class="banck-icon">
                         <i class="flaticon-research"></i>
@@ -305,38 +307,47 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
+
+
+
+
+
             <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
+
+                @foreach ( $postJobShow as $postedJob)
+
                 <div class="job-wrapper mb-30">
                     <div class="banck-icon">
                         <i class="flaticon-job-search-3"></i>
                     </div>
                     <div class="job-tag mb-30">
-                        <span class="tag-normal">full time</span>
-                        <span class="tag-fea">featured</span>
+                        <span class="tag-fea">{{  $postedJob->type }}</span>
+
                     </div>
                     <div class="job-instructor-profile mb-30">
-                        <div class="job-instructor-img f-left">
+                        {{-- <div class="job-instructor-img f-left">
                             <img src="{{url('/frontend/assets/img/job/03.png') }}" alt="">
-                        </div>
+                        </div> --}}
                         <div class="job-instructor-title">
-                            <h4><a href="job-details.html">Pinterest LTD</a></h4>
-                            <span><i class="far fa-map-marker-alt"></i> 205 Main Road, New York</span>
+                            <h4><a href="job-details.html">{{  $postedJob->company }}</a></h4>
+                            <span><i class="far fa-map-marker-alt"></i> {{  $postedJob->location }}</span>
                         </div>
                     </div>
                     <div class="job-content">
-                        <h4><a href="job-details.html">Senior Creative Director</a></h4>
-                        <p>Quis autem vel eum reprehenderit
-                        voluptate velitquam molestiae</p>
+                        <h4><a href="job-details.html">{{  $postedJob->title }}</a></h4>
+
                         <div class="job-salary">
-                            <span><i class="fal fa-usd-circle"></i> 250 - 495</span>
-                            <a href="job-details.html">Job Details <i class="far fa-arrow-right"></i>
+                            <span><i class="fal fa-usd-circle"></i> {{  $postedJob->salary }}</span>
+                            <a href="{{ route('job.details.show',$postedJob->id) }}">Job Details <i class="far fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
+
+                @endforeach
             </div>
-            <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
+            {{-- <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
                 <div class="job-wrapper mb-30">
                     <div class="banck-icon">
                         <i class="flaticon-internship"></i>
@@ -364,8 +375,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
+            </div> --}}
+            {{-- <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
                 <div class="job-wrapper mb-30">
                     <div class="banck-icon">
                         <i class="flaticon-job-search-3"></i>
@@ -394,7 +405,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

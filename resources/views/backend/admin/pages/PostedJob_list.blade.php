@@ -13,6 +13,7 @@
     <table class="table table-bordered">
         <thead>
           <tr>
+            <th scope="col">Serial</th>
             <th scope="col">Job Title</th>
             <th scope="col">Company</th>
             <th scope="col">Salary</th>

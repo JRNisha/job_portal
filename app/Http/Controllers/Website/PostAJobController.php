@@ -10,7 +10,20 @@ use App\Http\Controllers\Controller;
 class PostAJobController extends Controller
 {
 
+    //job Details showing from website
 
+    public function jobDetailsShow($job_id){
+        //dd($job_id);
+        $postedJob=PostedJobs::find($job_id);
+        return view('frontend.pages.jobDetails',compact('postedJob'));
+    }
+
+    //Browsing jobs
+    public function browseJobs(){
+        return view('frontend.pages.browseJobs');
+    }
+
+//
     public function postJobShow(){
         $postJobShow = PostedJobs:: orderBy('id','desc')->paginate(5);
         return view('backend.admin.pages.PostedJob_list',compact('postJobShow'));
