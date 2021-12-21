@@ -10,7 +10,7 @@
 
 
 <h1 class="text-center w-100 py-4">Registered Candidate List</h1>
-    <table class="table table-bordered table-dark">
+    <table class="table table-bordered ">
         <thead>
           <tr>
             <th scope="col">Serial</th>
@@ -41,7 +41,9 @@
     </td>
 
    {{-- <td>{{  $candidate->image }}</td> --}}
-    <td>{{  $candidate->cv }}</td>
+    <td>
+        <a href="{{ url('/uploads/cv/'.$candidate->cv ) }}">{{  $candidate->cv }}</a>
+    </td>
     <td>{{  $candidate->gender }}</td>
 
 

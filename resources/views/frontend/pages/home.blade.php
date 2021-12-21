@@ -18,6 +18,7 @@
                             <div class="hero-dot-shape d-none d-lg-block">
                                 <img src="{{url('/frontend/assets/img/shape/dot-shape.png')  }}" alt="">
                             </div>
+
                             <div class="hero-slider-caption">
                                 <h2 data-animation="fadeInUp" data-delay=".7s"><span>2560</span> Thousands Dream
                                 Jobs Available Now</h2>
@@ -37,18 +38,18 @@
                                         <button>Find Jobs <i class="far fa-arrow-right"></i></button>
                                     </form>
                                 </div>
-                                <div class="hero-profile mt-45">
+                                {{-- <div class="hero-profile mt-45">
                                     <h3>Popular Profile</h3>
                                     <a href="about.html"><img src="{{ url('frontend/assets/img/slider/hero-profile-img.png') }}" alt="profile"></a>
                                     <h3>3k+ Jobs Done</h3>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-5 d-none d-xl-block">
-                        <div class="slider-img">
+                        {{-- <div class="slider-img">
                             <img src="{{url('/frontend/assets/img/slider/me.png')  }}" alt="">
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -103,7 +104,7 @@
                     </div>
                     <div class="categories-text">
                         <h4>Web Development</h4>
-                        <span>73 Available Jobs</span>
+                        <span>Available Jobs</span>
                     </div>
                     <div class="cat-button">
                         <a href="job-grid.html"><i class="far fa-arrow-right"></i></a>
@@ -117,7 +118,7 @@
                     </div>
                     <div class="categories-text">
                         <h4>Private Tutors</h4>
-                        <span>52 Available Jobs</span>
+                        <span>Available Jobs</span>
                     </div>
                     <div class="cat-button">
                         <a href="job-grid.html"><i class="far fa-arrow-right"></i></a>

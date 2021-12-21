@@ -1,74 +1,82 @@
 @extends('frontend.master')
 @section('content')
 
-
+<div class="categories-area pt-80 grey-bg pb-50">
 <div class='container'>
-    <form action="#" class="p-5 bg-white">
 
+{{-- message --}}
+@if(session()->has('msg'))
+<p class="alert alert-success">{{session()->get('msg')}}</p>
+@endif
+
+
+
+{{-- validation --}}
+@if ($errors->any())
+<div class="alert alert-danger">
+<ul>
+@foreach ($errors->all() as $error)
+    <li>{{ $error }}</li>
+@endforeach
+</ul>
+</div>
+@endif
+<form action="{{route('post.job.store')}}" method="POST" class="p-5 bg-white">
+
+    @csrf
 
 
         <div class="row form-group">
+
           <div class="col-md-12 mb-3 mb-md-0">
             <label class="font-weight-bold" for="fullname">Job Title</label>
-            <input type="text" id="fullname" class="form-control" placeholder="eg. Full Stack Frontend">
+            <input name="title" input type="text"  class="form-control" placeholder="eg. Full Stack Frontend">
           </div>
         </div>
+
+        <div class="row form-group">
+            <div class="col-md-12 mb-3 mb-md-0">
+              <label class="font-weight-bold" for="fullname">Salary</label>
+              <input name="salary" input type="integer"  class="form-control" placeholder="eg. BDT 20k">
+            </div>
+          </div>
 
         <div class="row form-group mb-5">
           <div class="col-md-12 mb-3 mb-md-0">
             <label class="font-weight-bold" for="fullname">Company</label>
-            <input type="text" id="fullname" class="form-control" placeholder="eg. Facebook, Inc.">
+            <input name="company" input type="text"  class="form-control" placeholder="eg. Facebook, Inc.">
+          </div>
+        </div>
+
+        <div class="row form-group mb-5">
+
+                <label class="font-weight-bold" for="fullname">Job Type</label>
+                <div class="col-md-12 mb-3 mb-md-0">
+            <select name="type" class="form-control" id="exampleFormControlSelect1">
+              <option>Full Time</option>
+              <option>Part Time</option>
+              <option>Freelance</option>
+              <option>Internship</option>
+              <option>Termporary</option>
+            </select>
           </div>
         </div>
 
 
-        <div class="row form-group">
-          <div class="col-md-12"><h3>Job Type</h3></div>
-          <div class="col-md-12 mb-3 mb-md-0">
-            <label for="option-job-type-1">
-              <input type="radio" id="option-job-type-1" name="job-type"> Full Time
-            </label>
-          </div>
-          <div class="col-md-12 mb-3 mb-md-0">
-            <label for="option-job-type-2">
-              <input type="radio" id="option-job-type-2" name="job-type"> Part Time
-            </label>
-          </div>
 
-          <div class="col-md-12 mb-3 mb-md-0">
-            <label for="option-job-type-3">
-              <input type="radio" id="option-job-type-3" name="job-type"> Freelance
-          </div>
-          <div class="col-md-12 mb-3 mb-md-0">
-            <label for="option-job-type-4">
-              <input type="radio" id="option-job-type-4" name="job-type"> Internship
-            </label>
-          </div>
-          <div class="col-md-12 mb-3 mb-md-0">
-            <label for="option-job-type-4">
-              <input type="radio" id="option-job-type-4" name="job-type"> Termporary
-            </label>
-          </div>
-
-        </div>
 
         <div class="row form-group mb-4">
           <div class="col-md-12"><h3>Location</h3></div>
           <div class="col-md-12 mb-3 mb-md-0">
-            <input type="text" class="form-control" placeholder="New York City">
+            <input name="location" input type="text" class="form-control" placeholder="New York City">
           </div>
         </div>
 
-        <div class="row form-group">
-          <div class="col-md-12"><h3>Job Description</h3></div>
-          <div class="col-md-12 mb-3 mb-md-0">
-            <textarea name="" class="form-control" id="" cols="30" rows="5"></textarea>
-          </div>
-        </div>
+        
 
         <div class="row form-group">
           <div class="col-md-12">
-            <input type="submit" value="Post a Job" class="btn btn-primary  py-2 px-5">
+            <button type="submit"  class="btn btn-primary  py-2 px-5">Submit</button>
           </div>
         </div>
 

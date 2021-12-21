@@ -68,13 +68,14 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Employer
                 </a>
-                <a class="nav-link" href="">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Job Post
-                </a>
+
                 <a class="nav-link" href="{{route ('job.category') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Job Category
+                </a>
+                <a class="nav-link" href="{{ route('post.job.show') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Posted Jobs
                 </a>
                 <a class="nav-link" href="index.html">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>

@@ -31,7 +31,11 @@ use App\Http\Controllers\Website\SigninController;
 
 //website
 Route::get('/',[HomeController::class,'home']);
+
+//posted jobs
 Route::get('/post/job/form',[PostAJobController::class,'postJobForm'])->name('post.job');
+Route::post('/posted/job/store',[PostAJobController::class,'postJobStore'])->name('post.job.store');
+Route::get('/posted/job/show',[PostAJobController::class,'postJobShow'])->name('post.job.show');
 
 //Login
 Route::get('/login',[LoginController::class,'login'])->name('login.form');

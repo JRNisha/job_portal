@@ -15,12 +15,12 @@
                         <div class="main-menu d-none d-lg-block">
                             <nav id="mobile-menu">
                                 <ul>
-                                    <li class="active"><a href="index.html">home <i class="far fa-angle-down"></i></a>
+                                    {{-- <li class="active"><a href="index.html">home <i class="far fa-angle-down"></i></a>
                                         <ul class="sub-menu text-left">
                                             <li><a href="index.html">home 1</a></li>
                                             <li><a href="index-2.html">home 2</a></li>
                                         </ul>
-                                    </li>
+                                    </li> --}}
                                     <li><a href="job-grid.html">Jobs <i class="far fa-angle-down"></i></a>
                                         <ul class="sub-menu text-left">
                                             <li><a href="job-grid.html">Job Categories</a></li>
