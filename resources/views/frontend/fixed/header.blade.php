@@ -3,31 +3,18 @@
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6">
-                    {{-- <div class="logo">
-                        <a href="index.html"><img src="{{ url('frontend/assets/img/logo/logo.png') }}" alt="" /></a>
-                    </div> --}}
-                    {{-- <div class="logo-black">
-                        <a href="index.html"><img src="{{ url('frontend/assets/img/logo/logo-black.png') }}" alt="" /></a>
-                    </div> --}}
+
                 </div>
                 <div class="col-xl-10 col-lg-10 col-md-6 col-sm-6 col-6">
                     <div class="header-right d-flex justify-content-end justify-content-lg-between align-items-center">
                         <div class="main-menu d-none d-lg-block">
                             <nav id="mobile-menu">
                                 <ul>
-                                    {{-- <li class="active"><a href="index.html">home <i class="far fa-angle-down"></i></a>
-                                        <ul class="sub-menu text-left">
-                                            <li><a href="index.html">home 1</a></li>
-                                            <li><a href="index-2.html">home 2</a></li>
-                                        </ul>
-                                    </li> --}}
+                                    <li>  <a href="{{ route('website') }}">Home</a></li>
                                     <li><a href="job-grid.html">Jobs <i class="far fa-angle-down"></i></a>
                                         <ul class="sub-menu text-left">
-                                            <li><a href="job-grid.html">Job Categories</a></li>
-                                            {{-- <li><a href="job-sidebar.html">Job Sidebar</a></li>
-                                            <li><a href="job-grid-2-col.html">Job Grid 2 Col</a></li>
-                                            <li><a href="job-grid-sidebar.html">Job Grid Sidebar</a></li>
-                                            <li><a href="job-grid-map.html">Job Grid Map</a></li> --}}
+                                            <li><a href="{{ route('post.job') }}">Post Jobs</a></li>
+
                                             <li><a href="job-details.html">job Details</a></li>
                                         </ul>
                                     </li>
@@ -47,19 +34,7 @@
                                             {{-- <li><a href="employer-details.html">Employer Details</a> --}}
                                         </ul>
                                     </li>
-                                    {{-- <li><a href="#">Pages <i class="far fa-angle-down"></i></a>
-                                        <ul class="sub-menu text-left">
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="faq.html">Faq</a></li>
-                                            <li><a href="pricing.html">Pricing</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="blog-grid.html">Blog Grid</a></li>
-                                            <li><a href="blog-standard.html">Blog List</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="register.html">Register</a></li>
-                                        </ul>
-                                    </li> --}}
+
                                     <li><a href="">Companies <i class="far fa-angle-down"></i></a>
 
                                         <ul class="sub-menu text-left">
@@ -75,8 +50,12 @@
                         </div>
                         <div class="header-btn d-none d-lg-block">
                             <div class="hedder-button">
+                                @if (auth()->user())
+                                <a href="{{ route('user.logout') }}" class="h-btn h-btn-green">{{ auth()->user()->name }} | Logout</a>
+                                @else
                                 <a class="h-btn d-lg-none d-xl-inline-block" href="{{ route('signin.form') }}"><i class="far fa-user-circle"></i> Sign In</a>
-                                <a class="h-btn h-btn-green" href="{{ route('login.form') }}"><i class="far fa-lock-alt"></i> Log In</a>
+                                @endif
+                                <a class="h-btn h-btn-green" data-toggle="modal" data-target="#login"><i class="far fa-lock-alt"></i> Log In</a>
                             </div>
                         </div>
                         <div class="sidebar__menu d-lg-none">
@@ -92,3 +71,37 @@
         </div>
     </div>
 </header>
+
+
+<!-- Login Modal -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form action="{{ route('login.form') }}" method="POST">
+            @csrf
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">User Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="">Enter User Email:</label>
+                        <input name="email" type="email" class="form-control" placeholder="Enter user email">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Enter User Password:</label>
+                        <input name="password" type="password" class="form-control" placeholder="Enter user password">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

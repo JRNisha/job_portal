@@ -15,39 +15,11 @@
                     Admin
                 </a> --}}
 
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="{{ route('signed.users.list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                    Users
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    Signed In Users
+
                 </a>
-                <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                            Candidate
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="">Create Profile</a>
-                                <a class="nav-link" href="">Log in</a>
-                                <a class="nav-link" href="register.html">Register</a>
-                                <a class="nav-link" href="password.html">Forgot Password</a>
-                            </nav>
-                        </div>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                          Recruiter
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="login.html">Create Profile</a>
-                                <a class="nav-link" href="register.html">Log in</a>
-                                <a class="nav-link" href="register.html">Register</a>
-                                <a class="nav-link" href="password.html">Forgot Password</a>
-                            </nav>
-                        </div>
-                    </nav>
-                </div>
 
 
                 <a class="nav-link" href="{{ route('company.list') }}">

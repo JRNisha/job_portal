@@ -1,131 +1,93 @@
 @extends('frontend.master')
 
 @section('content')
+<div class="categories-area pt-80 grey-bg pb-50">
+    <div class="container">
 
-<main>
 
-    <!-- page title area start -->
-    <section class="page__title page__title-height d-flex align-items-center" data-background="{{ url('frontend/assets/img/page-title/page-title-1.jpg') }}">
-        <div class="hero-shape">
-            <span class="circle"></span>
-            <span class="circle circle-yellow"></span>
-            <span class="shape-plus shape-plus-green">+</span>
-            <span class="shape-plus shape-plus-green shape-plus-2">+</span>
-            <span class="dot-shape">
-                <img src="{{ url('frontend/assets/img/shape/dot-shape.png') }}" alt="dot-shape">
-            </span>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="page__title-content text-center mt-80">
-                        {{-- <h2>FAQ</h2> --}}
-                          <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb justify-content-center">
-                              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                              <li class="breadcrumb-item active" aria-current="page">Sign In</li>
-                            </ol>
-                          </nav>
-                    </div>
+{{-- message --}}
+@if(session()->has('msg'))
+<p class="alert alert-success">{{session()->get('msg')}}</p>
+@endif
+
+
+
+{{-- validation --}}
+@if ($errors->any())
+<div class="alert alert-danger">
+<ul>
+@foreach ($errors->all() as $error)
+    <li>{{ $error }}</li>
+@endforeach
+</ul>
+</div>
+@endif
+
+        <div class="row mt-5">
+             <h1 class="text-center w-100 py-4" style="color:rgb(114, 49, 100)">Sign In</h1>
+             <form action="{{ route('signin.store') }}" method="POST" class="row g-3" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4" class="form-label">Name</label>
+                    <input name="name" type="text" class="form-control" id="inputEmail4">
+                  </div>
+
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4" class="form-label">*Email</label>
+                  <input name="email" type="email" class="form-control" id="inputEmail4">
                 </div>
-            </div>
-        </div>
-    </section>
-    <!-- page title area end -->
-
-    <!-- register area start -->
-    <section class="login-area pt-80 pb-80 d-flex justify-content-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
-                    <div class="section-title text-center ml-50 mr-50 mb-20">
-                        <h2>Sign Up</h2>
-                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur</p>
-                    </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4" class="form-label">*Password</label>
+                  <input name="password" type="password" class="form-control" id="inputPassword4">
                 </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-xl-12">
-                    <div class="signin-popup-box">
-                        <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
-                            <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Candidate</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Employer</a>
-                            </li>
-                        </ul>
-                            <div class="tab-content d-flex justify-content-center" id="myTabContent">
-                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                    <div class="login-form">
-                                        <form>
-                                            <div class="input-text">
-                                                <input type="text" placeholder="Username">
-                                                <i class="la la-user"></i>
-                                            </div>
-                                            <div class="input-text input-pass">
-                                                <input type="password" placeholder="********">
-                                            </div>
-                                            <div class="input-text input-email">
-                                                <input type="email" placeholder="Email">
-                                            </div>
-                                            <div class="input-text input-phone">
-                                                <input type="text" placeholder="Phone">
-                                            </div>
-                                            <p class="remember-label">
-                                                <input type="checkbox" id="A" name="A" value="A"> <label for="A">Remember Me</label>
-                                            </p>
-                                            <a href="#" title="">Forgot Password?</a>
-                                            <button type="submit">Login</button>
-                                        </form>
-                                        <div class="extra-login">
-                                            <span>Or</span>
-                                            <div class="login-social">
-                                                <a class="fb-login" href="#" title=""><i class="fab fa-facebook-f"></i></a>
-                                                <a class="tw-login" href="#" title=""><i class="fab fa-twitter"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <div class="login-form">
-                                    <form>
-                                        <div class="input-text">
-                                            <input type="text" placeholder="Username">
-                                            <i class="la la-user"></i>
-                                        </div>
-                                        <div class="input-text input-pass">
-                                            <input type="password" placeholder="********">
-                                        </div>
-                                        <div class="input-text input-email">
-                                            <input type="email" placeholder="Email">
-                                        </div>
-                                        <div class="input-text input-phone">
-                                            <input type="text" placeholder="Phone">
-                                        </div>
-                                        <p class="remember-label">
-                                            <input type="checkbox" id="A" name="A" value="A"> <label for="A">Remember Me</label>
-                                        </p>
-                                        <a href="#" title="">Forgot Password?</a>
-                                        <button type="submit">Login</button>
-                                    </form>
-                                    <div class="extra-login">
-                                        <span>Or</span>
-                                        <div class="login-social">
-                                            <a class="fb-login" href="#" title=""><i class="fab fa-facebook-f"></i></a>
-                                            <a class="tw-login" href="#" title=""><i class="fab fa-twitter"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- register area end -->
-</main>
 
+                <div class="form-group col-12">
+                  <label for="inputMobileNumber" class="form-label">*Mobile Number</label>
+                  <input name="mobile" type="number" class="form-control" id="inputMobileNumber" placeholder="">
+                </div>
+
+
+
+                <div class="form-group col-12">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input name="address" type="text" class="form-control" id="inputAddress" placeholder="">
+                  </div>
+
+                  {{-- <div class="form-group col-4">
+                    <label for="iamge">Image</label>
+                    <input name="image" type="file" class="form-control-file" id="exampleFormControlFile1">
+                  </div> --}}
+
+
+                  {{-- <div class="form-group col-4">
+                    <label for="exampleFormControlFile1">*Upload CV</label>
+                    <input name="cv" type="file" class="form-control-file" id="exampleFormControlFile2">
+                  </div>
+
+                  <div class="form-group col-4" class="form-label">Gender</label>
+
+                    <div class=" form-group col-6 dropdown mt-1">
+                      <select name="gender" class="btn btn dropdown" id="dropdownMenu2" data-toggle="dropdown" placeholder="Select Company Type">
+
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Something Else</option>
+
+                      </select>
+                    </div> --}}
+                </div>
+
+
+
+
+
+                <div class="text-center w-100 py-4">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+        </div>
+
+    </div>
+</div>
 
 @endsection

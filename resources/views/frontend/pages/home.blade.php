@@ -1,4 +1,4 @@
- @extends('frontend.master')
+@extends('frontend.master')
  @section('content')
  <main>
  <!-- hero-area start -->
@@ -839,4 +839,3 @@
 
 </main>
 @endsection
-

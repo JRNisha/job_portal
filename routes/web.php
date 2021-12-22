@@ -1,22 +1,23 @@
 <?php
 
-use App\Http\Controllers\Admin\CandidateController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CandidateProfile;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\JobPostController;
 use App\Http\Controllers\Website\HomeController;
+use App\Http\Controllers\Website\UserController;
 use App\Http\Controllers\Admin\CompanyController;
+use App\Http\Controllers\Website\LoginController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\EmployerController;
+use App\Http\Controllers\Website\SigninController;
+use App\Http\Controllers\Admin\CandidateController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Website\PostAJobController;
 use App\Http\Controllers\Admin\CompanyListController;
 use App\Http\Controllers\Website\CompanyDetailsController;
 use App\Http\Controllers\Website\EmployerDetailsController;
 use App\Http\Controllers\Website\CandidateDetailsController;
-use App\Http\Controllers\Website\LoginController;
-use App\Http\Controllers\Website\SigninController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,7 @@ use App\Http\Controllers\Website\SigninController;
 */
 
 //website
-Route::get('/',[HomeController::class,'home']);
+Route::get('/',[HomeController::class,'home'])->name('website');
 
 //posted jobs
 Route::get('/post/job/form',[PostAJobController::class,'postJobForm'])->name('post.job');
@@ -41,9 +42,15 @@ Route::get('/job/details/{job_id}',[PostAJobController::class,'jobDetailsShow'])
 //Browse all jobs
 Route::get('/browse/jobs/',[PostAJobController::class,'browseJobs'])->name('browse.jobs');
 //Login
-Route::get('/login',[LoginController::class,'login'])->name('login.form');
+
 //Signin
-Route::get('/signin',[SigninController::class,'signin'])->name('signin.form');
+Route::get('/signin',[UserController::class,'signIn'])->name('signin.form');
+Route::post('/signin/store',[UserController::class,'signInStore'])->name('signin.store');
+Route::get('/sign/in/users',[UserController::class,'signInList'])->name('signed.users.list');
+Route::Post('/login',[UserController::class,'login'])->name('login.form');
+Route::get('/logout', [UserController::class, 'logout'])->name('user.logout');
+
+
 //company
 Route::get('/create/company/profile',[CompanyDetailsController::class,'companyProfileForm'])->name('create.company.profile');
 Route::post('/create/company/profile/store',[CompanyDetailsController::class,'companyProfileStore'])->name('store.company.profile');
