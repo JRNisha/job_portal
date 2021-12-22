@@ -38,18 +38,8 @@
                                         <button>Find Jobs <i class="far fa-arrow-right"></i></button>
                                     </form>
                                 </div>
-                                {{-- <div class="hero-profile mt-45">
-                                    <h3>Popular Profile</h3>
-                                    <a href="about.html"><img src="{{ url('frontend/assets/img/slider/hero-profile-img.png') }}" alt="profile"></a>
-                                    <h3>3k+ Jobs Done</h3>
-                                </div> --}}
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-5 d-none d-xl-block">
-                        {{-- <div class="slider-img">
-                            <img src="{{url('/frontend/assets/img/slider/me.png')  }}" alt="">
-                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -217,126 +207,26 @@
             </div>
         </div>
         <div class="row">
-            {{-- <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
+            @foreach ($postJobShow as $postedJob)
+            <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
                 <div class="job-wrapper mb-30">
                     <div class="banck-icon">
                         <i class="flaticon-dashboard"></i>
                     </div>
                     <div class="job-tag mb-30">
-                        <span class="tag-normal">full time</span>
+                        <span class="tag-normal"> {{ $postedJob->type }}</span>
                         <span class="tag-urgent">urgent</span>
                     </div>
                     <div class="job-instructor-profile mb-30">
-                        <div class="job-instructor-img f-left">
-                            <img src="{{url('/frontend/assets/img/job/01.png')}}" alt="">
-                        </div>
-                        <div class="job-instructor-title">
-                            <h4><a href="job-details.html">Slack LTD 2020</a></h4>
-                            <span><i class="far fa-map-marker-alt"></i> 205 Main Road, New York</span>
-                        </div>
-                    </div>
-                    <div class="job-content">
-                        <h4><a href="job-details.html">Senior Graphics Designer</a></h4>
-                        <p>Quis autem vel eum reprehenderit
-                        voluptate velitquam molestiae</p>
-                        <div class="job-salary">
-                            <span><i class="fal fa-usd-circle"></i> 250 - 495</span>
-                            <a href="job-details.html">Job Details <i class="far fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-
-
-            {{-- <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
-                <div class="job-wrapper mb-30">
-                    <div class="banck-icon">
-                        <i class="flaticon-job-search-3"></i>
-                    </div>
-                    <div class="job-tag mb-30">
-                        <span class="tag-normal">full time</span>
-                        <span class="tag-fea">featured</span>
-                    </div>
-                    <div class="job-instructor-profile mb-30">
-                        <div class="job-instructor-img f-left">
-                            <img src="{{ url('/frontend/assets/img/job/02.png') }}" alt="">
-                        </div>
-                        <div class="job-instructor-title">
-                            <h4><a href="job-details.html">Google Plus LTD</a></h4>
-                            <span><i class="far fa-map-marker-alt"></i> 55 Main Road, Australia</span>
-                        </div>
-                    </div>
-                    <div class="job-content">
-                        <h4><a href="job-details.html">Senior/Junior Web Developer</a></h4>
-                        <p>Quis autem vel eum reprehenderit
-                        voluptate velitquam molestiae</p>
-                        <div class="job-salary">
-                            <span><i class="fal fa-usd-circle"></i> 250 - 495</span>
-                            <a href="job-details.html">Job Details <i class="far fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-            {{-- <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
-                <div class="job-wrapper mb-30">
-                    <div class="banck-icon">
-                        <i class="flaticon-research"></i>
-                    </div>
-                    <div class="job-tag mb-30">
-                        <span class="tag-normal">Part time</span>
-                    </div>
-                    <div class="job-instructor-profile mb-30">
-                        <div class="job-instructor-img f-left">
-                            <img src="{{ url('/frontend/assets/img/job/03.png') }}" alt="">
-                        </div>
-                        <div class="job-instructor-title">
-                            <h4><a href="job-details.html">Linux LTD 2020</a></h4>
-                            <span><i class="far fa-map-marker-alt"></i> 205 Main Road, New York</span>
-                        </div>
-                    </div>
-                    <div class="job-content">
-                        <h4><a href="job-details.html">Marketing Officer (6 Month)</a></h4>
-                        <p>Quis autem vel eum reprehenderit
-                        voluptate velitquam molestiae</p>
-                        <div class="job-salary">
-                            <span><i class="fal fa-usd-circle"></i> 250 - 495</span>
-                            <a href="job-details.html">Job Details <i class="far fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-
-
-
-
-
-            <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
-
-                @foreach ( $postJobShow as $postedJob)
-
-                <div class="job-wrapper mb-30">
-                    <div class="banck-icon">
-                        <i class="flaticon-job-search-3"></i>
-                    </div>
-                    <div class="job-tag mb-30">
-                        <span class="tag-fea">{{  $postedJob->type }}</span>
-
-                    </div>
-                    <div class="job-instructor-profile mb-30">
-                        {{-- <div class="job-instructor-img f-left">
-                            <img src="{{url('/frontend/assets/img/job/03.png') }}" alt="">
-                        </div> --}}
                         <div class="job-instructor-title">
                             <h4><a href="job-details.html">{{  $postedJob->company }}</a></h4>
-                            <span><i class="far fa-map-marker-alt"></i> {{  $postedJob->location }}</span>
+                            <span><i class="far fa-map-marker-alt"></i> 205 Main Road, New York</span>
                         </div>
                     </div>
                     <div class="job-content">
                         <h4><a href="job-details.html">{{  $postedJob->title }}</a></h4>
-
+                        <p>Quis autem vel eum reprehenderit
+                        voluptate velitquam molestiae</p>
                         <div class="job-salary">
                             <span><i class="fal fa-usd-circle"></i> {{  $postedJob->salary }}</span>
                             <a href="{{ route('job.details.show',$postedJob->id) }}">Job Details <i class="far fa-arrow-right"></i>
@@ -344,69 +234,13 @@
                         </div>
                     </div>
                 </div>
-
-                @endforeach
             </div>
-            {{-- <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
-                <div class="job-wrapper mb-30">
-                    <div class="banck-icon">
-                        <i class="flaticon-internship"></i>
-                    </div>
-                    <div class="job-tag mb-30">
-                        <span class="tag-normal">full time</span>
-                    </div>
-                    <div class="job-instructor-profile mb-30">
-                        <div class="job-instructor-img f-left">
-                            <img src="{{ url('/frontend/assets/img/job/05.png') }}" alt="">
-                        </div>
-                        <div class="job-instructor-title">
-                            <h4><a href="job-details.html">Soundcloud @95</a></h4>
-                            <span><i class="far fa-map-marker-alt"></i> 205 Main Road, USA</span>
-                        </div>
-                    </div>
-                    <div class="job-content">
-                        <h4><a href="job-details.html">Creative Product Designer</a></h4>
-                        <p>Quis autem vel eum reprehenderit
-                        voluptate velitquam molestiae</p>
-                        <div class="job-salary">
-                            <span><i class="fal fa-usd-circle"></i> 250 - 495</span>
-                            <a href="job-details.html">Job Details <i class="far fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-            {{-- <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
-                <div class="job-wrapper mb-30">
-                    <div class="banck-icon">
-                        <i class="flaticon-job-search-3"></i>
-                    </div>
-                    <div class="job-tag mb-30">
-                        <span class="tag-normal">full time</span>
-                        <span class="tag-urgent">urgent</span>
-                    </div>
-                    <div class="job-instructor-profile mb-30">
-                        <div class="job-instructor-img f-left">
-                            <img src="{{ url('/frontend/assets/img/job/06.png') }}" alt="">
-                        </div>
-                        <div class="job-instructor-title">
-                            <h4><a href="job-details.html">Cutlery Foods</a></h4>
-                            <span><i class="far fa-map-marker-alt"></i> 205 Main Road, USA</span>
-                        </div>
-                    </div>
-                    <div class="job-content">
-                        <h4><a href="job-details.html">Creative Experience Chefs</a></h4>
-                        <p>Quis autem vel eum reprehenderit
-                        voluptate velitquam molestiae</p>
-                        <div class="job-salary">
-                            <span><i class="fal fa-usd-circle"></i> 250 - 495</span>
-                            <a href="job-details.html">Job Details <i class="far fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
+
+
+
+            @endforeach
         </div>
+
     </div>
 </div>
 <!-- job-area-end -->
@@ -568,7 +402,7 @@
             </div>
             <div class="col-lg-5">
                 <div class="cta-btn text-lg-right mb-30">
-                    <a class="b-btn" href="about.html">Get Started Now <i class="far fa-arrow-right"></i></a>
+                    <a class="b-btn" href="{{ route('signin.form') }}">Get Started Now <i class="far fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
