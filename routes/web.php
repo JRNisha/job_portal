@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\CompanyListController;
 use App\Http\Controllers\Website\CompanyDetailsController;
 use App\Http\Controllers\Website\EmployerDetailsController;
 use App\Http\Controllers\Website\CandidateDetailsController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,21 +67,26 @@ Route::get('/create/candidate/profile/show',[CandidateDetailsController::class,'
 //employer
 Route::get('/create/employer/profile',[EmployerDetailsController::class,'employerProfileForm'])->name('create.employer.profile');
 Route::post('/create/employer/profile/store',[EmployerDetailsController::class,'employerProfileStore'])->name('store.employer.profile');
-
+Route::patch('/Update/employer/profile{employer_id}',[EmployerDetailsController::class,'updateEmployer'])->name('update.employer.profile');
 Route::get('/create/employer/profile/show',[EmployerDetailsController::class,'employerProfileShow'])->name('show.employer.profile');
+Route::get('/delete/employer/profile/list/{employer_id}',[EmployerDetailsController::class,'deleteEmployer'])->name('delete.employer.profile');
+Route::get('/Edit/employer/profile{employer_id}',[EmployerDetailsController::class,'editEmployer'])->name('edit.employer.profile');
 
 
+
+
+//Login for admin
+Route::get('/admin/login',[AdminUserController::class,'login'])->name('admin.login');
+Route::post('/admin/do-login',[AdminUserController::class,'doLogin'])->name('admin.doLogin');
 //admin
-//  Route::group(['prefix'=>'admin'],function (){
-//   Route::get('/', function () {
-//       return view('backend.admin.pages.master');
-//     })->name('home');
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function (){
+ Route::get('/', function () {
+       return view('backend.admin.pages.home');
+  })->name('home');
 
+//admin logout
+Route::get('/logout',[AdminUserController::class,'logout'])->name('admin.logout');
 
-
- Route::get('/admin', function () {
-       return view('backend.admin.master');
-  });
 //company
     Route::get('/company_list',[CompanyListController::class,'companylist'])->name('company.list');
     Route::get('/about_company',[CompanyListController::class,'aboutcompany'])->name('about.company');
@@ -97,5 +103,4 @@ Route::get('/admin',[DashboardController::class,'dashboard'])->name('dashboard')
 Route::get('/company/list/card',[CompanyController::class,'companyCard'])->name('company.card');
 Route::get('/employer/list/card',[EmployerController::class,'employerCard'])->name('employer.card');
 Route::get('/candidate/list/card',[CandidateController::class,'candidateCard'])->name('candidate.card');
-//  })
-// ;
+ }) ;

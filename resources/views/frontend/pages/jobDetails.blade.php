@@ -5,6 +5,7 @@
     <div class='container'>
 
 
+<div id="divToPrint">
  <h1 class="text-center w-100 py-4" style="color:slateblue" >Job Details</h1>
 
 
@@ -16,9 +17,23 @@
 <p>Job Location : {{  $postedJob->location }}</p>
 
     <button type="apply" class="btn btn-primary">Apply</button>
+
+</div>
 </div>
 </div>
 </div>
 
+<button class="btn btn-primary" type="submit" onClick="PrintDiv('divToPrint');" value="Print" >print</button>
+<script language="javascript">
+    function PrintDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 
  @endsection
+
+

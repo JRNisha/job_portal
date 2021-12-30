@@ -14,7 +14,6 @@
             <th scope="col">Serial</th>
             <th scope="col">Employer Name</th>
             <th scope="col">Email</th>
-            <th scope="col">Password</th>
             <th scope="col">Mobile Number</th>
             <th scope="col">Address</th>
             <th scope="col">Status </th>
@@ -29,12 +28,11 @@
     <td>{{ $key+1 }}</td>
     <td>{{  $employer-> name }}</td>
     <td>{{  $employer-> email }}</td>
-    <td>{{  $employer-> password }}</td>
     <td>{{  $employer-> mobile }}</td>
     <td>{{  $employer-> address }}</td>
     <td>
-        <a class="btn btn-success btn-sm" >Approve</a>
-        <a class="btn btn-danger btn-sm" style="margin-left: 15px;">Reject</a>
+        <a href="{{ route('edit.employer.profile',$employer->id) }}"class="btn btn-success btn-sm" >Update</a>
+        <a href="{{ route('delete.employer.profile', $employer->id) }}"class="btn btn-danger btn-sm" style="margin-left: 15px;">Reject</a>
     </td>
 
   </tr>

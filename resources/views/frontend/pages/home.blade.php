@@ -220,13 +220,12 @@
                     <div class="job-instructor-profile mb-30">
                         <div class="job-instructor-title">
                             <h4><a href="job-details.html">{{  $postedJob->company }}</a></h4>
-                            <span><i class="far fa-map-marker-alt"></i> 205 Main Road, New York</span>
+                            <span><i class="far fa-map-marker-alt"></i> {{  $postedJob->location }}</span>
                         </div>
                     </div>
                     <div class="job-content">
                         <h4><a href="job-details.html">{{  $postedJob->title }}</a></h4>
-                        <p>Quis autem vel eum reprehenderit
-                        voluptate velitquam molestiae</p>
+                        <p>Apply to the job if you are interested</p>
                         <div class="job-salary">
                             <span><i class="fal fa-usd-circle"></i> {{  $postedJob->salary }}</span>
                             <a href="{{ route('job.details.show',$postedJob->id) }}">Job Details <i class="far fa-arrow-right"></i>
