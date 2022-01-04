@@ -51,7 +51,7 @@
                         <div class="header-btn d-none d-lg-block">
                             <div class="hedder-button">
                                 @if (auth()->user())
-                                <a href="{{ route('user.logout') }}" class="h-btn h-btn-green">{{ auth()->user()->name }} | Logout</a>
+                                <a href="{{ route('user.logout') }}" class="h-btn h-btn-green">{{ auth()->user()->name }} ({{auth()->user()->role}})| Logout</a>
                                 @else
                                 <a class="h-btn d-lg-none d-xl-inline-block" href="{{ route('signin.form') }}"><i class="far fa-user-circle"></i> Sign In</a>
                                 @endif
