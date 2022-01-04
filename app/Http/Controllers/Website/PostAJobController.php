@@ -25,8 +25,16 @@ class PostAJobController extends Controller
 
 //
     public function postJobShow(){
-        $postJobShow = PostedJobs:: orderBy('id','desc')->paginate(5);
-        return view('backend.admin.pages.PostedJob_list',compact('postJobShow'));
+
+        $key=null;
+        if(request()->search){
+            $key=request()->search;
+            $postJobShow=PostedJobs::where('title','LIKE','%'.$key.'%')->orWhere('company','LIKE','%'.$key.'%')->orWhere('salary','LIKE','%'.$key.'%')
+                                      ->orWhere('type','LIKE','%'.$key.'%')->orWhere('location','LIKE','%'.$key.'%')->paginate(3);
+                                      return view('backend.admin.pages.PostedJob_list',compact('postJobShow','key'));
+        }
+        $postJobShow = PostedJobs:: orderBy('id','desc')->paginate(3);
+        return view('backend.admin.pages.PostedJob_list',compact('postJobShow','key'));
     }
 
 
