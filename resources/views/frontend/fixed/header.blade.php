@@ -15,7 +15,7 @@
                                         <ul class="sub-menu text-left">
                                             <li><a href="{{ route('post.job') }}">Post Jobs</a></li>
 
-                                            <li><a href="job-details.html">job Details</a></li>
+                                            <li><a href="job-details.html">Job Categories</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="candidate-grid.html">Candidates <i class="far fa-angle-down"></i></a>

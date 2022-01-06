@@ -29,6 +29,7 @@
             <th scope="col">Serial</th>
             <th scope="col">Job Title</th>
             <th scope="col">Company</th>
+            <th scope="col">Category</th>
             <th scope="col">Salary</th>
             <th scope="col">Job Type</th>
             <th scope="col">Location</th>
@@ -44,6 +45,7 @@
     <td>{{ $key+1 }}</td>
     <td>{{  $postedJob->title }}</td>
     <td>{{  $postedJob->company }}</td>
+    <td>{{  $postedJob->category }}</td>
     <td>{{  $postedJob->salary }}</td>
     <td>{{  $postedJob->type }}</td>
     <td>{{  $postedJob->location }}</td>

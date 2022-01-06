@@ -69,7 +69,7 @@
                         <span>52 Available Jobs</span>
                     </div>
                     <div class="cat-button">
-                        <a href="job-grid.html"><i class="far fa-arrow-right"></i></a>
+                        <a href="{{route('job.catergory')}}"><i class="far fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>

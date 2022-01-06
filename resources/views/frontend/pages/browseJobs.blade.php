@@ -19,6 +19,7 @@
             </div>
         </div>
         <div class="row">
+
             @foreach ($postJobShow as $postedJob)
             <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
                 <div class="job-wrapper mb-30">
@@ -35,6 +36,9 @@
                             <span><i class="far fa-map-marker-alt"></i> 205 Main Road, New York</span>
                         </div>
                     </div>
+
+                
+
                     <div class="job-content">
                         <h4><a href="job-details.html">{{  $postedJob->title }}</a></h4>
                         <p>Quis autem vel eum reprehenderit

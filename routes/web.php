@@ -42,6 +42,8 @@ Route::get('/posted/job/show',[PostAJobController::class,'postJobShow'])->name('
 Route::get('/job/details/{job_id}',[PostAJobController::class,'jobDetailsShow'])->name('job.details.show');
 //Browse all jobs
 Route::get('/browse/jobs/',[PostAJobController::class,'browseJobs'])->name('browse.jobs');
+//job categories
+Route::get('/job/Categories',[PostAJobController::class,'jobCategories'])->name('job.catergory');
 //Login
 
 //Signin

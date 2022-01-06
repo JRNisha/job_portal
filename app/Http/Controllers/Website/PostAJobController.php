@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Website;
 
 use Throwable;
 use App\Models\PostedJobs;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -20,6 +21,7 @@ class PostAJobController extends Controller
 
     //Browsing jobs
     public function browseJobs(){
+     
         return view('frontend.pages.browseJobs');
     }
 
@@ -61,6 +63,7 @@ class PostAJobController extends Controller
 
         'title'=>$request->title,
         'company'=>$request->company,
+        'category'=>$request->category,
         'salary'=>$request->salary,
         'type'=>$request->type,
         'location'=>$request->location
@@ -72,6 +75,11 @@ class PostAJobController extends Controller
         //    dd($throw);
         return redirect()->back()->with('error','Problem!');
        }
+   }
+   //job categories
+   public function jobCategories(){
+       $postJob=PostedJobs::all();
+       return view('frontend.pages.jobCatergories',compact('postJob'));
    }
 
 
