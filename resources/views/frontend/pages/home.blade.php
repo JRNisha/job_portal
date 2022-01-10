@@ -20,7 +20,7 @@
                             </div>
 
                             <div class="hero-slider-caption">
-                                <h2 data-animation="fadeInUp" data-delay=".7s"><span>2560</span> Thousands Dream
+                                <h2 data-animation="fadeInUp" data-delay=".7s"><span>Thousands</span>  Dream
                                 Jobs Available Now</h2>
                                 <div class="job-hero-form">
                                     <form action="#">
@@ -230,6 +230,10 @@
                             <span><i class="fal fa-usd-circle"></i> {{  $postedJob->salary }}</span>
                             <a href="{{ route('job.details.show',$postedJob->id) }}">Job Details <i class="far fa-arrow-right"></i>
                             </a>
+                        </div>
+                        <div>
+                        <a href="{{route('applied.jobs.add',$postedJob->id)}}"class="btn btn-primary">Apply</a>   
+
                         </div>
                     </div>
                 </div>

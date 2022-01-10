@@ -24,7 +24,7 @@
 @endif
 
         <div class="row mt-5">
-             <h1 class="text-center w-100 py-4" style="color:rgb(114, 49, 100)">Sign In</h1>
+             <h1 class="text-center w-100 py-4" style="color:rgb(114, 49, 100)">Register</h1>
              <form action="{{ route('signin.store') }}" method="POST" class="row g-3" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group col-md-12">

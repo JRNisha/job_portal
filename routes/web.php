@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CandidateProfile;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\JobPostController;
+use App\Http\Controllers\Website\AppliedJobsController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\UserController;
 use App\Http\Controllers\Admin\CompanyController;
@@ -38,10 +39,17 @@ Route::get('/',[HomeController::class,'home'])->name('website');
 Route::get('/post/job/form',[PostAJobController::class,'postJobForm'])->name('post.job');
 Route::post('/posted/job/store',[PostAJobController::class,'postJobStore'])->name('post.job.store');
 Route::get('/posted/job/show',[PostAJobController::class,'postJobShow'])->name('post.job.show');
+
+//Applied Jobs
+Route::group(['middleware'=>'web_auth'],function (){
+    Route::get('/applied/jobs/{id}',[AppliedJobsController::class,'addToAppliedJobs'])->name('applied.jobs.add');
+    Route::get('get/applied/jobs',[AppliedJobsController::class,'getAppliedJobs'])->name('applied.jobs.get');
+    });
+
 //job details showing on website
 Route::get('/job/details/{job_id}',[PostAJobController::class,'jobDetailsShow'])->name('job.details.show');
 //Browse all jobs
-Route::get('/browse/jobs/',[PostAJobController::class,'browseJobs'])->name('browse.jobs');
+Route::get('/browse/jobs',[PostAJobController::class,'browseJobs'])->name('browse.jobs');
 //job categories
 Route::get('/job/Categories',[PostAJobController::class,'jobCategories'])->name('job.catergory');
 //Login
