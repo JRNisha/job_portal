@@ -20,7 +20,13 @@ public function getAppliedJobs()
        return view('frontend.pages.appliedJobs',compact('postedJob'));
     }
 
+//clearing
+public function clearJob()
+{
+    session()->forget('appliedJobs');
+    return redirect()->back()->with('message','Job cleared successfully.');
 
+}
     //adding
     public function addToAppliedJobs($id){
         $postedJob=PostedJobs::find($id);
@@ -48,5 +54,24 @@ public function getAppliedJobs()
     }
 
 
+    if(!isset($postedJobExist[$id]))
+    {
+
+        $postedJobExist[$id] = [
+            
+                'job_id' => $id,
+                'job_title' => $postedJob->title,
+                'job_type' => $postedJob->type,
+                'job_salary' => $postedJob->salary,
+                'job_company_name'=>$postedJob->company,
+                'job_location'=>$postedJob->location ,
+                'job_qty' => 1,
+            
+        ];
+        session()->put('appliedJobs', $postedJobExist);
+        return redirect()->back()->with('message', 'Applied to the job successfully');
+    }
+
+    
     }
 }

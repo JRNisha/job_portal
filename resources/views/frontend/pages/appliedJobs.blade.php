@@ -4,7 +4,7 @@
  <div class="categories-area pt-80 grey-bg pb-50">
     <div class='container'>
 
-    <h1 class="text-center w-100 py-4" style="color:slateblue" >Applied Jobs({{count($postedJob)}})</h1>
+    <h1 class="text-center w-100 py-4" style="color:slateblue" >Applied Jobs({{session()->has('appliedJobs') ? count(session()->get('appliedJobs')):0}})</h1>
     <table class="table table-success table-striped">
   
   <thead>
@@ -19,9 +19,10 @@
     </tr>
   </thead>
   <tbody>
+ @if($postedJob)
   @foreach($postedJob as $key=>$data)
         <tr>
-        <td>{{ $key+1 }}</td>
+        <td>{{ $key }}</td>
             <td>{{$data['job_title']}}</td>
             <td>{{$data['job_type']}}</td>
             <td>{{$data['job_salary']}}</td>
@@ -31,9 +32,12 @@
             
         </tr>
         @endforeach
+        @endif
+      
   </tbody>
 
 </table>
+<a href="{{route('cart.job')}}" class="btn btn-danger">Cancel</a>
 </div>
 </div>
 

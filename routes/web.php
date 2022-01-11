@@ -44,6 +44,7 @@ Route::get('/posted/job/show',[PostAJobController::class,'postJobShow'])->name('
 Route::group(['middleware'=>'web_auth'],function (){
     Route::get('/applied/jobs/{id}',[AppliedJobsController::class,'addToAppliedJobs'])->name('applied.jobs.add');
     Route::get('get/applied/jobs',[AppliedJobsController::class,'getAppliedJobs'])->name('applied.jobs.get');
+    Route::get('/clear/job',[AppliedJobsController::class,'clearJob'])->name('cart.job');
     });
 
 //job details showing on website
