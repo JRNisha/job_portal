@@ -83,7 +83,7 @@
                         <span>304 Available Jobs</span>
                     </div>
                     <div class="cat-button">
-                        <a href="job-grid.html"><i class="far fa-arrow-right"></i></a>
+                    <a href="{{route('job.category.bank.jobs')}}"><i class="far fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,7 @@
                         <span>Available Jobs</span>
                     </div>
                     <div class="cat-button">
-                        <a href="job-grid.html"><i class="far fa-arrow-right"></i></a>
+                        <a href="{{route('job.category.private.tutor')}}"><i class="far fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -153,7 +153,7 @@
                         <span>52 Available Jobs</span>
                     </div>
                     <div class="cat-button">
-                        <a href="job-grid.html"><i class="far fa-arrow-right"></i></a>
+                        <a href="{{route('job.category.business.group')}}"><i class="far fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -167,7 +167,7 @@
                         <span>304 Available Jobs</span>
                     </div>
                     <div class="cat-button">
-                        <a href="job-grid.html"><i class="far fa-arrow-right"></i></a>
+                    <a href="{{route('job.category.cleaning.services')}}"><i class="far fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>

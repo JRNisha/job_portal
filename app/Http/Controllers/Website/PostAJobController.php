@@ -81,15 +81,37 @@ class PostAJobController extends Controller
        $postJob=PostedJobs::all();
        return view('frontend.pages.jobCatergories',compact('postJob'));
    }
-   //job categories webdevelopment
-   public function jobCategoriesWebDevelopment(){
+   //job categories private tutors
+   public function jobCategoriesPrivateTutor(){
     $postJob=PostedJobs::all();
-    return view('frontend.pages.jobCategoriesWebDevelopment',compact('postJob'));
+    return view('frontend.pages.jobCategoriesPrivateTutors',compact('postJob'));
+}
+   
+   //job categories business group
+   public function jobCategoriesBusinessGroup(){
+    $postJob=PostedJobs::all();
+    return view('frontend.pages.jobCategoriesBusinessGroup',compact('postJob'));
+}
+   ////job categories bank jobs
+   public function jobCategoriesBankJobs(){
+    $postJob=PostedJobs::all();
+    return view('frontend.pages.jobCategoriesBankJobs',compact('postJob'));
 }
 // //job categories digital marketing
 public function jobCategoriesDigitalMarketing(){
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesDigitalMarketing',compact('postJob'));
+}
+//job categories cleaning services
+public function jobCategoriesCleaningServices(){
+    $postJob=PostedJobs::all();
+    return view('frontend.pages.jobCategoriesCleaningServices',compact('postJob'));
+}
+
+//job categories webdevelopment
+public function jobCategoriesWebDevelopment(){
+    $postJob=PostedJobs::all();
+    return view('frontend.pages.jobCategoriesWebDevelopment',compact('postJob'));
 }
 // //job categories it/web
 public function jobCategoriesIt(){
