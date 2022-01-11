@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="row">
-
+@if($postJobShow)
             @foreach ($postJobShow as $postedJob)
             <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
                 <div class="job-wrapper mb-30">
@@ -55,6 +55,7 @@
 
 
             @endforeach
+            @endif
         </div>
 
     </div>

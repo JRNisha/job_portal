@@ -53,6 +53,10 @@ Route::get('/job/details/{job_id}',[PostAJobController::class,'jobDetailsShow'])
 Route::get('/browse/jobs',[PostAJobController::class,'browseJobs'])->name('browse.jobs');
 //job categories
 Route::get('/job/Categories',[PostAJobController::class,'jobCategories'])->name('job.catergory');
+Route::get('/job/Categories/web/development',[PostAJobController::class,'jobCategoriesWebDevelopment'])->name('job.category.WebDevelopment');
+Route::get('/job/Categories/digital/marketing',[PostAJobController::class,'jobCategoriesDigitalMarketing'])->name('job.category.DigitalMarketing');
+Route::get('/job/Categories/it',[PostAJobController::class,'jobCategoriesIt'])->name('job.category.it');
+Route::get('/job/Categories/medical',[PostAJobController::class,'jobCategoriesMedical'])->name('job.category.medical');
 //Login
 
 //Signin

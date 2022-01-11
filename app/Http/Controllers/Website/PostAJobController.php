@@ -81,7 +81,25 @@ class PostAJobController extends Controller
        $postJob=PostedJobs::all();
        return view('frontend.pages.jobCatergories',compact('postJob'));
    }
-
-
+   //job categories webdevelopment
+   public function jobCategoriesWebDevelopment(){
+    $postJob=PostedJobs::all();
+    return view('frontend.pages.jobCategoriesWebDevelopment',compact('postJob'));
+}
+// //job categories digital marketing
+public function jobCategoriesDigitalMarketing(){
+    $postJob=PostedJobs::all();
+    return view('frontend.pages.jobCategoriesDigitalMarketing',compact('postJob'));
+}
+// //job categories it/web
+public function jobCategoriesIt(){
+    $postJob=PostedJobs::all();
+    return view('frontend.pages.jobCategoriesIt',compact('postJob'));
+}
+// //job categories medical
+public function jobCategoriesMedical(){
+    $postJob=PostedJobs::all();
+    return view('frontend.pages.jobCategoriesMedical',compact('postJob'));
+}
 
 }

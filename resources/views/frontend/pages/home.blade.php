@@ -74,12 +74,12 @@
                 </div>
             </div>
             <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
-                <div class="categories-wrapper active pos-rel">
+                <div class="categories-wrapper pos-rel">
                     <div class="categories-icon f-left">
                         <i class="fal fa-acorn"></i>
                     </div>
                     <div class="categories-text">
-                        <h4>Movie & Films</h4>
+                        <h4>Bank Jobs</h4>
                         <span>304 Available Jobs</span>
                     </div>
                     <div class="cat-button">
@@ -97,7 +97,7 @@
                         <span>Available Jobs</span>
                     </div>
                     <div class="cat-button">
-                        <a href="job-grid.html"><i class="far fa-arrow-right"></i></a>
+                    <a href="{{route('job.category.WebDevelopment')}}"><i class="far fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -125,7 +125,7 @@
                         <span>304 Available Jobs</span>
                     </div>
                     <div class="cat-button">
-                        <a href="job-grid.html"><i class="far fa-arrow-right"></i></a>
+                    <a href="{{route('job.category.DigitalMarketing')}}"><i class="far fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -139,7 +139,7 @@
                         <span>73 Available Jobs</span>
                     </div>
                     <div class="cat-button">
-                        <a href="job-grid.html"><i class="far fa-arrow-right"></i></a>
+                        <a href="{{route('job.category.it')}}"><i class="far fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -181,7 +181,7 @@
                         <span>73 Available Jobs</span>
                     </div>
                     <div class="cat-button">
-                        <a href="job-grid.html"><i class="far fa-arrow-right"></i></a>
+                    <a href="{{route('job.category.medical')}}"><i class="far fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
