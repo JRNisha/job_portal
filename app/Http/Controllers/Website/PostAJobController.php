@@ -20,9 +20,9 @@ class PostAJobController extends Controller
     }
 
     //Browsing jobs
-    public function browseJobs(){
-     
-        return view('frontend.pages.browseJobs');
+    public function browseJobs($job_id){
+        $postedJob=PostedJobs::find($job_id);
+        return view('frontend.pages.browseJobs',compact('postedJob'));
     }
 
 //

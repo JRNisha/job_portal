@@ -293,7 +293,7 @@
 </div>
 <!-- counter-area end -->
 
-<div class="testimonial-area grey-bg pt-80 pb-60" data-background="{{ url('frontend/assets/img/bg/map.png') }}">
+<!-- <div class="testimonial-area grey-bg pt-80 pb-60" data-background="{{ url('frontend/assets/img/bg/map.png') }}">
     <div class="container">
         <div class="row">
             <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
@@ -337,7 +337,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- services area start -->
 <section class="services__area pt-80 pb-50">
@@ -346,7 +346,6 @@
             <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
                 <div class="section-title text-center mb-45">
                     <h2>How To Get Started</h2>
-                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur</p>
                 </div>
             </div>
         </div>
@@ -359,7 +358,7 @@
                     </div>
                     <div class="services__content">
                         <h2>Need Any Jobs?</h2>
-                        <p>But must expla to you how all this mistaken idea of denouncing pleure and praising pain was born</p>
+                        <!-- <p>But must expla to you how all this mistaken idea of denouncing pleure and praising pain was born</p> -->
                         <a href="contact.html" class="b-btn b-btn-green">Apply Job <i class="far fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -372,7 +371,7 @@
                     </div>
                     <div class="services__content">
                         <h2>Post Your Jobs</h2>
-                        <p>But must expla to you how all this mistaken idea of denouncing pleure and praising pain was born</p>
+                        <!-- <p>But must expla to you how all this mistaken idea of denouncing pleure and praising pain was born</p> -->
                         <a href="{{ route('post.job') }}" class="b-btn b-btn-green">Post Job <i class="far fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -385,7 +384,7 @@
                     </div>
                     <div class="services__content">
                         <h2>Job Market Data</h2>
-                        <p>But must expla to you how all this mistaken idea of denouncing pleure and praising pain was born</p>
+                        <!-- <p>But must expla to you how all this mistaken idea of denouncing pleure and praising pain was born</p> -->
                         <a href="contact.html" class="b-btn b-btn-green">Get Data <i class="far fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -413,7 +412,7 @@
 </div>
 
 <!-- blog area start -->
-<div class="blog__area-2 pt-75 pb-50">
+<!-- <div class="blog__area-2 pt-75 pb-50">
     <div class="container">
         <div class="row">
             <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
@@ -486,7 +485,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- blog area end -->
 
 <!-- brand area start -->
