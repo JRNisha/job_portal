@@ -19,7 +19,12 @@
                             <nav id="mobile-menu">
                                 <ul>
                                     <li>  <a href="{{ route('website') }}">Home</a></li>
+                                    @if(auth()->user())
+                                    @if(auth()->user()->role == "candidate") 
                                     <li>  <a href="{{route('applied.jobs.get')}}">Applied Jobs({{session()->has('appliedJobs') ? count(session()->get('appliedJobs')):0}})</a></li>
+                                    @else
+                                    @endif
+                                    @endif
                                     <li><a href="job-grid.html">Jobs <i class="far fa-angle-down"></i></a>
                                         <ul class="sub-menu text-left">
                                             @if(auth()->user())
@@ -31,7 +36,8 @@
                                             <li><a href="job-details.html">Job Categories</a></li>
                                         </ul>
                                     </li>
-                                   
+                                    @if(auth()->user())
+                                    @if(auth()->user()->role == "candidate") 
                                     <li><a href="candidate-grid.html">Candidates <i class="far fa-angle-down"></i></a>
                                         <ul class="sub-menu text-left">
                                             <li><a href="{{ route('create.candidate.profile') }}">Create candidate profile</a>
@@ -40,6 +46,14 @@
                                             {{-- <li><a href="candidate-grid.html">Candidate Details</a> --}}
                                         </ul>
                                     </li>
+                                    @else
+                                    @endif
+                                    @endif
+
+
+
+                                    @if(auth()->user())
+                                    @if(auth()->user()->role == "company")
                                     <li><a href="employer-list.html">Employers <i class="far fa-angle-down"></i></a>
                                         <ul class="sub-menu text-left">
                                             <li><a href="{{ route('create.employer.profile') }}">Create Employer Profile</a>
@@ -59,6 +73,9 @@
                                             <li><a href="">Company Details</a>
                                         </ul>
                                     </li>
+                                    @else
+                                            @endif
+                                            @endif
                                 </ul>
                             </nav>
                         </div>

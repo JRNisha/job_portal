@@ -363,6 +363,9 @@
                     </div>
                 </div>
             </div>
+
+            @if(auth()->user())
+            @if(auth()->user()->role == "company")
             <div class="col-xl-4 col-lg-4 col-md-6">
                 <div class="services__item grey-bg transition-3 text-center mb-30">
                     <div class="services__shape transition-3" data-background="{{ url('frontend/assets/img/shape/hexa.png') }}"></div>
@@ -376,6 +379,9 @@
                     </div>
                 </div>
             </div>
+            @else
+            @endif
+            @endif
             <div class="col-xl-4 col-lg-4 col-md-6">
                 <div class="services__item grey-bg transition-3 text-center mb-30">
                     <div class="services__shape transition-3" data-background="{{ url('frontend/assets/img/shape/hexa.png') }}"></div>
