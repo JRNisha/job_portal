@@ -45,10 +45,7 @@
                   <label for="inputMobileNumber" class="form-label">*Mobile Number</label>
                   <input name="mobile" type="number" class="form-control" id="inputMobileNumber" placeholder="">
                 </div>
-
-
-
-                <div class="form-group col-12">
+          <div class="form-group col-12">
                     <label for="inputAddress" class="form-label">Candidate Address</label>
                     <input name="address" type="text" class="form-control" id="inputAddress" placeholder="">
                   </div>

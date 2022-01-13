@@ -232,7 +232,7 @@
                             </a>
                         </div>
                         <div>
-                        <a href="{{route('applied.jobs.add',$postedJob->id)}}"class="btn btn-primary">Apply</a>   
+                        <a href="{{route('job.application',$postedJob->id)}}"class="btn btn-primary">Apply</a>   
 
                         </div>
                     </div>

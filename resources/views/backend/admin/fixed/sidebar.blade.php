@@ -32,7 +32,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Posted Jobs
                 </a>
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{ route('job.apply') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Job Apply
                 </a>

@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\JobApplication;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class PostedJobs extends Model
 {
@@ -17,7 +18,9 @@ class PostedJobs extends Model
 //         'type',
 //     'location'
 // ];
-
+public function JobApplication(){
+    return $this->belongsTo(JobApplication::class);
+}
 
 
     }

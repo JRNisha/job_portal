@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Website;
 
 use Throwable;
 use App\Models\PostedJobs;
-
+use App\Models\JobApplication;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -123,5 +124,44 @@ public function jobCategoriesMedical(){
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesMedical',compact('postJob'));
 }
+
+
+
+//job application
+public function jobApplication($id){
+    $post = PostedJobs::find($id);
+   return view('frontend.pages.jobApplication',compact('post'));
+}
+
+
+public function jobApplicationShow(){
+   
+    $jobApplicationView = JobApplication::with(['user','JobApplication'])->orderBy('id','desc')->paginate(5);
+    // $jobPost=PostedJobs::with(['JobApplication'])->orderBy('id','desc')->paginate(5);
+    //dd($jobApplicationView);
+    return view('backend.admin.pages.jobApply',compact('jobApplicationView'));
+}
+
+
+
+public function jobApplicationStore(Request $request,$id){
+      
+$post = PostedJobs::find($id);
+ try{
+     JobApplication::create([
+      'user_id'=>auth()->user()->id,
+      'posted_job_id'=>$post->id,
+      'date'=>Carbon::now(),
+      
+          
+
+     ]);
+    return redirect()->route('website')->with('message', 'application updated!');
+  }
+     catch(Throwable $throw){
+         dd($throw);
+      return redirect()->back()->with('error','Problem!');
+     }
+ }
 
 }

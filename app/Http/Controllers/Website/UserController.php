@@ -22,7 +22,7 @@ class UserController extends Controller
 
 
 
-
+   
     public function signInStore(Request $request){
         //dd($request->all());
         $request->validate([
@@ -32,19 +32,49 @@ class UserController extends Controller
 
 
             ]);
+            $imagename = '';
 
+            // for image
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            // $cv = $request->file('cv');
+        
+            $imagename = date('Ymdhms').'.'.$image->getClientOriginalExtension();
+            // $cvname = date('Ymdhms').'.'.$image->getClientOriginalExtension();
+            // dd($cvname);
+            $image->storeAs('/uploads/candidate/',$imagename);
+            // $image->storeAs('/uploads/cv/',$cvname);
+        
+        }
+        
+        $cvname = '';
+        // for cv
+        if ($request->hasFile('cv')) {
+            // $image = $request->file('image');
+            $cv = $request->file('cv');
+        
+            // $imagename = date('Ymdhms').'.'.$image->getClientOriginalExtension();
+            $cvname = date('Ymdhms').'.'.$cv->getClientOriginalExtension();
+            // $image->storeAs('/uploads/candidate/',$imagename);
+            $cv->storeAs('/uploads/cv/',$cvname);
+        
+        }
 
      try{
          User::create([
 
-          'name'=>$request->name,
-          'email'=>$request->email,
-          'password'=>bcrypt($request->password),
-          'mobile'=>$request->mobile,
-          'address'=>$request->address,
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>bcrypt($request->password),
+            'mobile'=>$request->mobile,
+            'address'=>$request->address,
+            'image'=>$imagename,
+            'cv'=>$cvname,
+            'gender'=>$request->gender,
+      
 
          ]);
-        return redirect()->back()->with('msg', 'Sign In completed!');
+        return redirect()->back()->with('message', 'Registration completed!');
       }
          catch(Throwable $throw){
           return redirect()->back()->with('error','Problem!');

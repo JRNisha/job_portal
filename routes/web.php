@@ -4,18 +4,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CandidateProfile;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\JobPostController;
-use App\Http\Controllers\Website\AppliedJobsController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\UserController;
 use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Website\LoginController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\EmployerController;
+use App\Http\Controllers\Admin\JobApplyController;
 use App\Http\Controllers\Website\SigninController;
 use App\Http\Controllers\Admin\CandidateController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Website\PostAJobController;
 use App\Http\Controllers\Admin\CompanyListController;
+use App\Http\Controllers\Website\AppliedJobsController;
 use App\Http\Controllers\Website\CompanyDetailsController;
 use App\Http\Controllers\Website\EmployerDetailsController;
 use App\Http\Controllers\Website\CandidateDetailsController;
@@ -61,6 +62,10 @@ Route::get('/job/Categories/cleaning/services',[PostAJobController::class,'jobCa
 Route::get('/job/Categories/digital/marketing',[PostAJobController::class,'jobCategoriesDigitalMarketing'])->name('job.category.DigitalMarketing');
 Route::get('/job/Categories/it',[PostAJobController::class,'jobCategoriesIt'])->name('job.category.it');
 Route::get('/job/Categories/medical',[PostAJobController::class,'jobCategoriesMedical'])->name('job.category.medical');
+//job Application
+Route::get('/job/application/{id}',[PostAJobController::class,'jobApplication'])->name('job.application');
+Route::post('/job/application/store/{id}',[PostAJobController::class,'jobApplicationStore'])->name('store.job.application');
+Route::get('/admin/job/apply',[PostAJobController::class,'jobApplicationShow'])->name('job.apply');
 //Login
 
 //Signin
@@ -93,7 +98,6 @@ Route::get('/Edit/employer/profile{employer_id}',[EmployerDetailsController::cla
 
 
 
-
 //Login for admin
 Route::get('/admin/login',[AdminUserController::class,'login'])->name('admin.login');
 Route::post('/admin/do-login',[AdminUserController::class,'doLogin'])->name('admin.doLogin');
@@ -118,8 +122,8 @@ Route::get('/logout',[AdminUserController::class,'logout'])->name('admin.logout'
     Route::post('/job/category/show',[CategoryController::class,'categoryShow'])->name('job.category.show');
 //Dashboard
 Route::get('/admin',[DashboardController::class,'dashboard'])->name('dashboard');
-//cards
-Route::get('/company/list/card',[CompanyController::class,'companyCard'])->name('company.card');
-Route::get('/employer/list/card',[EmployerController::class,'employerCard'])->name('employer.card');
-Route::get('/candidate/list/card',[CandidateController::class,'candidateCard'])->name('candidate.card');
+//job apply
+
+
+
  }) ;
