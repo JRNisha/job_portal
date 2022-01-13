@@ -22,8 +22,12 @@
                                     <li>  <a href="{{route('applied.jobs.get')}}">Applied Jobs({{session()->has('appliedJobs') ? count(session()->get('appliedJobs')):0}})</a></li>
                                     <li><a href="job-grid.html">Jobs <i class="far fa-angle-down"></i></a>
                                         <ul class="sub-menu text-left">
+                                            @if(auth()->user())
+                                            @if(auth()->user()->role == "company")
                                             <li><a href="{{ route('post.job') }}">Post Jobs</a></li>
-
+                                            @else
+                                            @endif
+                                            @endif
                                             <li><a href="job-details.html">Job Categories</a></li>
                                         </ul>
                                     </li>

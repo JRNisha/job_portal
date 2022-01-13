@@ -28,9 +28,15 @@
              <h1 class="text-center w-100 py-4" style="color:slateblue" >Create Company Profile</h1>
              <form action="{{route('store.company.profile') }}" method="POST" class="row g-3">
                 @csrf
+
+                <div class="form-group col-md-12">
+                    <!-- <label for="inputEmail4" class="form-label">Company Name</label> -->
+                    <input hidden value="company" name="role" type="text" class="form-control" id="inputEmail4">
+                  </div>
+
                 <div class="form-group col-md-12">
                     <label for="inputEmail4" class="form-label">Company Name</label>
-                    <input name="name" type="email" class="form-control" id="inputEmail4">
+                    <input name="name" type="text" class="form-control" id="inputEmail4">
                   </div>
 
                 <div class="form-group col-md-6">

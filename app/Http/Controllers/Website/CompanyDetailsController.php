@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Website;
 
 use Throwable;
 use App\Models\Company;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -19,7 +20,7 @@ class CompanyDetailsController extends Controller
 
 
       public function companyProfileStore(Request $request){
-        //dd($request->all());
+        // dd($request->all());
           $request->validate([
           'email'=>'required',
           'password'=>'required',
@@ -28,13 +29,14 @@ class CompanyDetailsController extends Controller
           ]);
 
    try{
-       Company::create([
+       User::create([
 
         'name'=>$request->name,
         'email'=>$request->email,
-        'password'=>$request->password,
-        'type'=>$request->type,
+        'password'=>bcrypt($request->password),
+        'company_type'=>$request->type,
         'address'=>$request->address,
+        'role'=>$request->role,
 
        ]);
       return redirect()->route('create.company.profile')->with('msg', 'company list updated!');

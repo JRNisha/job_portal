@@ -5,7 +5,7 @@
 
                 <br>
                 <br>
-
+                @if(auth()->user()->role == "admin")
                 <a class="nav-link collapsed" href="{{ route('signed.users.list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                     Signed In Users
@@ -32,10 +32,20 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Posted Jobs
                 </a>
+                
                 <a class="nav-link" href="{{ route('job.apply') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Job Apply
                 </a>
+
+                @endif
+
+                @if(auth()->user()->role == "company")
+                <a class="nav-link" href="{{ route('job.apply') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Job Apply
+                </a>
+                @endif
         <br>
         <br>
         <br>
