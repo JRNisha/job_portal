@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Website;
 
 use Throwable;
-use App\Models\PostedJobs;
-use App\Models\JobApplication;
 use Carbon\Carbon;
+use App\Models\User;
+use App\Models\PostedJobs;
 use Illuminate\Http\Request;
+use App\Models\JobApplication;
 use App\Http\Controllers\Controller;
 
 class PostAJobController extends Controller
@@ -162,6 +163,16 @@ $post = PostedJobs::find($id);
          dd($throw);
       return redirect()->back()->with('error','Problem!');
      }
+ }
+
+ //job applicant
+ public function applicant($id){
+    //  dd($id);
+    $jobapplication = jobApplication::find($id);
+    // dd($jobapplication->user_id);
+    $user_info = User::where('id',$jobapplication->user_id)->paginate(5);
+    // dd($user_info);
+     return view('backend.admin.pages.applicantDetails',compact('user_info'));
  }
 
 }

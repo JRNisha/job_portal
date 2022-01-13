@@ -66,6 +66,8 @@ Route::get('/job/Categories/medical',[PostAJobController::class,'jobCategoriesMe
 Route::get('/job/application/{id}',[PostAJobController::class,'jobApplication'])->name('job.application');
 Route::post('/job/application/store/{id}',[PostAJobController::class,'jobApplicationStore'])->name('store.job.application');
 Route::get('/admin/job/apply',[PostAJobController::class,'jobApplicationShow'])->name('job.apply');
+Route::get('/admin/job/applicant/details/{id}',[PostAJobController::class,'applicant'])->name('job.applicant');
+
 //Login
 
 //Signin

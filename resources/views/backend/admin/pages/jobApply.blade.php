@@ -28,7 +28,7 @@
     <td>{{  $data->created_at }}</td>
     <td>{{  $data->Status }}</td>
     <td>
-        <a href=""class="btn btn-success btn-sm" >View Details</a>
+        <a href="{{route('job.applicant',$data->id)}}"class="btn btn-success btn-sm" >View Details</a>
         <a href=""class="btn btn-success btn-sm" >Approve</a>
         <a href=""class="btn btn-danger btn-sm" style="margin-left: 15px;">Decline</a>
     </td>
