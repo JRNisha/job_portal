@@ -17,7 +17,7 @@
         <tbody>
 
 @foreach($postJob as $postJob)
-@if($postJob->category=='Cleaning Services')
+@if($postJob->category=='Cleaning')
 <tr>
     <td>{{  $postJob->title }}</td>
     <td>{{  $postJob->company }}</td>

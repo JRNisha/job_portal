@@ -25,19 +25,21 @@
                                     @else
                                     @endif
                                     @endif
-                                    <li><a href="job-grid.html">Jobs <i class="far fa-angle-down"></i></a>
-                                        <ul class="sub-menu text-left">
-                                            @if(auth()->user())
-                                            @if(auth()->user()->role == "company")
-                                            <li><a href="{{ route('post.job') }}">Post Jobs</a></li>
-                                            @else
-                                            @endif
-                                            @endif
-                                            <li><a href="job-details.html">Job Categories</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="">Jobs <i class="far fa-angle-down"></i></a>
+
                                     @if(auth()->user())
-                                    @if(auth()->user()->role == "candidate") 
+                                            @if(auth()->user()->role == "company")
+                                        <ul class="sub-menu text-left">
+                                           
+                                            <li><a href="{{ route('post.job') }}">Post Jobs</a></li>
+                                            
+                                          
+                                        </ul>
+                                        @else
+                                            @endif
+                                            @endif
+                                    </li>
+                                   
                                     <li><a href="candidate-grid.html">Candidates <i class="far fa-angle-down"></i></a>
                                         <ul class="sub-menu text-left">
                                             <li><a href="{{ route('create.candidate.profile') }}">Create candidate profile</a>
@@ -46,20 +48,17 @@
                                             {{-- <li><a href="candidate-grid.html">Candidate Details</a> --}}
                                         </ul>
                                     </li>
-                                    @else
-                                    @endif
-                                    @endif
+                                   
 
 
 
-                                    @if(auth()->user())
-                                    @if(auth()->user()->role == "company")
+                                   
                                     <li><a href="employer-list.html">Employers <i class="far fa-angle-down"></i></a>
                                         <ul class="sub-menu text-left">
                                             <li><a href="{{ route('create.employer.profile') }}">Create Employer Profile</a>
-                                                <li><a href="">Browse Candidates</a>
+                                              
                                                     <li><a href="">Post a job</a>
-                                            {{-- <li><a href="employer-details.html">Employer Details</a> --}}
+                                            
                                         </ul>
                                     </li>
 
@@ -69,19 +68,18 @@
                                             <li><a href="{{ route('create.company.profile') }}">Create Company Profile</a>
 
 
-                                                    <li><a href="">Company Details</a>
-                                            <li><a href="">Company Details</a>
+                    
                                         </ul>
                                     </li>
-                                    @else
-                                            @endif
-                                            @endif
+                                  
                                 </ul>
                             </nav>
                         </div>
                         <div class="header-btn d-none d-lg-block">
                             <div class="hedder-button">
+                                
                                 @if (auth()->user())
+                                
                                 <a href="{{ route('user.logout') }}" class="h-btn h-btn-green">{{ auth()->user()->name }} ({{auth()->user()->role}})| Logout</a>
                                 @else
                                 <a class="h-btn d-lg-none d-xl-inline-block" href="{{ route('signin.form') }}"><i class="far fa-user-circle"></i>Register</a>

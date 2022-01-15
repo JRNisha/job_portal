@@ -47,7 +47,10 @@
     </div>
 </section>
 
+
+
 <!-- categories-area-start -->
+
 <div class="categories-area pt-80 grey-bg pb-50">
     <div class="container">
         <div class="row">
@@ -188,6 +191,7 @@
         </div>
     </div>
 </div>
+
 <!-- categories-area-end -->
 
 <!-- job-area-start -->
@@ -227,7 +231,7 @@
                         <h4><a href="job-details.html">{{  $postedJob->title }}</a></h4>
                         <p>Apply to the job if you are interested</p>
                         <div class="job-salary">
-                            <span><i class="fal fa-usd-circle"></i> {{  $postedJob->salary }}</span>
+                            <span> {{  $postedJob->salary }} Taka</span>
                             <a href="{{ route('job.details.show',$postedJob->id) }}">Job Details <i class="far fa-arrow-right"></i>
                             </a>
                         </div>
