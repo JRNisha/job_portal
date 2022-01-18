@@ -44,7 +44,7 @@
         <div class="row form-group mb-5">
           <div class="col-md-12 mb-3 mb-md-0">
             <label class="font-weight-bold" for="fullname">Company</label>
-            <input  name="name"  value="{{auth()->user()->name}}" input type="text"  class="form-control" placeholder="eg. Facebook, Inc.">
+            <input readonly name="name"  value="{{auth()->user()->name}}" input type="text"  class="form-control" placeholder="eg. Facebook, Inc.">
           </div>
         </div>
         <div class="row form-group mb-5">

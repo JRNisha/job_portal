@@ -131,7 +131,8 @@ public function jobCategoriesMedical(){
 //job application
 public function jobApplication($id){
     $post = PostedJobs::find($id);
-   return view('frontend.pages.jobApplication',compact('post'));
+    $company=Company::all();
+   return view('frontend.pages.jobApplication',compact('post','company'));
 }
 
 
