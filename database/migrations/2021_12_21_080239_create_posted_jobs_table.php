@@ -17,7 +17,7 @@ class CreatePostedJobsTable extends Migration
 
             $table->id();
             $table->string('title');
-            $table->string('company');
+            $table->string('company_id');
             $table->integer('salary');
             $table->string('category');
             $table->string('type');

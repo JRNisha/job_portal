@@ -18,6 +18,7 @@ class CreateJobApplicationsTable extends Migration
            
           
             $table->integer('user_id');
+            $table->integer('company_id');
             $table->integer('posted_job_id');
             $table->string('date');
           

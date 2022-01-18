@@ -10,6 +10,7 @@
   <tr>
             <th scope="col">Serial</th>
             <th scope="col">User_ID</th>
+            <th scope="col">Company_ID</th>
             <th scope="col">Posted_Job_ID</th>
             <th scope="col">Date</th>
             <th scope="col">Status</th>
@@ -23,6 +24,7 @@
     <tr>
      <td>{{$key+1}}</td>
     <td>{{  $data->user->name }}</td>
+    <td>{{$data->company_id}}</td>
     <td>{{  $data->JobApplication->title }}</td>
     
     <td>{{  $data->created_at }}</td>

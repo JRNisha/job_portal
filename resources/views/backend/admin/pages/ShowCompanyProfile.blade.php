@@ -16,7 +16,6 @@
             <th scope="col">Serial</th>
             <th scope="col">Company Name</th>
             <th scope="col">Email</th>
-            <th scope="col">Password</th>
             <th scope="col">Company Type</th>
             <th scope="col">Address</th>
             <th scope="col">Status </th>
@@ -27,12 +26,12 @@
         <tbody>
 
 @foreach ( $companyProfileShow as $key=>$company)
+@if($company->role=='company')
 <tr>
     <td>{{ $key+1 }}</td>
     <td>{{  $company->name }}</td>
     <td>{{  $company->email }}</td>
-    <td>{{  $company->password }}</td>
-    <td>{{  $company->type }}</td>
+    <td>{{  $company->company_type }}</td>
     <td>{{  $company->address }}</td>
     <td>
         <a class="btn btn-success btn-sm" >Approve</a>
@@ -40,6 +39,7 @@
     </td>
 
   </tr>
+  @endif
 @endforeach
 
 

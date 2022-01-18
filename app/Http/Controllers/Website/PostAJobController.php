@@ -64,7 +64,7 @@ class PostAJobController extends Controller
     PostedJobs::create([
 
         'title'=>$request->title,
-        'company'=>$request->company,
+        'company_id'=>auth()->user()->id,
         'category'=>$request->category,
         'salary'=>$request->salary,
         'type'=>$request->type,
@@ -136,6 +136,12 @@ public function jobApplication($id){
 
 
 public function jobApplicationShow(){
+
+    if(auth()->user()->role=='company'){
+        $jobApplicationView = JobApplication::with(['user','JobApplication'])
+        ->where('user_id',auth()->user()->id)->orderBy('id','desc')->paginate(5);
+   
+    }
    
     $jobApplicationView = JobApplication::with(['user','JobApplication'])->orderBy('id','desc')->paginate(5);
     // $jobPost=PostedJobs::with(['JobApplication'])->orderBy('id','desc')->paginate(5);
@@ -153,6 +159,7 @@ $post = PostedJobs::find($id);
       'user_id'=>auth()->user()->id,
       'posted_job_id'=>$post->id,
       'date'=>Carbon::now(),
+      'company_id' => $post->company_id,
       
           
 
@@ -160,7 +167,7 @@ $post = PostedJobs::find($id);
     return redirect()->route('website')->with('message', 'application updated!');
   }
      catch(Throwable $throw){
-         dd($throw);
+    
       return redirect()->back()->with('error','Problem!');
      }
  }

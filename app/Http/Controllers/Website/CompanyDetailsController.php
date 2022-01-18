@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 class CompanyDetailsController extends Controller
 {
     public function companyProfileShow(){
-        $companyProfileShow = Company:: orderBy('id','desc')->paginate(5);
+        $companyProfileShow = User:: orderBy('id','desc')->paginate(5);
         return view('backend.admin.pages.ShowCompanyProfile',compact('companyProfileShow'));
     }
     public function companyProfileForm(){
