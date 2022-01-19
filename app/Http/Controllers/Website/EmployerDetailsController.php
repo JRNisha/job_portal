@@ -13,8 +13,10 @@ class EmployerDetailsController extends Controller
 
 
     public function employerProfileShow(){
+        $count = Employer::count(); 
+// dd($employerCount);
         $employerProfileShow = Employer:: orderBy('id','desc')->paginate(5);
-        return view('backend.admin.pages.ShowEmployerProfile',compact('employerProfileShow'));
+        return view('backend.admin.pages.ShowEmployerProfile',compact('employerProfileShow','count'));
     }
     public function employerProfileForm(){
         return view('frontend.pages.CreateEmployerProfile');

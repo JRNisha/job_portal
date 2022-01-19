@@ -265,24 +265,16 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+            <div class="col-xl-4 col-lg-3 col-md-6 col-sm-6">
                 <div class="single-fact mb-30 ml-50">
                     <i class="fal fa-user-circle"></i>
                     <div class="fact-text">
-                        <h2>8563</h2>
-                        <span>Employees</span>
+                        <h2>{{$count}} Employers </h2>
+                        
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                <div class="single-fact mb-30 ml-70">
-                    <i class="fal fa-file-alt"></i>
-                    <div class="fact-text">
-                        <h2>6852</h2>
-                        <span>CV/Resume</span>
-                    </div>
-                </div>
-            </div>
+           
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                 <div class="single-fact mb-30 ml-70">
                     <i class="fal fa-coffee"></i>

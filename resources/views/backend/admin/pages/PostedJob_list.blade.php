@@ -44,7 +44,7 @@
 <tr>
     <td>{{ $key+1 }}</td>
     <td>{{  $postedJob->title }}</td>
-    <td>{{  $postedJob->company_id }}</td>
+    <td>{{  $postedJob->company->name }}</td>
     <td>{{  $postedJob->category }}</td>
     <td>{{  $postedJob->salary }}</td>
     <td>{{  $postedJob->type }}</td>
