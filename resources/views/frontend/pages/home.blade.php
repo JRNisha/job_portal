@@ -223,7 +223,7 @@
                     </div>
                     <div class="job-instructor-profile mb-30">
                         <div class="job-instructor-title">
-                            <h4><a href="job-details.html">{{  $postedJob->company }}</a></h4>
+                            <h4><a href="job-details.html">{{  $postedJob->company->name }}</a></h4>
                             <span><i class="far fa-map-marker-alt"></i> {{  $postedJob->location }}</span>
                         </div>
                     </div>

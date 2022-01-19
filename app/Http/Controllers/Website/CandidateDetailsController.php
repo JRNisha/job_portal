@@ -7,11 +7,20 @@ use App\Models\Candidate;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\JobApplication;
 
 class CandidateDetailsController extends Controller
 {
     public function candidateProfileForm(){
       return view('frontend.pages.CreateCandidateProfile');
+    }
+
+
+
+    public function Profile(){
+        $jobApplicationView = JobApplication::with(['user','JobApplication'])
+        ->where('user_id',auth()->user()->id)->orderBy('id','desc')->paginate(5);
+        return view('frontend.pages.candidateProfile',compact('jobApplicationView'));
     }
 
 

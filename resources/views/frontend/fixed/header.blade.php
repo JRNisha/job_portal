@@ -43,7 +43,7 @@
                                     <li><a href="candidate-grid.html">Candidates <i class="far fa-angle-down"></i></a>
                                         <ul class="sub-menu text-left">
                                             <li><a href="{{ route('create.candidate.profile') }}">Create candidate profile</a>
-                                                <li><a href="">Browse Jobs</a>
+                                                <li><a href="{{route('profile')}}">Candidate Profile</a>
                                                     <li><a href="">Apply for Jobs</a>
                                             {{-- <li><a href="candidate-grid.html">Candidate Details</a> --}}
                                         </ul>

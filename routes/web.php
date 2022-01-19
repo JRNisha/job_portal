@@ -67,6 +67,7 @@ Route::get('/job/application/{id}',[PostAJobController::class,'jobApplication'])
 Route::post('/job/application/store/{id}',[PostAJobController::class,'jobApplicationStore'])->name('store.job.application');
 Route::get('/admin/job/apply',[PostAJobController::class,'jobApplicationShow'])->name('job.apply');
 Route::get('/admin/job/applicant/details/{id}',[PostAJobController::class,'applicant'])->name('job.applicant');
+Route::get('/admin/hire/{id}',[PostAJobController::class,'hire'])->name('hire');
 
 //Login
 
@@ -88,6 +89,7 @@ Route::get('/create/company/profile/show',[CompanyDetailsController::class,'comp
 Route::get('/create/candidate/profile',[CandidateDetailsController::class,'candidateProfileForm'])->name('create.candidate.profile');
 Route::post('/create/candidate/profile/store',[CandidateDetailsController::class,'candidateProfileStore'])->name('store.candidate.profile');
 Route::get('/create/candidate/profile/show',[CandidateDetailsController::class,'candidateProfileShow'])->name('show.candidate.profile');
+Route::get('/candidate/profile',[CandidateDetailsController::class,'profile'])->name('profile');
 
 
 //employer

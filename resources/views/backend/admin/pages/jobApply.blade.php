@@ -14,21 +14,23 @@
             <th scope="col">Posted_Job_ID</th>
             <th scope="col">Date</th>
             <th scope="col">Status</th>
+            <th scope="col">Details</th>
             
 
 
           </tr>
   </thead>
   <tbody>
-  @foreach (  $jobApplicationView as $key=>$data)
+  @foreach ( $jobApplicationView as $key=>$data)
+
     <tr>
      <td>{{$key+1}}</td>
     <td>{{  $data->user->name }}</td>
-    <td>{{$data->company_id}}</td>
+    <td>{{$data->company->name}}</td>
     <td>{{  $data->JobApplication->title }}</td>
     
     <td>{{  $data->created_at }}</td>
-    <td>{{  $data->Status }}</td>
+    <td>{{  $data->status }}</td>
     <td>
         <a href="{{route('job.applicant',$data->id)}}"class="btn btn-success btn-sm" >View Details</a>
         <a href=""class="btn btn-success btn-sm" >Approve</a>

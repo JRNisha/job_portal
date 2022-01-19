@@ -5,40 +5,51 @@
 
 
 
-@foreach ( $user_info as $key=>$info)
+
+
 <section class="section about-section gray-bg" id="about">
             <div class="container">
                 <div class="row align-items-center flex-row-reverse">
                     <div class="col-lg-6">
                         <div class="about-text go-to">
-                            <h3 class="dark-color">{{$info->name}}</h3>
+                            <h3 class="dark-color">{{$jobapplication->user->name}}</h3>
                            
                             <div class="row about-list">
                                 <div class="col-md-6">
                                     <div class="media">
                                         <label>Gender</label>
-                                        <p>{{  $info->gender }}</p>
+                                        <p>{{  $jobapplication->user->gender }}</p>
                                     </div>
                                 
                                     <div class="media">
                                         <label>Address</label>
-                                        <p>{{ $info->address }}</p>
+                                        <p>{{ $jobapplication->user->address }}</p>
                                     </div>
                                    
                                     <div class="media">
                                         <label>CV</label>
-                                         <a href="{{ url('/uploads/cv/'.$info->cv ) }}">{{  $info->cv }}</a>
+                                         <a href="{{ url('/uploads/cv/'.$jobapplication->user->cv ) }}">{{  $jobapplication->user->cv }}</a>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="media">
                                         <label>E-mail</label>
-                                        <p>{{  $info->email }}</p>
+                                        <p>{{  $jobapplication->user->email }}</p>
                                     </div>
+                                    
                                     <div class="media">
                                         <label>Phone</label>
-                                        <p>{{  $info->mobile }}</p>
+                                        <p>{{  $jobapplication->user->mobile }}</p>
                                     </div>
+
+
+                                <div class="media">
+                               
+        <a href="{{route('hire',$jobapplication->id)}}"class="btn btn-primary btn-sm" >Hire</a>
+        <a href=""class="btn btn-danger btn-sm" style="margin-left: 15px;">Reject</a>
+    
+                                </div>
+
                                 
                                 </div>
                             </div>
@@ -46,7 +57,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="about-avatar">
-                        <img width="500px" src=" {{url('/uploads/candidate/'.$info->image)}}" style="border-radius: 4px;" width="500px;" alt="candidate">
+                        <img width="500px" src=" {{url('/uploads/candidate/'.$jobapplication->user->image)}}" style="border-radius: 4px;" width="500px;" alt="candidate">
                         </div>
                     </div>
                 </div>
@@ -80,7 +91,7 @@
                 </div> -->
             </div>
         </section>
-        @endforeach
+      
         <style>
     body{
     color: #6F8BA4;
@@ -209,59 +220,6 @@ mark {
 </style>
 <!-- //list -->
 
-
-<!-- <h1 class="text-center w-100 py-4">Applicant Details</h1>
-    <table class="table table-bordered ">
-        <thead>
-          <tr>
-            <th scope="col">Serial</th>
-            <th scope="col">Candidate Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Mobile Number</th>
-            <th scope="col">Address</th>
-            <th scope="col">Image</th>
-            <th scope="col">Upload CV</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Status</th>
-
-
-          </tr>
-        </thead>
-        <tbody>
-
-@foreach ( $user_info as $key=>$info)
-<tr>
-    <td>{{ $key+1 }}</td>
-    <td>{{  $info->name }}</td>
-    <td>{{  $info->email }}</td>
-    <td>{{  $info->mobile }}</td>
-    <td>{{ $info->address }}</td>
-    <td>
-        <img width="100px" src=" {{url('/uploads/candidate/'.$info->image)}}" style="border-radius: 4px;" width="500px;" alt="candidate">
-    </td>
-
-   {{-- <td>{{  $info->image }}</td> --}}
-    <td>
-        <a href="{{ url('/uploads/cv/'.$info->cv ) }}">{{  $info->cv }}</a>
-    </td>
-    <td>{{  $info->gender }}</td>
-    <td>{{  $info->Status }}
-    
-
-        <a href=""class="btn btn-success btn-sm" >Approve</a>
-        <a href=""class="btn btn-danger btn-sm" style="margin-left: 15px;">Decline</a>
-    </td>
-
-  </tr>
-@endforeach
-
-
-     <tbody>
-      </table>
-
-      {{ $user_info->links() }} -->
-
-</div>
 
 
 

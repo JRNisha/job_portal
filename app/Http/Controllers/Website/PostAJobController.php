@@ -131,22 +131,23 @@ public function jobCategoriesMedical(){
 //job application
 public function jobApplication($id){
     $post = PostedJobs::find($id);
-    $company=Company::all();
-   return view('frontend.pages.jobApplication',compact('post','company'));
+    
+   return view('frontend.pages.jobApplication',compact('post'));
 }
 
 
 public function jobApplicationShow(){
 
+
     if(auth()->user()->role=='company'){
         $jobApplicationView = JobApplication::with(['user','JobApplication'])
-        ->where('user_id',auth()->user()->id)->orderBy('id','desc')->paginate(5);
+        ->where('company_id',auth()->user()->id)->orderBy('id','desc')->paginate(5);
    
+    }else{
+        $jobApplicationView = JobApplication::with(['user','JobApplication'])->orderBy('id','desc')->paginate(5);
+
     }
    
-    $jobApplicationView = JobApplication::with(['user','JobApplication'])->orderBy('id','desc')->paginate(5);
-    // $jobPost=PostedJobs::with(['JobApplication'])->orderBy('id','desc')->paginate(5);
-    //dd($jobApplicationView);
     return view('backend.admin.pages.jobApply',compact('jobApplicationView'));
 }
 
@@ -175,12 +176,25 @@ $post = PostedJobs::find($id);
 
  //job applicant
  public function applicant($id){
-    //  dd($id);
-    $jobapplication = jobApplication::find($id);
-    // dd($jobapplication->user_id);
-    $user_info = User::where('id',$jobapplication->user_id)->paginate(5);
-    // dd($user_info);
-     return view('backend.admin.pages.applicantDetails',compact('user_info'));
+
+    $jobapplication = jobApplication::with('user')->find($id);
+     
+     return view('backend.admin.pages.applicantDetails',compact('jobapplication'));
+ }
+
+
+ //hire
+
+ public function hire($id){
+     $hire=jobApplication::where('id',$id)->first();
+    
+     $hire->update([
+        'status'=>'hired'
+     ]);
+   
+     return redirect()->route('job.apply');
+    
+     
  }
 
 }
