@@ -13,28 +13,28 @@
                 </a>
 
                 <a class="nav-link" href="{{ route('show.company.profile') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-building"></i></div>
                     Companies
                 </a>
 
 
                 <a class="nav-link" href="{{ route('show.candidate.profile') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Candidate
                 </a>
                 <a class="nav-link" href="{{ route('show.employer.profile') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-user-tie"></i></div>
                     Employer
                 </a>
 
 
                 <a class="nav-link" href="{{ route('post.job.show') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-mail-bulk"></i></div>
                     Posted Jobs
                 </a>
                 
                 <a class="nav-link" href="{{ route('job.apply') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fab fa-adn"></i></div>
                     Job Apply
                 </a>
 
@@ -42,7 +42,7 @@
 
                 @if(auth()->user()->role == "company")
                 <a class="nav-link" href="{{ route('job.apply') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fab fa-adn"></i></div>
                     Job Apply
                 </a>
                 @endif

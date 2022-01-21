@@ -21,7 +21,8 @@
                                             <i class="fal fa-gift-card"></i>
                                         </div>
                                         <div class="text">
-                                            <h4><span class="counter">3560</span>+</h4>
+                                            
+                                            <h4><span class="counter"> </span></h4>
                                             <span>Available Jobs</span>
                                         </div>
                                     </div>
@@ -30,7 +31,7 @@
                                             <i class="fal fa-user-circle"></i>
                                         </div>
                                         <div class="text">
-                                            <h4><span class="counter">8563</span>+</h4>
+                                            <h4><span class="counter"> </span></h4>
                                             <span>Employees</span>
                                         </div>
                                     </div>

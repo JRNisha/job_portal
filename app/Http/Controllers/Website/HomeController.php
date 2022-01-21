@@ -6,16 +6,18 @@ use App\Models\PostedJobs;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Employer;
+use App\Models\User;
 
 class HomeController extends Controller
 {
     public function home()
-    {
-
-
+    {   
+        $countCandidate =  User::count();
+        $countCompany =  User::count();
+        $countJob = PostedJobs::count();
         $count = Employer::count();
         // dd($count);
         $postJobShow = PostedJobs::all();
-        return view('frontend.pages.home',compact('postJobShow','count'));
+        return view('frontend.pages.home',compact('postJobShow','count','countJob','countCompany','countCandidate'));
     }
 }

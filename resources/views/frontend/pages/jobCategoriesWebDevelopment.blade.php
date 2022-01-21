@@ -20,7 +20,7 @@
 @if($postJob->category=='Web Development')
 <tr>
     <td>{{  $postJob->title }}</td>
-    <td>{{  $postJob->company }}</td>
+    <td>{{  $postJob->company->name }}</td>
     <td>{{  $postJob->category }}</td>
     <td>{{  $postJob->salary }}</td>
     <td>{{  $postJob->type }}</td>

@@ -19,9 +19,10 @@
                                 <img src="{{url('/frontend/assets/img/shape/dot-shape.png')  }}" alt="">
                             </div>
 
-                            <div class="hero-slider-caption">
-                                <h2 data-animation="fadeInUp" data-delay=".7s"><span>Thousands</span>  Dream
-                                Jobs Available Now</h2>
+                            <div class="hero-slider-caption ">
+                        
+                                <h2 data-animation="fadeInUp" data-delay=".7s"><span class="counter">{{$countJob}} </span>  Dream Jobs Available Now</h2>
+                            
                                 <div class="job-hero-form">
                                     <form action="#">
                                         <select>
@@ -212,7 +213,7 @@
         </div>
         <div class="row">
             @foreach ($postJobShow as $postedJob)
-            <div class="col-xl-4 col-lg-6 col-md-12 mb-30">
+            <div class="col-xl-4 col-lg-6 col-md-12 mb-30" style="box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px">
                 <div class="job-wrapper mb-30">
                     <div class="banck-icon">
                         <i class="flaticon-dashboard"></i>
@@ -259,31 +260,45 @@
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                 <div class="single-fact mb-30">
                     <i class="fal fa-gift-card"></i>
-                    <div class="fact-text">
-                        <h2>3560</h2>
-                        <span>Available Jobs</span>
+                    <div class="fact-text" >
+                    <h2>{{$countJob}} Available Jobs </h2>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-3 col-md-6 col-sm-6">
-                <div class="single-fact mb-30 ml-50">
-                    <i class="fal fa-user-circle"></i>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="single-fact mb-30">
+                <i class="fas fa-user-tie"></i>
                     <div class="fact-text">
-                        <h2>{{$count}} Employers </h2>
+                        <h2>{{$count}}<br> Employers </h2>
                         
                     </div>
                 </div>
             </div>
            
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                <div class="single-fact mb-30 ml-70">
-                    <i class="fal fa-coffee"></i>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6" >
+                <div class="single-fact mb-30">
+                <i class="fas fa-users"></i>
                     <div class="fact-text">
-                        <h2>7456</h2>
-                        <span>Campaigns</span>
+                    <h2>{{$countCandidate}} Candidates</h2>  
                     </div>
                 </div>
             </div>
+
+
+
+          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="single-fact mb-30">
+                    <i class="fas fa-building"></i>
+                    <div class="fact-text">
+                    <h2>{{ $countCompany}} <br>Companies </h2>
+                   
+                        
+                    </div>
+                </div>
+            </div> 
+
+
+
         </div>
     </div>
 </div>

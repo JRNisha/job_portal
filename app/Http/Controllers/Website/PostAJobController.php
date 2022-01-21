@@ -37,8 +37,10 @@ class PostAJobController extends Controller
                                       ->orWhere('type','LIKE','%'.$key.'%')->orWhere('location','LIKE','%'.$key.'%')->paginate(3);
                                       return view('backend.admin.pages.PostedJob_list',compact('postJobShow','key'));
         }
+
+        $countJob = PostedJobs::count();
         $postJobShow = PostedJobs:: orderBy('id','desc')->paginate(3);
-        return view('backend.admin.pages.PostedJob_list',compact('postJobShow','key'));
+        return view('backend.admin.pages.PostedJob_list',compact('postJobShow','key','countJob'));
     }
 
 
@@ -117,6 +119,7 @@ public function jobCategoriesWebDevelopment(){
 }
 // //job categories it/web
 public function jobCategoriesIt(){
+    
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesIt',compact('postJob'));
 }

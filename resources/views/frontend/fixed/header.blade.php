@@ -84,7 +84,7 @@
                                 @else
                                 <a class="h-btn d-lg-none d-xl-inline-block" href="{{ route('signin.form') }}"><i class="far fa-user-circle"></i>Register</a>
                                 @endif
-                                <a class="h-btn h-btn-green" data-toggle="modal" data-target="#login"><i class="far fa-lock-alt"></i> Log In</a>
+                                <a class="h-btn h-btn-green" data-toggle="modal" data-target="#login"><span style="color:#fff"><i class="far fa-lock-alt"></i> Log In<span></a>
                             </div>
                         </div>
                         <div class="sidebar__menu d-lg-none">
