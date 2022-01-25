@@ -12,9 +12,20 @@ class CompanyDetailsController extends Controller
 {
     public function companyProfileShow(){
 
+
+
+        $key=null;
+        if(request()->search){
+            $key=request()->search;
+
+            $companyProfileShow=User::Where('name','LIKE','%'.$key.'%')->orWhere('email','LIKE','%'.$key.'%')
+                                      ->orWhere('mobile','LIKE','%'.$key.'%')->orWhere('address','LIKE','%'.$key.'%')->paginate(3);
+                                      return view('backend.admin.pages.ShowCompanyProfile',compact('companyProfileShow','key'));
+        }
+
         $countCompany =  User::where('role', "company")->count();
         $companyProfileShow = User::orderBy('id','desc')->paginate(5);
-    
+
         return view('backend.admin.pages.ShowCompanyProfile',compact('companyProfileShow','countCompany'));
     }
     public function companyProfileForm(){

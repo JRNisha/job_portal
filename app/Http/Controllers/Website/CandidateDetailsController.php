@@ -27,6 +27,19 @@ class CandidateDetailsController extends Controller
 
     public function candidateProfileShow(){
 
+
+
+        $key=null;
+        if(request()->search){
+            $key=request()->search;
+
+            $candidateProfileShow=User::Where('name','LIKE','%'.$key.'%')->orWhere('email','LIKE','%'.$key.'%')
+                                      ->orWhere('mobile','LIKE','%'.$key.'%')->orWhere('address','LIKE','%'.$key.'%')->paginate(3);
+                                      return view('backend.admin.pages.ShowCandidateProfile',compact('candidateProfileShow','key'));
+        }
+
+
+
         $countCandidate =  User::where('role', "Candidate")->count();
         $candidateProfileShow = User:: orderBy('id','desc')->paginate(5);
         return view('backend.admin.pages.ShowCandidateProfile',compact('candidateProfileShow','countCandidate'));

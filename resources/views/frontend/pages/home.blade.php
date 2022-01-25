@@ -70,7 +70,7 @@
                     </div>
                     <div class="categories-text">
                         <h4>Graphics Design</h4>
-                        <span>52 Available Jobs</span>
+                        {{-- <span>52 Available Jobs</span> --}}
                     </div>
                     <div class="cat-button">
                         <a href="{{route('job.catergory')}}"><i class="far fa-arrow-right"></i></a>
@@ -84,7 +84,7 @@
                     </div>
                     <div class="categories-text">
                         <h4>Bank Jobs</h4>
-                        <span>304 Available Jobs</span>
+                        {{-- <span>304 Available Jobs</span> --}}
                     </div>
                     <div class="cat-button">
                     <a href="{{route('job.category.bank.jobs')}}"><i class="far fa-arrow-right"></i></a>
@@ -98,7 +98,7 @@
                     </div>
                     <div class="categories-text">
                         <h4>Web Development</h4>
-                        <span>Available Jobs</span>
+                        {{-- <span>Available Jobs</span> --}}
                     </div>
                     <div class="cat-button">
                     <a href="{{route('job.category.WebDevelopment')}}"><i class="far fa-arrow-right"></i></a>
@@ -112,7 +112,7 @@
                     </div>
                     <div class="categories-text">
                         <h4>Private Tutors</h4>
-                        <span>Available Jobs</span>
+                        {{-- <span>Available Jobs</span> --}}
                     </div>
                     <div class="cat-button">
                         <a href="{{route('job.category.private.tutor')}}"><i class="far fa-arrow-right"></i></a>
@@ -126,7 +126,7 @@
                     </div>
                     <div class="categories-text">
                         <h4>Digital Marketing</h4>
-                        <span>304 Available Jobs</span>
+                        {{-- <span>304 Available Jobs</span> --}}
                     </div>
                     <div class="cat-button">
                     <a href="{{route('job.category.DigitalMarketing')}}"><i class="far fa-arrow-right"></i></a>
@@ -140,7 +140,7 @@
                     </div>
                     <div class="categories-text">
                         <h4>It/Web Consulting</h4>
-                        <span>73 Available Jobs</span>
+                        {{-- <span>73 Available Jobs</span> --}}
                     </div>
                     <div class="cat-button">
                         <a href="{{route('job.category.it')}}"><i class="far fa-arrow-right"></i></a>
@@ -154,7 +154,7 @@
                     </div>
                     <div class="categories-text">
                         <h4>Business Group</h4>
-                        <span>52 Available Jobs</span>
+                        {{-- <span>52 Available Jobs</span> --}}
                     </div>
                     <div class="cat-button">
                         <a href="{{route('job.category.business.group')}}"><i class="far fa-arrow-right"></i></a>
@@ -168,7 +168,7 @@
                     </div>
                     <div class="categories-text">
                         <h4>Cleaning Services</h4>
-                        <span>304 Available Jobs</span>
+                        {{-- <span>304 Available Jobs</span> --}}
                     </div>
                     <div class="cat-button">
                     <a href="{{route('job.category.cleaning.services')}}"><i class="far fa-arrow-right"></i></a>
@@ -182,7 +182,7 @@
                     </div>
                     <div class="categories-text">
                         <h4>Medical & Healths</h4>
-                        <span>73 Available Jobs</span>
+                        {{-- <span>73 Available Jobs</span> --}}
                     </div>
                     <div class="cat-button">
                     <a href="{{route('job.category.medical')}}"><i class="far fa-arrow-right"></i></a>

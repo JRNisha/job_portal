@@ -22,7 +22,7 @@
                                         </div>
                                         <div class="text">
 
-                                            <h4><span class="counter"> </span></h4>
+                                            {{-- <h4><span class="counter"> </span></h4> --}}
                                             <span>Available Jobs</span>
                                         </div>
                                     </div>
@@ -32,7 +32,7 @@
                                         </div>
                                         <div class="text">
 
-                                            <h4><span class="counter"> </span></h4>
+                                            {{-- <h4><span class="counter"> </span></h4> --}}
                                             <span>Employees</span>
                                         </div>
                                     </div>
