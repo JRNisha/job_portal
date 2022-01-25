@@ -54,6 +54,7 @@ public function candidateProfileStore(Request $request){
         'mobile'=>'required',
 
 
+
         ]);
         $imagename = '';
 
@@ -88,7 +89,7 @@ public function candidateProfileStore(Request $request){
 
       'name'=>$request->name,
       'email'=>$request->email,
-      'password'=>$request->password,
+      'password'=>bcrypt($request->password),
       'mobile'=>$request->mobile,
       'address'=>$request->address,
       'image'=>$imagename,

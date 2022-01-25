@@ -39,13 +39,14 @@
         <div class="col-md-7 col-lg-6 ml-auto">
             <form action="{{route('store.company.profile') }}" method="POST">
             @csrf
-            <div class="form-group col-md-12"> 
+            <div class="form-group col-md-12">
 
 
+                
 
                     <!--unnecessary <label for="inputEmail4" class="form-label">Company Name</label> -->
 
-                    
+
              <input hidden value="company" name="role" type="text" class="form-control" >
                   </div>
                 <div class="row">
@@ -60,7 +61,7 @@
                         <input name="name" type="text" placeholder="Company Name" class="form-control bg-white border-left-0 border-md">
                     </div>
 
-                   
+
 
                     <!-- Email Address -->
                     <div class="input-group col-lg-12 mb-4">
@@ -83,7 +84,7 @@
                     </div>
 
 
-                   
+
 
 
                      <!-- Company Address -->
@@ -110,18 +111,18 @@
                     </div>
                 </div>
 
-                   
-                    
+
+
 
                     <!-- Submit Button -->
                     <div class="form-group col-lg-12 mx-auto mb-0">
                     <button type="submit" class="btn btn-primary btn-block py-2">
                     <span class="font-weight-bold">Create your Company account</span>
                     </button>
-                        
+
                     </div>
 
-                   
+
 
                     <!-- Already Registered -->
                     <div class="text-center w-100">
@@ -228,7 +229,7 @@ $(function () {
 
                     <!--unnecessary <label for="inputEmail4" class="form-label">Company Name</label> -->
 
-                    
+
                     <!-- <input hidden value="company" name="role" type="text" class="form-control" id="inputEmail4">
                   </div>
 

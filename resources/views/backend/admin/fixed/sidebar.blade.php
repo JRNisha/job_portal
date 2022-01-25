@@ -40,7 +40,7 @@
 
                 <a class="nav-link" href="{{ route('admin.posted.job.report') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div>
-                    Report
+                    Posted Jobs Report
                 </a>
 
 

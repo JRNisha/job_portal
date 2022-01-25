@@ -52,9 +52,12 @@
      <strong>Candidate</strong> Profile</h3>
     </div>
 </div>
+
+
              <form action="{{ route('store.candidate.profile') }}" method="POST" class="row g-3" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group col-md-12">
+                    <input hidden value="Candidate" name="role" type="text" class="form-control" >
                     <label for="inputEmail4" class="form-label">Candidate Name</label>
                     <input name="name" type="text" class="form-control" id="inputEmail4">
                   </div>
