@@ -17,7 +17,7 @@
         <tbody>
 
 @foreach($postJob as $postJob)
-@if($postJob->category=='Business Group')
+@if($postJob->category=='Business')
 <tr>
     <td>{{  $postJob->title }}</td>
     <td>{{  $postJob->company->name }}</td>
@@ -31,7 +31,7 @@
      <tbody>
       </table>
 
-      
+
 
 </div>
 </div>

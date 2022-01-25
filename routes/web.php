@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CandidateProfile;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\JobPostController;
+use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\UserController;
 use App\Http\Controllers\Admin\CompanyController;
@@ -126,7 +127,11 @@ Route::get('/logout',[AdminUserController::class,'logout'])->name('admin.logout'
     Route::post('/job/category/show',[CategoryController::class,'categoryShow'])->name('job.category.show');
 //Dashboard
 Route::get('/admin',[DashboardController::class,'dashboard'])->name('dashboard');
-//job apply
+
+
+//Report
+Route::get('/Posted/Job/Report',[ReportController::class,'postedJobReport'])->name('admin.posted.job.report');
+Route::post('/Posted/Job/Report/Search',[ReportController::class,'searchreport'])->name('admin.posted.job.report.search');
 
 
 

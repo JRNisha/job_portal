@@ -32,11 +32,19 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-mail-bulk"></i></div>
                     Posted Jobs
                 </a>
-                
+
                 <a class="nav-link" href="{{ route('job.apply') }}">
                     <div class="sb-nav-link-icon"><i class="fab fa-adn"></i></div>
                     Job Apply
                 </a>
+
+                <a class="nav-link" href="{{ route('admin.posted.job.report') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div>
+                    Report
+                </a>
+
+
+
 
                 @endif
 
@@ -45,6 +53,9 @@
                     <div class="sb-nav-link-icon"><i class="fab fa-adn"></i></div>
                     Job Apply
                 </a>
+
+
+
                 @endif
         <br>
         <br>
