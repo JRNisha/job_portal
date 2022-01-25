@@ -12,8 +12,22 @@ class EmployerDetailsController extends Controller
 
 
 
+
     public function employerProfileShow(){
-        $count = Employer::count(); 
+
+        $key=null;
+        if(request()->search){
+            $key=request()->search;
+
+            $employerProfileShow=Employer::Where('name','LIKE','%'.$key.'%')->orWhere('email','LIKE','%'.$key.'%')
+                                      ->orWhere('mobile','LIKE','%'.$key.'%')->orWhere('address','LIKE','%'.$key.'%')->paginate(3);
+                                      return view('backend.admin.pages.ShowEmployerProfile',compact('employerProfileShow','key'));
+
+                                    }
+
+
+
+        $count = Employer::count();
 // dd($employerCount);
         $employerProfileShow = Employer:: orderBy('id','desc')->paginate(5);
         return view('backend.admin.pages.ShowEmployerProfile',compact('employerProfileShow','count'));

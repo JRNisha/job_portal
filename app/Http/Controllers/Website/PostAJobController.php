@@ -33,10 +33,12 @@ class PostAJobController extends Controller
         $key=null;
         if(request()->search){
             $key=request()->search;
-            $postJobShow=PostedJobs::where('title','LIKE','%'.$key.'%')->orWhere('company','LIKE','%'.$key.'%')->orWhere('salary','LIKE','%'.$key.'%')
+
+            $postJobShow=PostedJobs::where('title','LIKE','%'.$key.'%')->orWhere('company_id','LIKE','%'.$key.'%')->orWhere('salary','LIKE','%'.$key.'%')
                                       ->orWhere('type','LIKE','%'.$key.'%')->orWhere('location','LIKE','%'.$key.'%')->paginate(3);
                                       return view('backend.admin.pages.PostedJob_list',compact('postJobShow','key'));
-        }
+
+                                    }
 
         $countJob = PostedJobs::count();
         $postJobShow = PostedJobs:: orderBy('id','desc')->paginate(3);
@@ -90,7 +92,7 @@ class PostAJobController extends Controller
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesPrivateTutors',compact('postJob'));
 }
-   
+
    //job categories business group
    public function jobCategoriesBusinessGroup(){
     $postJob=PostedJobs::all();
@@ -119,7 +121,7 @@ public function jobCategoriesWebDevelopment(){
 }
 // //job categories it/web
 public function jobCategoriesIt(){
-    
+
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesIt',compact('postJob'));
 }
@@ -134,7 +136,7 @@ public function jobCategoriesMedical(){
 //job application
 public function jobApplication($id){
     $post = PostedJobs::find($id);
-    
+
    return view('frontend.pages.jobApplication',compact('post'));
 }
 
@@ -145,19 +147,19 @@ public function jobApplicationShow(){
     if(auth()->user()->role=='company'){
         $jobApplicationView = JobApplication::with(['user','JobApplication'])
         ->where('company_id',auth()->user()->id)->orderBy('id','desc')->paginate(5);
-   
+
     }else{
         $jobApplicationView = JobApplication::with(['user','JobApplication'])->orderBy('id','desc')->paginate(5);
 
     }
-   
+
     return view('backend.admin.pages.jobApply',compact('jobApplicationView'));
 }
 
 
 
 public function jobApplicationStore(Request $request,$id){
-      
+
 $post = PostedJobs::find($id);
  try{
      JobApplication::create([
@@ -165,14 +167,14 @@ $post = PostedJobs::find($id);
       'posted_job_id'=>$post->id,
       'date'=>Carbon::now(),
       'company_id' => $post->company_id,
-      
-          
+
+
 
      ]);
     return redirect()->route('website')->with('message', 'application updated!');
   }
      catch(Throwable $throw){
-    
+
       return redirect()->back()->with('error','Problem!');
      }
  }
@@ -181,7 +183,7 @@ $post = PostedJobs::find($id);
  public function applicant($id){
 
     $jobapplication = jobApplication::with('user')->find($id);
-     
+
      return view('backend.admin.pages.applicantDetails',compact('jobapplication'));
  }
 
@@ -190,14 +192,14 @@ $post = PostedJobs::find($id);
 
  public function hire($id){
      $hire=jobApplication::where('id',$id)->first();
-    
+
      $hire->update([
         'status'=>'hired'
      ]);
-   
+
      return redirect()->route('job.apply');
-    
-     
+
+
  }
 
 }
