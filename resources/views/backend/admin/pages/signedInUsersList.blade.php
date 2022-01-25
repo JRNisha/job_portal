@@ -10,13 +10,12 @@
 
 
 <h1 class="text-center w-100 py-4">Registered Candidate List</h1>
-    <table class="table table-bordered ">
+    <table class="table ">
         <thead>
         <tr>
             <th scope="col">Serial</th>
             <th scope="col">Candidate Name</th>
             <th scope="col">Email</th>
-            <th scope="col">Password</th>
             <th scope="col">Mobile Number</th>
             <th scope="col">Address</th>
             <th scope="col">Image</th>
@@ -33,7 +32,6 @@
     <td>{{ $key+1 }}</td>
     <td>{{  $user->name }}</td>
     <td>{{  $user->email }}</td>
-    <td>{{   $user->password }}</td>
     <td>{{   $user->mobile }}</td>
     <td>{{  $user->address }}</td>
     <td>

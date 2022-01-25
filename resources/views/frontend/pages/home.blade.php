@@ -20,9 +20,9 @@
                             </div>
 
                             <div class="hero-slider-caption ">
-                        
+
                                 <h2 data-animation="fadeInUp" data-delay=".7s"><span class="counter">{{$countJob}} </span>  Dream Jobs Available Now</h2>
-                            
+
                                 <div class="job-hero-form">
                                     <form action="#">
                                         <select>
@@ -237,7 +237,7 @@
                             </a>
                         </div>
                         <div>
-                        <a href="{{route('job.application',$postedJob->id)}}"class="btn btn-primary">Apply</a>   
+                        <a href="{{route('job.application',$postedJob->id)}}"class="btn btn-primary">Apply</a>
 
                         </div>
                     </div>
@@ -261,7 +261,7 @@
                 <div class="single-fact mb-30">
                     <i class="fal fa-gift-card"></i>
                     <div class="fact-text" >
-                    <h2>{{$countJob}} Available Jobs </h2>
+                    <h2 >{{$countJob}} Available Jobs </h2>
                     </div>
                 </div>
             </div>
@@ -270,16 +270,16 @@
                 <i class="fas fa-user-tie"></i>
                     <div class="fact-text">
                         <h2>{{$count}}<br> Employers </h2>
-                        
+
                     </div>
                 </div>
             </div>
-           
+
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6" >
                 <div class="single-fact mb-30">
                 <i class="fas fa-users"></i>
                     <div class="fact-text">
-                    <h2>{{$countCandidate}} Candidates</h2>  
+                    <h2>{{$countCandidate}} Candidates</h2>
                     </div>
                 </div>
             </div>
@@ -291,11 +291,11 @@
                     <i class="fas fa-building"></i>
                     <div class="fact-text">
                     <h2>{{ $countCompany}} <br>Companies </h2>
-                   
-                        
+
+
                     </div>
                 </div>
-            </div> 
+            </div>
 
 
 

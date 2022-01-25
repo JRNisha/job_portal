@@ -15,7 +15,7 @@
         <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
 
 </form>
- 
+
 
 
 
@@ -23,7 +23,7 @@
 <h1 class="text-center w-100 py-4">Posted Job List</h1>
 
 
-    <table class="table table-bordered">
+    <table class="table">
         <thead>
           <tr>
             <th scope="col">Serial</th>
@@ -33,6 +33,9 @@
             <th scope="col">Salary</th>
             <th scope="col">Job Type</th>
             <th scope="col">Location</th>
+            <th scope="col">Status </th>
+
+
 
 
 
@@ -49,6 +52,10 @@
     <td>{{  $postedJob->salary }}</td>
     <td>{{  $postedJob->type }}</td>
     <td>{{  $postedJob->location }}</td>
+    <td>
+        <a href=""class="btn btn-success btn-sm" >Update</a>
+        <a class="btn btn-danger btn-sm" style="margin-left: 15px;">Reject</a>
+    </td>
 
   </tr>
 @endforeach

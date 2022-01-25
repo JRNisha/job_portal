@@ -9,8 +9,17 @@
 @endif
 
 
+{{--search --}}
+
+<form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" action="{{route('post.job.show')}}"method="get">
+    <div class="input-group">
+        <input class="form-control" name="search"type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+        <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
+
+</form>
+
 <h1 class="text-center w-100 py-4">Registered Company List</h1>
-    <table class="table table-bordered">
+    <table class="table">
         <thead>
           <tr>
             <th scope="col">Serial</th>
@@ -24,17 +33,19 @@
           </tr>
         </thead>
         <tbody>
-
+            @php
+            $count=1;
+        @endphp
 @foreach ( $companyProfileShow as $key=>$company)
 @if($company->role=='company')
 <tr>
-    <td>{{ $key+1 }}</td>
+    <td>{{ $count++ }}</td>
     <td>{{  $company->name }}</td>
     <td>{{  $company->email }}</td>
     <td>{{  $company->company_type }}</td>
     <td>{{  $company->address }}</td>
     <td>
-        <a class="btn btn-success btn-sm" >Approve</a>
+        <a href=""class="btn btn-success btn-sm" >Update</a>
         <a class="btn btn-danger btn-sm" style="margin-left: 15px;">Reject</a>
     </td>
 

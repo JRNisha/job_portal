@@ -11,9 +11,9 @@ use App\Models\User;
 class HomeController extends Controller
 {
     public function home()
-    {   
-        $countCandidate =  User::count();
-        $countCompany =  User::count();
+    {
+        $countCandidate =  User::where('role', "Candidate")->count();
+        $countCompany =  User::where('role', "company")->count();
         $countJob = PostedJobs::count();
         $count = Employer::count();
         // dd($count);

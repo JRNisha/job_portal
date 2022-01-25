@@ -27,7 +27,7 @@ class CandidateDetailsController extends Controller
 
     public function candidateProfileShow(){
 
-        $countCandidate =  User::count();
+        $countCandidate =  User::where('role', "Candidate")->count();
         $candidateProfileShow = User:: orderBy('id','desc')->paginate(5);
         return view('backend.admin.pages.ShowCandidateProfile',compact('candidateProfileShow','countCandidate'));
     }

@@ -12,8 +12,9 @@ class CompanyDetailsController extends Controller
 {
     public function companyProfileShow(){
 
-        $countCompany =  User::count();
-        $companyProfileShow = User:: orderBy('id','desc')->paginate(5);
+        $countCompany =  User::where('role', "company")->count();
+        $companyProfileShow = User::orderBy('id','desc')->paginate(5);
+    
         return view('backend.admin.pages.ShowCompanyProfile',compact('companyProfileShow','countCompany'));
     }
     public function companyProfileForm(){

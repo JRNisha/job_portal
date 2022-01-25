@@ -7,6 +7,18 @@
 @if(session()->has('msg'))
 <p class="alert alert-success">{{session()->get('msg')}}</p>
 @endif
+
+
+{{--search --}}
+
+<form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" action="{{route('post.job.show')}}"method="get">
+    <div class="input-group">
+        <input class="form-control" name="search"type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+        <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
+
+</form>
+
+
 <h1 class="text-center w-100 py-4">Registered Employer List</h1>
     <table class="table">
         <thead>
