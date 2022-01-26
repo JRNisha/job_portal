@@ -8,6 +8,7 @@
 
 
 <section class="section about-section gray-bg" id="about">
+    
             <div class="container">
                 <div class="row align-items-center flex-row-reverse">
                     <div class="col-lg-6">

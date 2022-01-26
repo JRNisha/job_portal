@@ -43,7 +43,10 @@
                     Posted Jobs Report
                 </a>
 
-
+                <a class="nav-link" href="{{ route('admin.job.application.report') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div>
+                    Job Application Report
+                </a>
 
 
                 @endif

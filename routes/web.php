@@ -87,14 +87,14 @@ Route::get('/logout', [UserController::class, 'logout'])->name('user.logout');
 Route::get('/create/company/profile',[CompanyDetailsController::class,'companyProfileForm'])->name('create.company.profile');
 Route::post('/create/company/profile/store',[CompanyDetailsController::class,'companyProfileStore'])->name('store.company.profile');
 Route::get('/create/company/profile/show',[CompanyDetailsController::class,'companyProfileShow'])->name('show.company.profile');
-Route::get('company/profile/delete/{id}', [CompanyDetailsController::class, 'companyProfileDelete'])->name('company.profile.delete');
+// Route::get('company/profile/delete/{id}', [CompanyDetailsController::class, 'companyProfileDelete'])->name('company.profile.delete');
 
 //candidate
 Route::get('/create/candidate/profile',[CandidateDetailsController::class,'candidateProfileForm'])->name('create.candidate.profile');
 Route::post('/create/candidate/profile/store',[CandidateDetailsController::class,'candidateProfileStore'])->name('store.candidate.profile');
 Route::get('/create/candidate/profile/show',[CandidateDetailsController::class,'candidateProfileShow'])->name('show.candidate.profile');
 Route::get('/candidate/profile',[CandidateDetailsController::class,'profile'])->name('profile');
-
+Route::get('candidate/profile/delete/{id}', [CandidateDetailsController::class, 'candidateProfileDelete'])->name('candidate.profile.delete');
 
 //employer
 Route::get('/create/employer/profile',[EmployerDetailsController::class,'employerProfileForm'])->name('create.employer.profile');
@@ -135,7 +135,9 @@ Route::get('/admin',[DashboardController::class,'dashboard'])->name('dashboard')
 //Report
 Route::get('/Posted/Job/Report',[ReportController::class,'postedJobReport'])->name('admin.posted.job.report');
 Route::post('/Posted/Job/Report/Search',[ReportController::class,'searchreport'])->name('admin.posted.job.report.search');
-
+//application report
+Route::get('/Job/Application/Report',[ReportController::class,'jobApplicationReport'])->name('admin.job.application.report');
+Route::post('/Job/Application/Search',[ReportController::class,'searchApplicationReport'])->name('admin.job.application.report.search');
 
 
  }) ;

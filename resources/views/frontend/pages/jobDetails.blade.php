@@ -16,7 +16,7 @@
 <p>Company Name : {{  $postedJob->company->name }}</p>
 <p>Job Location : {{  $postedJob->location }}</p>
 
-<a href="{{route('applied.jobs.add',$postedJob->id)}}"class="btn btn-primary">Apply</a>   
+<a href="{{route('job.application',$postedJob->id)}}"class="btn btn-primary">Apply</a>
 
 
 </div>

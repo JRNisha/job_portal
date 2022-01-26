@@ -65,7 +65,7 @@
     <td>
 
             <a href=""class="btn btn-success btn-sm" >Update</a>
-            <a class="btn btn-danger btn-sm" style="margin-left:50;margin-top: 20px;">Reject</a>
+            <a href="{{route('candidate.profile.delete',$candidate->id)}}" class="btn btn-danger btn-sm" style="margin-left:50;margin-top: 20px;">Reject</a>
 
 
     </td>

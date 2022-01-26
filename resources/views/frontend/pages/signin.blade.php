@@ -22,8 +22,46 @@
 </ul>
 </div>
 @endif
+<br>
+<br>
+<br>
+<section class="section about-section gray-bg" id="about">
+<div class="row" style="margin-top: 100px">
+    <div class="col-sm-4"style="margin-left: 150px">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4"style="margin-left: 50px" >
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <div>
+         <img src="/frontend/assets/img/Candidate-submitting-CV-for-recruitment')}}" alt="">
+        </div>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="row mt-5">
+<style>
+    .section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.gray-bg {
+    background-color:aquamarine;
+}
+</style>
+
+        {{-- <div class="row mt-5">
              <h1 class="text-center w-100 py-4" style="color:rgb(114, 49, 100)">Register As a Candidate</h1>
              <form action="{{ route('signin.store') }}" method="POST" class="row g-3" enctype="multipart/form-data">
                 @csrf
@@ -82,7 +120,7 @@
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
-        </div>
+        </div> --}}
 
     </div>
 </div>

@@ -84,49 +84,57 @@ class PostAJobController extends Controller
    }
    //job categories
    public function jobCategories(){
+    $countGraphicsDesignerJob = PostedJobs::where('category', "GraphicsDesigner")->count();
        $postJob=PostedJobs::all();
        return view('frontend.pages.jobCatergories',compact('postJob'));
    }
    //job categories private tutors
    public function jobCategoriesPrivateTutor(){
+    $countPrivateTutorJob = PostedJobs::where('category', "Private Tutor")->count();
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesPrivateTutors',compact('postJob'));
 }
 
    //job categories business group
    public function jobCategoriesBusinessGroup(){
+    $countBusinessJob = PostedJobs::where('category', "Business")->count();
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesBusinessGroup',compact('postJob'));
 }
    ////job categories bank jobs
    public function jobCategoriesBankJobs(){
+    $countBankJob = PostedJobs::where('category', "Bank Job")->count();
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesBankJobs',compact('postJob'));
 }
 // //job categories digital marketing
 public function jobCategoriesDigitalMarketing(){
+    $countDigitalMarketingJob = PostedJobs::where('category', "Digital Marketing")->count();
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesDigitalMarketing',compact('postJob'));
 }
 //job categories cleaning services
 public function jobCategoriesCleaningServices(){
+    $countCleaningJob = PostedJobs::where('category', "Cleaning")->count();
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesCleaningServices',compact('postJob'));
 }
 
 //job categories webdevelopment
 public function jobCategoriesWebDevelopment(){
+    $countWebJob = PostedJobs::where('category', "Web Development")->count();
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesWebDevelopment',compact('postJob'));
 }
 // //job categories it/web
 public function jobCategoriesIt(){
-
+    $countItJob = PostedJobs::where('category', "IT")->count();
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesIt',compact('postJob'));
 }
 // //job categories medical
 public function jobCategoriesMedical(){
+    $countMedicalJob = PostedJobs::where('category', "Medical")->count();
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesMedical',compact('postJob'));
 }

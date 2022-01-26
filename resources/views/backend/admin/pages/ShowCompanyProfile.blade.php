@@ -46,7 +46,7 @@
     <td>{{  $company->address }}</td>
     <td>
         <a href=""class="btn btn-success btn-sm" >Update</a>
-        <a href="{{route('company.profile.delete',$company->id)}}"class="btn btn-danger btn-sm" style="margin-left: 15px;">Reject</a>
+        {{-- <a href="{{route('company.profile.delete',$company->id)}}"class="btn btn-danger btn-sm" style="margin-left: 15px;">Reject</a> --}}
     </td>
 
   </tr>

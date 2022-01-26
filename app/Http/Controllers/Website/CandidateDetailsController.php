@@ -11,6 +11,19 @@ use App\Models\JobApplication;
 
 class CandidateDetailsController extends Controller
 {
+
+//delete
+public function candidateProfileDelete($candidate)
+{
+ User::find($candidate)->delete();
+ return redirect()->back()->with('success','Candidate has been deleted successfully');
+}
+
+
+
+
+
+
     public function candidateProfileForm(){
       return view('frontend.pages.CreateCandidateProfile');
     }
