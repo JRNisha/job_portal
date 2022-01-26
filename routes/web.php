@@ -68,7 +68,10 @@ Route::get('/job/application/{id}',[PostAJobController::class,'jobApplication'])
 Route::post('/job/application/store/{id}',[PostAJobController::class,'jobApplicationStore'])->name('store.job.application');
 Route::get('/admin/job/apply',[PostAJobController::class,'jobApplicationShow'])->name('job.apply');
 Route::get('/admin/job/applicant/details/{id}',[PostAJobController::class,'applicant'])->name('job.applicant');
+//hire
 Route::get('/admin/hire/{id}',[PostAJobController::class,'hire'])->name('hire');
+//reject
+Route::get('/admin/reject/{id}',[PostAJobController::class,'reject'])->name('reject');
 
 //Login
 
@@ -84,7 +87,7 @@ Route::get('/logout', [UserController::class, 'logout'])->name('user.logout');
 Route::get('/create/company/profile',[CompanyDetailsController::class,'companyProfileForm'])->name('create.company.profile');
 Route::post('/create/company/profile/store',[CompanyDetailsController::class,'companyProfileStore'])->name('store.company.profile');
 Route::get('/create/company/profile/show',[CompanyDetailsController::class,'companyProfileShow'])->name('show.company.profile');
-
+Route::get('company/profile/delete/{id}', [CompanyDetailsController::class, 'companyProfileDelete'])->name('company.profile.delete');
 
 //candidate
 Route::get('/create/candidate/profile',[CandidateDetailsController::class,'candidateProfileForm'])->name('create.candidate.profile');

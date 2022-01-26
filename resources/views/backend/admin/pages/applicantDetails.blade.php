@@ -13,19 +13,19 @@
                     <div class="col-lg-6">
                         <div class="about-text go-to">
                             <h3 class="dark-color">{{$jobapplication->user->name}}</h3>
-                           
+
                             <div class="row about-list">
                                 <div class="col-md-6">
                                     <div class="media">
                                         <label>Gender</label>
                                         <p>{{  $jobapplication->user->gender }}</p>
                                     </div>
-                                
+
                                     <div class="media">
                                         <label>Address</label>
                                         <p>{{ $jobapplication->user->address }}</p>
                                     </div>
-                                   
+
                                     <div class="media">
                                         <label>CV</label>
                                          <a href="{{ url('/uploads/cv/'.$jobapplication->user->cv ) }}">{{  $jobapplication->user->cv }}</a>
@@ -36,7 +36,7 @@
                                         <label>E-mail</label>
                                         <p>{{  $jobapplication->user->email }}</p>
                                     </div>
-                                    
+
                                     <div class="media">
                                         <label>Phone</label>
                                         <p>{{  $jobapplication->user->mobile }}</p>
@@ -44,13 +44,13 @@
 
 
                                 <div class="media">
-                               
+
         <a href="{{route('hire',$jobapplication->id)}}"class="btn btn-primary btn-sm" >Hire</a>
-        <a href=""class="btn btn-danger btn-sm" style="margin-left: 15px;">Reject</a>
-    
+        <a href="{{route('reject',$jobapplication->id)}}"class="btn btn-danger btn-sm" style="margin-left: 15px;">Reject</a>
+
                                 </div>
 
-                                
+
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                 </div> -->
             </div>
         </section>
-      
+
         <style>
     body{
     color: #6F8BA4;
@@ -111,7 +111,7 @@ img {
     vertical-align: middle;
     border-style: none;
 }
-/* About Me 
+/* About Me
 ---------------------*/
 .about-text h3 {
   font-size: 45px;

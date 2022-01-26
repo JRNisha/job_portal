@@ -202,4 +202,16 @@ $post = PostedJobs::find($id);
 
  }
 
+ //reject
+ public function reject($id){
+    $reject=jobApplication::where('id',$id)->first();
+
+    $reject->update([
+       'status'=>'Rejected'
+    ]);
+
+    return redirect()->route('job.apply');
+
+
+}
 }

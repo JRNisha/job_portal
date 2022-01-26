@@ -37,7 +37,7 @@
                         </div>
                     </div>
 
-                
+
 
                     <div class="job-content">
                         <h4><a href="job-details.html">{{  $postedJob->title }}</a></h4>

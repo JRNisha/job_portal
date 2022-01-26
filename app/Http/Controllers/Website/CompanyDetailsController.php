@@ -10,6 +10,17 @@ use App\Http\Controllers\Controller;
 
 class CompanyDetailsController extends Controller
 {
+
+//delete
+public function companyProfileDelete($company)
+{
+ User::find($company)->delete();
+ return redirect()->back()->with('success','Company has been deleted successfully');
+}
+
+
+
+
     public function companyProfileShow(){
 
 
