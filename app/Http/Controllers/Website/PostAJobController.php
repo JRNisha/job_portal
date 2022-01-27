@@ -34,8 +34,8 @@ class PostAJobController extends Controller
         if(request()->search){
             $key=request()->search;
 
-            $postJobShow=PostedJobs::where('title','LIKE','%'.$key.'%')->orWhere('company_id','LIKE','%'.$key.'%')->orWhere('salary','LIKE','%'.$key.'%')
-                                      ->orWhere('type','LIKE','%'.$key.'%')->orWhere('location','LIKE','%'.$key.'%')->paginate(3);
+            $postJobShow=PostedJobs::whereLike(['title', 'company.name','category','salary','type','location'],  $key)->paginate(3);
+
                                       return view('backend.admin.pages.PostedJob_list',compact('postJobShow','key'));
 
                                     }

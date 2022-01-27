@@ -24,19 +24,28 @@
                                 <h2 data-animation="fadeInUp" data-delay=".7s"><span class="counter">{{$countJob}} </span>  Dream Jobs Available Now</h2>
 
                                 <div class="job-hero-form">
-                                    <form action="#">
-                                        <select>
-                                            <option value="1">Job Categories</option>
-                                            <option value="1">Web Design</option>
-                                            <option value="1">Logo Design</option>
-                                            <option value="1">Banner Design</option>
-                                            <option value="1">WP Developer</option>
-                                            <option value="1">Linux Expert</option>
+                                    <form action="{{route('website')}}" method="get">
+                                        <select name="category">
+
+                                        @foreach ($postJobShow as $postjob)
+
+                                        <option value="{{ $postjob->id }}">{{ $postjob->category }}</option>
+                                        @endforeach
+
+                                            {{-- <option value="1">Graphics Design</option>
+                                            <option value="1">Private Tutors</option>
+                                            <option value="1">Business Group</option>
+                                            <option value="1">Bank Jobs</option>
+                                            <option value="1">Digital Marketing</option>
+                                            <option value="1">Cleaning Services</option>
+                                            <option value="1">Web Development</option>
+                                            <option value="1">It/Web Consulting</option>
+                                            <option value="1">Medical & Healths</option> --}}
                                         </select>
                                         <div class="job-input">
-                                            <input type="text" placeholder="Locations">
+                                            <input type="text" placeholder="Locations" name="location">
                                         </div>
-                                        <button>Find Jobs <i class="far fa-arrow-right"></i></button>
+                                        <button type="submit">Find Jobs <i class="far fa-arrow-right"></i></button>
                                     </form>
                                 </div>
                             </div>

@@ -9,6 +9,7 @@
 @endif
 {{--search --}}
 
+
 <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" action="{{route('post.job.show')}}"method="get">
     <div class="input-group">
         <input class="form-control" name="search"type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />

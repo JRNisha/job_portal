@@ -7,7 +7,7 @@
 
 
 
- 
+
 
 
 
@@ -18,7 +18,7 @@
     <table class="table table-bordered">
         <thead>
           <tr>
-           
+
             <th scope="col">Job Title</th>
             <th scope="col">Company</th>
             <th scope="col">Category</th>
@@ -33,9 +33,9 @@
         <tbody>
 {{-- @dd($postJobShow) --}}
 @foreach($postJob as $postJob)
-@if($postJob->category=='GraphicsDesigner')
+@if($postJob->category=='Graphics Designer')
 <tr>
-   
+
     <td>{{  $postJob->title }}</td>
     <td>{{  $postJob->company->name }}</td>
     <td>{{  $postJob->category }}</td>
@@ -52,7 +52,7 @@
      <tbody>
       </table>
 
-      
+
 
 </div>
 </div>

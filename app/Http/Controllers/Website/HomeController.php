@@ -10,8 +10,24 @@ use App\Models\User;
 
 class HomeController extends Controller
 {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function home()
     {
+
+
         $countCandidate =  User::where('role', "Candidate")->count();
         $countCompany =  User::where('role', "company")->count();
         $countJob = PostedJobs::count();
@@ -27,8 +43,20 @@ class HomeController extends Controller
         $countBusinessJob = PostedJobs::where('category', "Business")->count();
         $countPrivateTutorJob = PostedJobs::where('category', "Private Tutor")->count();
         $countGraphicsDesignerJob = PostedJobs::where('category', "GraphicsDesigner")->count();
+
+        
+        if(request()->category && request()->location ){
+            $category=request()->category;
+            $location=request()->location;
+            $postJobShow=PostedJobs::Where('category','LIKE','%'.$category.'%')->orWhere('location','LIKE','%'.$location.'%')->get();
+                                      return view('frontend.pages.home',compact('postJobShow','count','countJob','countCompany','countCandidate','countMedicalJob','countItJob','countWebJob','countCleaningJob','countBankJob','countDigitalMarketingJob','countBusinessJob','countPrivateTutorJob','countGraphicsDesignerJob'));
+
+                                      dd($postJobShow);
+            }
+
         // dd($count);
         $postJobShow = PostedJobs::all();
-        return view('frontend.pages.home',compact('postJobShow','count','countJob','countCompany','countCandidate','countMedicalJob','countItJob','countWebJob','countCleaningJob','countBankJob','countDigitalMarketingJob','countBusinessJob','countPrivateTutorJob','countGraphicsDesignerJob'));
+        return view('frontend.pages.home',compact('postJobShow','count','countJob','countCompany','countCandidate','countMedicalJob','countItJob',
+        'countWebJob','countCleaningJob','countBankJob','countDigitalMarketingJob','countBusinessJob','countPrivateTutorJob','countGraphicsDesignerJob'));
     }
 }

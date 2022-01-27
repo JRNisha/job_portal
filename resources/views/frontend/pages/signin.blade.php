@@ -26,25 +26,42 @@
 <br>
 <br>
 <section class="section about-section gray-bg" id="about">
-<div class="row" style="margin-top: 100px">
-    <div class="col-sm-4"style="margin-left: 150px">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="row" style="margin-top: 100px; margin-left: 141px;">
+    <div class="col-sm-4"style="margin-left: 50px" >
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align:center;">Register as Company</h5>
+            <div>
+                <br>
+           <img src="{{url ('frontend/assets/img/company.jpg') }}"  style="height: 200px; width: 100%;" alt="">
+           <br>
+           <br>
+           <br>
+           <div class="text-center w-100 py-4">
+             <a href="{{ route('create.company.profile') }}"> <button type="submit" class="btn btn-primary">Click Here</button></a>
+            </div>
         </div>
       </div>
     </div>
+</div>
+
     <div class="col-sm-4"style="margin-left: 50px" >
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
+          <h5 class="card-title" style="text-align:center;">Register as Candidate</h5>
           <div>
-         <img src="/frontend/assets/img/Candidate-submitting-CV-for-recruitment')}}" alt="">
-        </div>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+              <br>
+         <img src="{{url ('frontend/assets/img/candidate.jpg') }}" style="height: 200px;" alt="">
+         <br>
+         <br>
+         <br>
+
+         <div class="text-center w-100 py-4">
+           <a href="{{ route('create.candidate.profile') }}"> <button type="submit" class="btn btn-primary">Click Here</button></a>
+          </div>
+
+
+
       </div>
     </div>
   </div>

@@ -3,19 +3,22 @@
 @section('content')
 
 <div class="container">
-    <div class="form-row">
+    <div class="form-row" style="margin-top: 80px;">
 
-        <div class="form-group col-md-6">
+        <div class="form-group">
             <form action="{{route('admin.posted.job.report.search')}}" method="post">
                 @csrf
+                <div style="display: flex; justify-content: space-between;">
+                <div class="form-group col-lg-6" style="padding-right: 30px;">
                 <label for="inputPassword4">From date</label>
                 <input name="from" class="form-control" id="inputPassword4"  type="date" placeholder="">
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-lg-6">
                 <label for="inputPassword4">To date</label>
                 <input name="to" class="form-control" id="inputPassword4"  type="date" placeholder="">
                 </div>
-                <button type="submit" class="btn btn-info">Submit</button>
+            </div >
+                <button style="margin-top: 15px;margin-bottom: 15px;" type="submit" class="btn btn-info">Submit</button>
             </form>
 
           </div>
