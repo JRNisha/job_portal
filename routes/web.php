@@ -41,6 +41,7 @@ Route::get('/',[HomeController::class,'home'])->name('website');
 Route::get('/post/job/form',[PostAJobController::class,'postJobForm'])->name('post.job');
 Route::post('/posted/job/store',[PostAJobController::class,'postJobStore'])->name('post.job.store');
 Route::get('/posted/job/show',[PostAJobController::class,'postJobShow'])->name('post.job.show');
+Route::get('/posted/job/show/delete/{id}', [PostAJobController::class, 'postJobDelete'])->name('posted.job.delete');
 
 //Applied Jobs
 Route::group(['middleware'=>'web_auth'],function (){

@@ -27,7 +27,15 @@ class PostAJobController extends Controller
         return view('frontend.pages.browseJobs',compact('postedJob'));
     }
 
-//
+//delete
+public function postJobDelete($postJobShow)
+{
+ PostedJobs::find($postJobShow)->delete();
+ return redirect()->back()->with('success','Job has been deleted successfully');
+}
+
+
+
     public function postJobShow(){
 
         $key=null;

@@ -55,7 +55,7 @@
     <td>{{  $postedJob->location }}</td>
     <td>
         <a href=""class="btn btn-success btn-sm" >Update</a>
-        <a class="btn btn-danger btn-sm" style="margin-left: 15px;">Reject</a>
+        <a href="{{route('posted.job.delete',$postedJob->id)}}" class="btn btn-danger btn-sm" style="margin-left: 15px;">Delete</a>
     </td>
 
   </tr>
