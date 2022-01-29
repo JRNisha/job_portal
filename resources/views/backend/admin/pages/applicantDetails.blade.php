@@ -8,7 +8,7 @@
 
 
 <section class="section about-section gray-bg" id="about">
-    
+
             <div class="container">
                 <div class="row align-items-center flex-row-reverse">
                     <div class="col-lg-6">
@@ -17,14 +17,14 @@
 
                             <div class="row about-list">
                                 <div class="col-md-6">
-                                    <div class="media">
-                                        <label>Gender</label>
-                                        <p>{{  $jobapplication->user->gender }}</p>
+                                    <div class="col">
+                                        <h5><label>Gender</label></h5>
+                                        <h4>{{  $jobapplication->user->gender }}</h4>
                                     </div>
 
                                     <div class="media">
                                         <label>Address</label>
-                                        <p>{{ $jobapplication->user->address }}</p>
+                                        <h4>{{ $jobapplication->user->address }}</h4>
                                     </div>
 
                                     <div class="media">
@@ -35,12 +35,12 @@
                                 <div class="col-md-6">
                                     <div class="media">
                                         <label>E-mail</label>
-                                        <p>{{  $jobapplication->user->email }}</p>
+                                        <h4>{{  $jobapplication->user->email }}</h4>
                                     </div>
 
                                     <div class="media">
                                         <label>Phone</label>
-                                        <p>{{  $jobapplication->user->mobile }}</p>
+                                        <h4>{{  $jobapplication->user->mobile }}</h4>
                                     </div>
 
 
@@ -62,34 +62,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="counter">
-                    <div class="row">
-                        <div class="col-6 col-lg-3">
-                            <div class="count-data text-center">
-                                <h6 class="count h2" data-to="500" data-speed="500">500</h6>
-                                <p class="m-0px font-w-600">Happy Clients</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-lg-3">
-                            <div class="count-data text-center">
-                                <h6 class="count h2" data-to="150" data-speed="150">150</h6>
-                                <p class="m-0px font-w-600">Project Completed</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-lg-3">
-                            <div class="count-data text-center">
-                                <h6 class="count h2" data-to="850" data-speed="850">850</h6>
-                                <p class="m-0px font-w-600">Photo Capture</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-lg-3">
-                            <div class="count-data text-center">
-                                <h6 class="count h2" data-to="190" data-speed="190">190</h6>
-                                <p class="m-0px font-w-600">Telephonic Talk</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+
             </div>
         </section>
 
@@ -115,13 +88,13 @@ img {
 /* About Me
 ---------------------*/
 .about-text h3 {
-  font-size: 45px;
+  font-size: 80px;
   font-weight: 700;
   margin: 0 0 6px;
 }
 @media (max-width: 767px) {
   .about-text h3 {
-    font-size: 35px;
+    font-size: 55px;
   }
 }
 .about-text h6 {
@@ -130,11 +103,11 @@ img {
 }
 @media (max-width: 767px) {
   .about-text h6 {
-    font-size: 18px;
+    font-size: 30px;
   }
 }
 .about-text p {
-  font-size: 18px;
+  font-size: 30px;
   max-width: 450px;
 }
 .about-text p mark {
@@ -143,7 +116,7 @@ img {
 }
 
 .about-list {
-  padding-top: 10px;
+  padding-top: 30px;
 }
 .about-list .media {
   padding: 5px 0;

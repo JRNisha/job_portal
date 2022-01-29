@@ -27,14 +27,14 @@
      <td>{{$key+1}}</td>
     <td>{{  $data->user->name }}</td>
     <td>{{$data->company->name}}</td>
-    <td>{{  $data->JobApplication->title }}</td>
+    <td>{{  optional($data->JobApplication)->title }}</td>
 
     <td>{{  $data->created_at }}</td>
     <td>{{  $data->status }}</td>
     <td>
         <a href="{{route('job.applicant',$data->id)}}"class="btn btn-success btn-sm" >View Details</a>
-      
-        <a href=""class="btn btn-danger btn-sm" style="margin-left: 15px;">Decline</a>
+
+
     </td>
     </tr>
     @endforeach

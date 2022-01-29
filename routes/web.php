@@ -41,7 +41,8 @@ Route::get('/',[HomeController::class,'home'])->name('website');
 Route::get('/post/job/form',[PostAJobController::class,'postJobForm'])->name('post.job');
 Route::post('/posted/job/store',[PostAJobController::class,'postJobStore'])->name('post.job.store');
 Route::get('/posted/job/show',[PostAJobController::class,'postJobShow'])->name('post.job.show');
-Route::get('/posted/job/show/delete/{id}', [PostAJobController::class, 'postJobDelete'])->name('posted.job.delete');
+// Route::get('/posted/job/show/delete/{id}', [PostAJobController::class, 'postJobDelete'])->name('posted.job.delete');
+
 
 //Applied Jobs
 Route::group(['middleware'=>'web_auth'],function (){
@@ -88,7 +89,8 @@ Route::get('/logout', [UserController::class, 'logout'])->name('user.logout');
 Route::get('/create/company/profile',[CompanyDetailsController::class,'companyProfileForm'])->name('create.company.profile');
 Route::post('/create/company/profile/store',[CompanyDetailsController::class,'companyProfileStore'])->name('store.company.profile');
 Route::get('/create/company/profile/show',[CompanyDetailsController::class,'companyProfileShow'])->name('show.company.profile');
-// Route::get('company/profile/delete/{id}', [CompanyDetailsController::class, 'companyProfileDelete'])->name('company.profile.delete');
+Route::get('/company/profile/details',[CompanyDetailsController::class,'companyProfile'])->name('company.profile');
+Route::get('company/profile/delete/{id}', [CompanyDetailsController::class, 'companyProfileDelete'])->name('company.profile.delete');
 
 //candidate
 Route::get('/create/candidate/profile',[CandidateDetailsController::class,'candidateProfileForm'])->name('create.candidate.profile');
@@ -120,9 +122,9 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function (){
 Route::get('/logout',[AdminUserController::class,'logout'])->name('admin.logout');
 
 //company
-    Route::get('/company_list',[CompanyListController::class,'companylist'])->name('company.list');
-    Route::get('/about_company',[CompanyListController::class,'aboutcompany'])->name('about.company');
-    Route::post('/company/profile',[CompanyListController::class,'companyprofile'])->name('company.profile');
+    // Route::get('/company_list',[CompanyListController::class,'companylist'])->name('company.list');
+    // Route::get('/about_company',[CompanyListController::class,'aboutcompany'])->name('about.company');
+    // Route::post('/company/profile',[CompanyListController::class,'companyprofile'])->name('company.profile');
 
 
 //job category
@@ -130,7 +132,7 @@ Route::get('/logout',[AdminUserController::class,'logout'])->name('admin.logout'
     Route::get('/job/category/list',[CategoryController::class,'categoryList'])->name('job.category.list');
     Route::post('/job/category/show',[CategoryController::class,'categoryShow'])->name('job.category.show');
 //Dashboard
-Route::get('/admin',[DashboardController::class,'dashboard'])->name('dashboard');
+// Route::get('/',[DashboardController::class,'dashboard'])->name('dashboard');
 
 
 //Report

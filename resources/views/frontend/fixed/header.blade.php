@@ -19,67 +19,73 @@
                             <nav id="mobile-menu">
                                 <ul>
                                     <li>  <a href="{{ route('website') }}">Home</a></li>
-                                    @if(auth()->user())
-                                    @if(auth()->user()->role == "candidate") 
-                                    <li>  <a href="{{route('applied.jobs.get')}}">Applied Jobs({{session()->has('appliedJobs') ? count(session()->get('appliedJobs')):0}})</a></li>
-                                    @else
-                                    @endif
-                                    @endif
-                                    <li><a href="">Jobs <i class="far fa-angle-down"></i></a>
+
 
                                     @if(auth()->user())
-                                            @if(auth()->user()->role == "company")
+                                    @if(auth()->user()->role == "company")
+
+                                    <li><a href="">Jobs <i class="far fa-angle-down"></i></a>
                                         <ul class="sub-menu text-left">
-                                           
+
                                             <li><a href="{{ route('post.job') }}">Post Jobs</a></li>
-                                            
-                                          
+
+
                                         </ul>
                                         @else
                                             @endif
                                             @endif
                                     </li>
-                                   
+                                    @if(auth()->user())
+                                    @if(auth()->user()->role == "Candidate")
                                     <li><a href="candidate-grid.html">Candidates <i class="far fa-angle-down"></i></a>
                                         <ul class="sub-menu text-left">
                                             <li><a href="{{ route('create.candidate.profile') }}">Create candidate profile</a>
                                                 <li><a href="{{route('profile')}}">Candidate Profile</a>
-                                                    <li><a href="">Apply for Jobs</a>
-                                            {{-- <li><a href="candidate-grid.html">Candidate Details</a> --}}
+                                                 
                                         </ul>
                                     </li>
-                                   
+                                    @else
+                                    @endif
+                                    @endif
 
 
+                                    @if(auth()->user())
+                                    @if(auth()->user()->role == "company")
 
-                                   
                                     <li><a href="employer-list.html">Employers <i class="far fa-angle-down"></i></a>
                                         <ul class="sub-menu text-left">
                                             <li><a href="{{ route('create.employer.profile') }}">Create Employer Profile</a>
-                                              
+
                                                     <li><a href="">Post a job</a>
-                                            
+
                                         </ul>
                                     </li>
+
+
 
                                     <li><a href="">Companies <i class="far fa-angle-down"></i></a>
 
                                         <ul class="sub-menu text-left">
                                             <li><a href="{{ route('create.company.profile') }}">Create Company Profile</a>
+                                                <li><a href="{{route('company.profile')}}">Company Profile</a>
 
 
-                    
+
                                         </ul>
                                     </li>
-                                  
+
+                                    @else
+                                    @endif
+                                    @endif
+
                                 </ul>
                             </nav>
                         </div>
                         <div class="header-btn d-none d-lg-block">
                             <div class="hedder-button">
-                                
+
                                 @if (auth()->user())
-                                
+
                                 <a href="{{ route('user.logout') }}" class="h-btn h-btn-green">{{ auth()->user()->name }} ({{auth()->user()->role}})| Logout</a>
                                 @else
                                 <a class="h-btn d-lg-none d-xl-inline-block" href="{{ route('signin.form') }}"><i class="far fa-user-circle"></i>Register</a>

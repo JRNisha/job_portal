@@ -1,7 +1,7 @@
 @extends('frontend.master')
 
 @section('content')
-<div class="categories-area pt-80 grey-bg pb-50">
+<div class="categories-area pt-50 grey-bg pb-50">
     <div class="container">
 
 
@@ -26,7 +26,7 @@
 <br>
 <br>
 <section class="section about-section gray-bg" id="about">
-<div class="row" style="margin-top: 100px; margin-left: 141px;">
+<div class="row" style="margin-top: 10px;margin-bottom: 10px; margin-left: 141px;">
     <div class="col-sm-4"style="margin-left: 50px" >
         <div class="card">
           <div class="card-body">
@@ -69,7 +69,7 @@
 
 <style>
     .section {
-    padding: 100px 0;
+    padding: 10px 0;
     position: relative;
 }
 

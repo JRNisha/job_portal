@@ -27,13 +27,13 @@ class PostAJobController extends Controller
         return view('frontend.pages.browseJobs',compact('postedJob'));
     }
 
-//delete
-public function postJobDelete($postJobShow)
-{
- PostedJobs::find($postJobShow)->delete();
- return redirect()->back()->with('success','Job has been deleted successfully');
-}
 
+//delete
+// public function postJobDelete($postJobShow)
+// {
+//  PostedJobs::find($postJobShow)->delete();
+//  return redirect()->back()->with('success','Job has been deleted successfully');
+// }
 
 
     public function postJobShow(){
@@ -92,13 +92,13 @@ public function postJobDelete($postJobShow)
    }
    //job categories
    public function jobCategories(){
-    $countGraphicsDesignerJob = PostedJobs::where('category', "GraphicsDesigner")->count();
+    $countGraphicsDesignerJob = PostedJobs::where('category', "Graphics Designer")->count();
        $postJob=PostedJobs::all();
        return view('frontend.pages.jobCatergories',compact('postJob'));
    }
    //job categories private tutors
    public function jobCategoriesPrivateTutor(){
-    $countPrivateTutorJob = PostedJobs::where('category', "Private Tutor")->count();
+    $countPrivateTutorJob = PostedJobs::where('category', "Private Tutors")->count();
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesPrivateTutors',compact('postJob'));
 }
@@ -111,7 +111,7 @@ public function postJobDelete($postJobShow)
 }
    ////job categories bank jobs
    public function jobCategoriesBankJobs(){
-    $countBankJob = PostedJobs::where('category', "Bank Job")->count();
+    $countBankJob = PostedJobs::where('category', "Bank Jobs")->count();
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesBankJobs',compact('postJob'));
 }
@@ -142,7 +142,7 @@ public function jobCategoriesIt(){
 }
 // //job categories medical
 public function jobCategoriesMedical(){
-    $countMedicalJob = PostedJobs::where('category', "Medical")->count();
+    $countMedicalJob = PostedJobs::where('category', "Medical & Healths")->count();
     $postJob=PostedJobs::all();
     return view('frontend.pages.jobCategoriesMedical',compact('postJob'));
 }

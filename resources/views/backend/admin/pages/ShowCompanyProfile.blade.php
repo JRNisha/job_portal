@@ -1,24 +1,26 @@
 @extends('backend.admin.master')
 @section('content')
 
-<div class="container" style="margin-top: 20px">
+<div class="container my-5">
 
 {{-- message showing --}}
 @if(session()->has('msg'))
 <p class="alert alert-success">{{session()->get('msg')}}</p>
 @endif
 
-
+<section class="section about-section gray-bg" id="about">
 {{--search --}}
+<h1 class="text-center w-100 py-4">Registered Company List</h1>
 
-<form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" action="{{route('show.company.profile')}}"method="get">
-    <div class="input-group">
+<form class=" d-flex justify-content-center " action="{{route('show.company.profile')}}"method="get">
+    <div class="input-group ">
         <input class="form-control" name="search"type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
         <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
-
+    </div>
 </form>
 
-<h1 class="text-center w-100 py-4">Registered Company List</h1>
+
+
     <table class="table">
         <thead>
           <tr>
@@ -45,8 +47,8 @@
     <td>{{  $company->company_type }}</td>
     <td>{{  $company->address }}</td>
     <td>
-        <a href=""class="btn btn-success btn-sm" >Update</a>
-        {{-- <a href="{{route('company.profile.delete',$company->id)}}"class="btn btn-danger btn-sm" style="margin-left: 15px;">Reject</a> --}}
+        {{-- <a href=""class="btn btn-success btn-sm" >Update</a> --}}
+        <a href="{{route('company.profile.delete',$company->id)}}"class="btn btn-danger btn-sm" style="margin-left: 15px;">Reject</a>
     </td>
 
   </tr>
@@ -59,6 +61,20 @@
 
       {{  $companyProfileShow->links() }}
 
+
+
+    </section>
+
+    <style>
+        .section {
+        padding: 100px 0;
+        position: relative;
+    }
+
+    .gray-bg {
+        background-color:rgb(214, 198, 202);
+    }
+    </style>
 </div>
 
 

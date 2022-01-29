@@ -32,19 +32,19 @@ class HomeController extends Controller
         $countCompany =  User::where('role', "company")->count();
         $countJob = PostedJobs::count();
         $count = Employer::count();
-        $countMedicalJob = PostedJobs::where('category', "Medical")->count();
+        $countMedicalJob = PostedJobs::where('category', "Medical & Healths")->count();
         $countWebJob = PostedJobs::where('category', "Web Development")->count();
         $countItJob = PostedJobs::where('category', "IT")->count();
         $countCleaningJob = PostedJobs::where('category', "Cleaning")->count();
 
 
         $countDigitalMarketingJob = PostedJobs::where('category', "Digital Marketing")->count();
-        $countBankJob = PostedJobs::where('category', "Bank Job")->count();
+        $countBankJob = PostedJobs::where('category', "Bank Jobs")->count();
         $countBusinessJob = PostedJobs::where('category', "Business")->count();
-        $countPrivateTutorJob = PostedJobs::where('category', "Private Tutor")->count();
-        $countGraphicsDesignerJob = PostedJobs::where('category', "GraphicsDesigner")->count();
+        $countPrivateTutorJob = PostedJobs::where('category', "Private Tutors")->count();
+        $countGraphicsDesignerJob = PostedJobs::where('category', "Graphics Designer")->count();
 
-        
+
         if(request()->category && request()->location ){
             $category=request()->category;
             $location=request()->location;

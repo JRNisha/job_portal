@@ -7,16 +7,33 @@ use App\Models\Company;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\PostedJobs;
 
 class CompanyDetailsController extends Controller
 {
 
 //delete
-// public function companyProfileDelete($company)
-// {
-//  User::find($company)->delete();
-//  return redirect()->back()->with('success','Company has been deleted successfully');
-// }
+public function companyProfileDelete($company)
+{
+ User::find($company)->delete();
+ return redirect()->back()->with('success','Company has been deleted successfully');
+}
+
+
+//company profile
+public function companyProfile(){
+    // $postedJobView = PostedJobs::with(['user','JobPosts'])
+    // ->where('user_id',auth()->user()->id)->orderBy('id','desc')->paginate(5);
+    $user= auth()->user()->id;
+    // dd($user);
+    $postJobShow = PostedJobs::where('company_id',$user)->get();
+    // dd($postJobShow);
+    return view('frontend.pages.companyProfile',compact('postJobShow'));
+}
+
+
+
+
 
 
 

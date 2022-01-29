@@ -19,9 +19,9 @@
                                 <img src="{{url('/frontend/assets/img/shape/dot-shape.png')  }}" alt="">
                             </div>
 
-                            <div class="hero-slider-caption ">
+                            <div class="text-center hero-slider-caption " style="text-align: center;">
 
-                                <h2 data-animation="fadeInUp" data-delay=".7s"><span class="counter">{{$countJob}} </span>  Dream Jobs Available Now</h2>
+                                <h2  data-animation="fadeInUp" data-delay=".7s"><span class="counter">{{$countJob}} </span>  Dream Jobs Available Now</h2>
 
                                 <div class="job-hero-form">
                                     <form action="{{route('website')}}" method="get">
@@ -45,6 +45,7 @@
                                         <div class="job-input">
                                             <input type="text" placeholder="Locations" name="location">
                                         </div>
+
                                         <button type="submit">Find Jobs <i class="far fa-arrow-right"></i></button>
                                     </form>
                                 </div>

@@ -56,7 +56,6 @@
         <img width="100px" src=" {{url('/uploads/candidate/'.$candidate->image)}}" style="border-radius: 4px;" width="500px;" alt="candidate">
     </td>
 
-   {{-- <td>{{  $candidate->image }}</td> --}}
     <td>
         <a href="{{ url('/uploads/cv/'.$candidate->cv ) }}">{{  $candidate->cv }}</a>
     </td>
@@ -64,7 +63,7 @@
     <td>{{  $candidate->role }}</td>
     <td>
 
-            <a href=""class="btn btn-success btn-sm" >Update</a>
+            {{-- <a href=""class="btn btn-success btn-sm" >Update</a> --}}
             <a href="{{route('candidate.profile.delete',$candidate->id)}}" class="btn btn-danger btn-sm" style="margin-left:50;margin-top: 20px;">Reject</a>
 
 

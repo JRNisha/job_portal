@@ -34,7 +34,7 @@
             <th scope="col">Salary</th>
             <th scope="col">Job Type</th>
             <th scope="col">Location</th>
-            <th scope="col">Status </th>
+            {{-- <th scope="col">Status </th> --}}
 
 
 
@@ -53,10 +53,11 @@
     <td>{{  $postedJob->salary }}</td>
     <td>{{  $postedJob->type }}</td>
     <td>{{  $postedJob->location }}</td>
-    <td>
-        <a href=""class="btn btn-success btn-sm" >Update</a>
-        <a href="{{route('posted.job.delete',$postedJob->id)}}" class="btn btn-danger btn-sm" style="margin-left: 15px;">Delete</a>
-    </td>
+    {{-- <td>
+        {{-- <a href=""class="btn btn-success btn-sm" >Update</a> --}}
+        {{-- <a href="{{route('posted.job.delete',$postedJob->id)}}" class="btn btn-danger btn-sm" style="margin-left: 15px;">Delete</a> --}}
+
+    {{-- </td> --}}
 
   </tr>
 @endforeach

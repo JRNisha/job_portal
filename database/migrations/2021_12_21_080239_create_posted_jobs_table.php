@@ -22,6 +22,7 @@ class CreatePostedJobsTable extends Migration
             $table->string('category');
             $table->string('type');
             $table->string('location');
+            // $table->softDeletes();
             $table->timestamps();
         });
     }

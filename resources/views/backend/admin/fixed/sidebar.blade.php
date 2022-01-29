@@ -6,7 +6,14 @@
                 <br>
                 <br>
                 @if(auth()->user()->role == "admin")
-                <a class="nav-link collapsed" href="{{ route('signed.users.list')}}">
+             
+                <a class="nav-link collapsed " href="{{ route('home')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Dashboard
+
+                </a>
+
+                <a class="nav-link collapsed " href="{{ route('signed.users.list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                     Signed In Users
 
