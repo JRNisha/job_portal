@@ -130,7 +130,7 @@
 
     </div>
     <div class="form-group col-12 ">
-       <a href=""><button type="submit" class="btn btn-primary">Update Your Profile</button></a> 
+       <a href="{{ route('edit.company.profile',auth()->user()->id) }}"class="btn btn-primary">Update Your Profile</a>
       </div>
     </div>
   </div>

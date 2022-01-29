@@ -20,10 +20,40 @@ public function companyProfileDelete($company)
 }
 
 
+
+//update Company Profile
+public function updateCompany(Request $request,$company_id){
+
+
+    try{
+        User::find($company_id)->update([
+
+         'name'=>$request->name,
+         'email'=>$request->email,
+         'password'=>bcrypt($request->password),
+         'company_type'=>$request->company_type,
+         'address'=>$request->address,
+
+        ]);
+       return redirect()->route('create.company.profile')->with('msg', 'company list updated!');
+     }
+        catch(Throwable $throw){
+         return redirect()->back()->with('error','Problem!');
+        }
+
+
+   }
+   public function editCompany($company_id){
+      $company=User::find($company_id);
+    //   dd($company);
+      return view('frontend.pages.updateCompany',compact('company'));
+   }
+
+
+
+
 //company profile
 public function companyProfile(){
-    // $postedJobView = PostedJobs::with(['user','JobPosts'])
-    // ->where('user_id',auth()->user()->id)->orderBy('id','desc')->paginate(5);
     $user= auth()->user()->id;
     // dd($user);
     $postJobShow = PostedJobs::where('company_id',$user)->get();
@@ -76,7 +106,7 @@ public function companyProfile(){
         'name'=>$request->name,
         'email'=>$request->email,
         'password'=>bcrypt($request->password),
-        'company_type'=>$request->type,
+        'company_type'=>$request->company_type,
         'address'=>$request->address,
         'role'=>$request->role,
 

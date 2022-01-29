@@ -37,7 +37,8 @@
 
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-6 ml-auto">
-            <form action="{{route('store.company.profile') }}" method="POST">
+            <form action="{{route('update.company.profile',$company->id) }}" method="POST">
+                @method('PUT')
             @csrf
             <div class="form-group col-md-12">
 
