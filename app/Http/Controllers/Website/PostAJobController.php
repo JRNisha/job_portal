@@ -206,14 +206,21 @@ $post = PostedJobs::find($id);
 
  //hire
 
+
  public function hire($id){
-     $hire=jobApplication::where('id',$id)->first();
 
-     $hire->update([
-        'status'=>'hired'
-     ]);
+    $reject=jobApplication::where('id',$id)->first();
+    if($reject->status == 'Rejected'){
+        return redirect()->route('job.apply');
+    }else{
 
-     return redirect()->route('job.apply');
+        jobApplication::find($id)->update([
+            'status'=>'Hired'
+         ]);
+
+         return redirect()->route('job.apply');
+    }
+
 
 
  }
@@ -222,11 +229,17 @@ $post = PostedJobs::find($id);
  public function reject($id){
     $reject=jobApplication::where('id',$id)->first();
 
-    $reject->update([
-       'status'=>'Rejected'
-    ]);
+    if($reject->status == 'Hired'){
+        return redirect()->route('job.apply');
+    }else{
+        jobApplication::find($id)->update([
+            'status'=>'Rejected'
+         ]);
 
-    return redirect()->route('job.apply');
+         return redirect()->route('job.apply');
+    }
+
+
 
 
 }

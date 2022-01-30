@@ -17,11 +17,16 @@ class ReportController extends Controller
 
     public function searchreport(Request $request)
     {
+        $request->validate([
+            'from' => 'required',
+            'to' => 'required|date|after_or_equal:from',
+        ]);
+
 
         $postJobShow=PostedJobs::whereBetween('created_at',[$request->from,$request->to])->get();
 
 ;
-        return view('backend.admin.pages.PostedJobReport',compact('postJobShow'));
+        return view('backend.admin.pages.PostedJobReport',compact('postJobShow'))->with('error','Please select a validate date');
 
     }
 
@@ -35,6 +40,13 @@ class ReportController extends Controller
 
     public function searchApplicationReport(Request $request)
     {
+
+            $request->validate([
+                'from' => 'required',
+                'to' => 'required|date|after_or_equal:from',
+            ]);
+
+
 
         $jobApplicationView=JobApplication::whereBetween('created_at',[$request->from,$request->to])->get();
 

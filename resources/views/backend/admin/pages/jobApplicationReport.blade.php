@@ -5,8 +5,17 @@
 
 
 <div class="container">
-    <div class="form-row" style="margin-top: 80px;">
 
+
+
+    <div class="form-row" style="margin-top: 80px;">
+    {{-- message --}}
+
+    @if ($errors->any())
+     @foreach ($errors->all() as $error)
+         <div>{{$error}}</div>
+     @endforeach
+ @endif
         <div class="form-group">
             <form action="{{route('admin.job.application.report.search')}}" method="post">
                 @csrf

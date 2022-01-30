@@ -5,6 +5,12 @@
 <div class="container">
     <div class="form-row" style="margin-top: 80px;">
 
+        @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <h3><div style="color: red">{{$error}}</div></h3>
+        @endforeach
+    @endif
+
         <div class="form-group">
             <form action="{{route('admin.posted.job.report.search')}}" method="post">
                 @csrf
