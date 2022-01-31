@@ -24,7 +24,7 @@
 <form action="{{route('post.job.store')}}" method="POST" class="p-5 bg-white">
 
     @csrf
-   
+
 
         <div class="row form-group">
 
@@ -74,11 +74,19 @@
         <div class="row form-group mb-4">
           <div class="col-md-12"><h3>Location</h3></div>
           <div class="col-md-12 mb-3 mb-md-0">
-            <input name="location" input type="text" class="form-control" placeholder="New York City">
+            <input name="location" input type="text" class="form-control" placeholder="Location">
           </div>
         </div>
 
-        
+
+        <div class="row form-group mb-4">
+            <div class="col-md-12"><h3>Deadline</h3></div>
+            <div class="col-md-12 mb-3 mb-md-0">
+              <input name="deadline" input type="date" class="form-control" placeholder="date">
+            </div>
+          </div>
+
+
 
         <div class="row form-group">
           <div class="col-md-12">

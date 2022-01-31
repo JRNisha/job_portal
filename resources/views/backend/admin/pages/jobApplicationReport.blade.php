@@ -7,13 +7,14 @@
 <div class="container">
 
 
+    <div id="divToPrint">
 
     <div class="form-row" style="margin-top: 80px;">
     {{-- message --}}
 
     @if ($errors->any())
      @foreach ($errors->all() as $error)
-         <div>{{$error}}</div>
+     <h3><div style="color: red">{{$error}}</div></h3>
      @endforeach
  @endif
         <div class="form-group">
@@ -57,6 +58,17 @@
 
           </div>
 </div>
+</div>
 
+<button class="btn btn-primary " type="submit" onClick="PrintDiv('divToPrint');" value="Print" >print</button>
+<script language="javascript">
+    function PrintDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 
 @endsection

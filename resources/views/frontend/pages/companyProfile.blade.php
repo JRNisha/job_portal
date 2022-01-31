@@ -73,6 +73,7 @@
               <h5>Job Type : {{$postedJob->type }}</h5>
               <h5>Job Salary : {{$postedJob->salary }}</h5>
               <h5>Job Location : {{$postedJob->location }}</h5>
+              <h5>Application Deadline : {{$postedJob->deadline }}</h5>
 
             </div>
             @endforeach

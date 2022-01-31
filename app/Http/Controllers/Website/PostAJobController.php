@@ -38,6 +38,13 @@ class PostAJobController extends Controller
 
     public function postJobShow(){
 
+
+        $today=date('Y-m-d');
+
+
+
+
+
         $key=null;
         if(request()->search){
             $key=request()->search;
@@ -48,8 +55,10 @@ class PostAJobController extends Controller
 
                                     }
 
+
         $countJob = PostedJobs::count();
-        $postJobShow = PostedJobs:: orderBy('id','desc')->paginate(3);
+        $postJobShow = PostedJobs::where('deadline','>=',$today)->orderBy('id','desc')->paginate(3);
+
         return view('backend.admin.pages.PostedJob_list',compact('postJobShow','key','countJob'));
     }
 
@@ -80,7 +89,8 @@ class PostAJobController extends Controller
         'category'=>$request->category,
         'salary'=>$request->salary,
         'type'=>$request->type,
-        'location'=>$request->location
+        'location'=>$request->location,
+        'deadline'=>$request->deadline
 
        ]);
       return redirect()->route('post.job')->with('msg', 'Job list updated!');
@@ -91,60 +101,70 @@ class PostAJobController extends Controller
        }
    }
    //job categories
+
    public function jobCategories(){
+    $today=date('Y-m-d');
     $countGraphicsDesignerJob = PostedJobs::where('category', "Graphics Designer")->count();
-       $postJob=PostedJobs::all();
-       return view('frontend.pages.jobCatergories',compact('postJob'));
+       $postJob=PostedJobs::where('deadline','>=',$today)->get();
+       return view('frontend.pages.jobCatergories',compact('postJob','today'));
    }
    //job categories private tutors
    public function jobCategoriesPrivateTutor(){
+    $today=date('Y-m-d');
     $countPrivateTutorJob = PostedJobs::where('category', "Private Tutors")->count();
-    $postJob=PostedJobs::all();
-    return view('frontend.pages.jobCategoriesPrivateTutors',compact('postJob'));
+    $postJob=PostedJobs::where('deadline','>=',$today)->get();
+    return view('frontend.pages.jobCategoriesPrivateTutors',compact('postJob','today'));
 }
 
    //job categories business group
    public function jobCategoriesBusinessGroup(){
+    $today=date('Y-m-d');
     $countBusinessJob = PostedJobs::where('category', "Business")->count();
-    $postJob=PostedJobs::all();
-    return view('frontend.pages.jobCategoriesBusinessGroup',compact('postJob'));
+    $postJob=PostedJobs::where('deadline','>=',$today)->get();
+    return view('frontend.pages.jobCategoriesBusinessGroup',compact('postJob','today'));
 }
    ////job categories bank jobs
    public function jobCategoriesBankJobs(){
+    $today=date('Y-m-d');
     $countBankJob = PostedJobs::where('category', "Bank Jobs")->count();
-    $postJob=PostedJobs::all();
-    return view('frontend.pages.jobCategoriesBankJobs',compact('postJob'));
+    $postJob=PostedJobs::where('deadline','>=',$today)->get();
+    return view('frontend.pages.jobCategoriesBankJobs',compact('postJob','today'));
 }
 // //job categories digital marketing
 public function jobCategoriesDigitalMarketing(){
+    $today=date('Y-m-d');
     $countDigitalMarketingJob = PostedJobs::where('category', "Digital Marketing")->count();
-    $postJob=PostedJobs::all();
-    return view('frontend.pages.jobCategoriesDigitalMarketing',compact('postJob'));
+    $postJob=PostedJobs::where('deadline','>=',$today)->get();
+    return view('frontend.pages.jobCategoriesDigitalMarketing',compact('postJob','today'));
 }
 //job categories cleaning services
 public function jobCategoriesCleaningServices(){
-    $countCleaningJob = PostedJobs::where('category', "Cleaning")->count();
-    $postJob=PostedJobs::all();
-    return view('frontend.pages.jobCategoriesCleaningServices',compact('postJob'));
+    $today=date('Y-m-d');
+    $countCleaningJob = PostedJobs::where('category', "Cleaning")->where('deadline','>=',$today)->count();
+    $postJob=PostedJobs::all()->where('deadline','>=',$today)->get();
+    return view('frontend.pages.jobCategoriesCleaningServices',compact('postJob','today'));
 }
 
 //job categories webdevelopment
 public function jobCategoriesWebDevelopment(){
+    $today=date('Y-m-d');
     $countWebJob = PostedJobs::where('category', "Web Development")->count();
-    $postJob=PostedJobs::all();
-    return view('frontend.pages.jobCategoriesWebDevelopment',compact('postJob'));
+    $postJob=PostedJobs::where('deadline','>=',$today)->get();
+    return view('frontend.pages.jobCategoriesWebDevelopment',compact('postJob','today'));
 }
 // //job categories it/web
 public function jobCategoriesIt(){
+    $today=date('Y-m-d');
     $countItJob = PostedJobs::where('category', "IT")->count();
-    $postJob=PostedJobs::all();
-    return view('frontend.pages.jobCategoriesIt',compact('postJob'));
+    $postJob=PostedJobs::where('deadline','>=',$today)->get();
+    return view('frontend.pages.jobCategoriesIt',compact('postJob','today'));
 }
 // //job categories medical
 public function jobCategoriesMedical(){
+    $today=date('Y-m-d');
     $countMedicalJob = PostedJobs::where('category', "Medical & Healths")->count();
-    $postJob=PostedJobs::all();
-    return view('frontend.pages.jobCategoriesMedical',compact('postJob'));
+    $postJob=PostedJobs::where('deadline','>=',$today)->get();
+    return view('frontend.pages.jobCategoriesMedical',compact('postJob','today'));
 }
 
 

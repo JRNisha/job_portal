@@ -32,15 +32,6 @@
                                         <option value="{{ $postjob->id }}">{{ $postjob->category }}</option>
                                         @endforeach
 
-                                            {{-- <option value="1">Graphics Design</option>
-                                            <option value="1">Private Tutors</option>
-                                            <option value="1">Business Group</option>
-                                            <option value="1">Bank Jobs</option>
-                                            <option value="1">Digital Marketing</option>
-                                            <option value="1">Cleaning Services</option>
-                                            <option value="1">Web Development</option>
-                                            <option value="1">It/Web Consulting</option>
-                                            <option value="1">Medical & Healths</option> --}}
                                         </select>
                                         <div class="job-input">
                                             <input type="text" placeholder="Locations" name="location">
@@ -235,7 +226,9 @@
                     </div>
                     <div class="job-instructor-profile mb-30">
                         <div class="job-instructor-title">
-                            <h4><a href="job-details.html">{{  $postedJob->company->name }}</a></h4>
+                            <h4><a href="">{{  $postedJob->company->name }}</a></h4>
+                            <h4><a href="">Dead Line : {{  $postedJob->deadline }}</a></h4>
+                            <h4><a href="">Category : {{  $postedJob->category }}</a></h4>
                             <span><i class="far fa-map-marker-alt"></i> {{  $postedJob->location }}</span>
                         </div>
                     </div>
@@ -316,80 +309,14 @@
 </div>
 <!-- counter-area end -->
 
-<!-- <div class="testimonial-area grey-bg pt-80 pb-60" data-background="{{ url('frontend/assets/img/bg/map.png') }}">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
-                <div class="section-title text-center ml-50 mr-50 mb-45">
-                    <h2>What Our Candidates Say</h2>
-                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-6 col-lg-6">
-                <div class="test-img ml-40 mb-30">
-                    <img src="{{url('/frontend/assets/img/testominal/test-img.png') }}" alt="">
-                </div>
-            </div>
-            <div class="col-xl-5 col-lg-6">
-                <div class="test-active mt-50 mb-30">
-                    <div class="testimonial-wrapper">
-                        <div class="inner-test">
-                            <div class="test-icon f-left">
-                                <i class="fal fa-quote-right"></i>
-                            </div>
-                            <div class="test-text">
-                                <p>Sed perspiciatis unde omnis iste natus error voluptatem accusantium dolorem laudantim totam rem aperiam eaque ipsa quae
-                                invenre
-                                veritatis etquasi architecto beatae vitae dicta sunt explicab enipsam voluptatem voluptas
-                                Quis autem veleum iure reprehende</p>
-                            </div>
-                        </div>
-                        <div class="clientsay-name">
-                            <div class="client-say-img">
-                                <img src="{{url( '/frontend/assets/img/testominal/test-img1.png') }}" alt="">
-                            </div>
-                            <div class="client-say-content">
-                                <h4>Cornelius D. Kelly</h4>
-                                <span>Web designer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
+
 
 <!-- services area start -->
-<section class="services__area pt-80 pb-50">
+<section class="services__area pt-10 pb-10">
     <div class="container">
-        <div class="row">
-            <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
-                <div class="section-title text-center mb-45">
-                    <h2>How To Get Started</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="services__item grey-bg transition-3 text-center mb-30">
-                    <div class="services__shape transition-3" data-background="assets/img/shape/hexa.png"></div>
-                    <div class="services__icon mb-25">
-                        <img src="{{ url('/frontend/assets/img/icon/services/icon-1.png') }}" alt="">
-                    </div>
-                    <div class="services__content">
-                        <h2>Need Any Jobs?</h2>
-                        <!-- <p>But must expla to you how all this mistaken idea of denouncing pleure and praising pain was born</p> -->
-                        <a href="contact.html" class="b-btn b-btn-green">Apply Job <i class="far fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
             @if(auth()->user())
             @if(auth()->user()->role == "company")
-            <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="services__item grey-bg transition-3 text-center mb-30">
                     <div class="services__shape transition-3" data-background="{{ url('frontend/assets/img/shape/hexa.png') }}"></div>
                     <div class="services__icon mb-25">
@@ -397,7 +324,6 @@
                     </div>
                     <div class="services__content">
                         <h2>Post Your Jobs</h2>
-                        <!-- <p>But must expla to you how all this mistaken idea of denouncing pleure and praising pain was born</p> -->
                         <a href="{{ route('post.job') }}" class="b-btn b-btn-green">Post Job <i class="far fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -405,20 +331,7 @@
             @else
             @endif
             @endif
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="services__item grey-bg transition-3 text-center mb-30">
-                    <div class="services__shape transition-3" data-background="{{ url('frontend/assets/img/shape/hexa.png') }}"></div>
-                    <div class="services__icon mb-25">
-                        <img src="{{url( '/frontend/assets/img/icon/services/icon-3.png') }}" alt="">
-                    </div>
-                    <div class="services__content">
-                        <h2>Job Market Data</h2>
-                        <!-- <p>But must expla to you how all this mistaken idea of denouncing pleure and praising pain was born</p> -->
-                        <a href="contact.html" class="b-btn b-btn-green">Get Data <i class="far fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 </section>
 <!-- services area end -->
@@ -440,107 +353,8 @@
     </div>
 </div>
 
-<!-- blog area start -->
-<!-- <div class="blog__area-2 pt-75 pb-50">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
-                <div class="section-title text-center mb-45">
-                    <h2>Latest News & Blog</h2>
-                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-4 col-md-6">
-                <div class="blog__item-2 mb-30 ">
-                    <div class="blog__thumb fix">
-                        <a href="blog-details.html"><img src="{{ url('/frontend/assets/img/blog/blog-1.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="blog__content-2">
-                        <div class="blog__date text-center">
-                            <h4>20</h4>
-                            <span>Dec</span>
-                        </div>
-                        <div class="blog__meta blog__meta-2">
-                            <span><i class="fal fa-user-circle"></i><a href="#">David Warner</a></span>
-                            <span><i class="fal fa-comments"></i><a href="#">Com (05)</a></span>
-                        </div>
-                        <h4><a href="blog-details.html">Samsun Youth Education We Activities Go Amidst</a></h4>
-                        <p>But must explen to you how mistake idea denouncing pleasure and prasng pain was born and completes</p>
-                        <a href="blog-details.html" class="b-btn b-btn-grey">Read More <i class="far fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="blog__item-2 mb-30">
-                    <div class="blog__thumb fix">
-                        <a href="blog-details.html"><img src="{{ url('/frontend/assets/img/blog/blog-2.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="blog__content-2">
-                        <div class="blog__date text-center">
-                            <h4>15</h4>
-                            <span>Dec</span>
-                        </div>
-                        <div class="blog__meta blog__meta-2">
-                            <span><i class="fal fa-user-circle"></i><a href="#">David Warner</a></span>
-                            <span><i class="fal fa-comments"></i><a href="#">Com (05)</a></span>
-                        </div>
-                        <h4><a href="blog-details.html">how mistake idea pleasure denouncing </a></h4>
-                        <p>But must explen to you how mistake idea denouncing pleasure and prasng pain was born and completes</p>
-                        <a href="blog-details.html" class="b-btn b-btn-grey">Read More <i class="far fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="blog__item-2 mb-30">
-                    <div class="blog__thumb fix">
-                        <a href="blog-details.html"><img src="{{ url('/frontend/assets/img/blog/blog-3.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="blog__content-2">
-                        <div class="blog__date text-center">
-                            <h4>10</h4>
-                            <span>Dec</span>
-                        </div>
-                        <div class="blog__meta blog__meta-2">
-                            <span><i class="fal fa-user-circle"></i><a href="#">David Warner</a></span>
-                            <span><i class="fal fa-comments"></i><a href="#">Com (05)</a></span>
-                        </div>
-                        <h4><a href="blog-details.html">prasng pain was born and completes</a></h4>
-                        <p>But must explen to you how mistake idea denouncing pleasure and prasng pain was born and completes</p>
-                        <a href="blog-details.html" class="b-btn b-btn-grey">Read More <i class="far fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-<!-- blog area end -->
 
-<!-- brand area start -->
-<div class="brand__area grey-bg pt-80 pb-80">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="brand__slider owl-carousel">
-                    <div class="brand__item">
-                        <img src="{{url( '/frontend/assets/img/brand/brand-8.jpg') }}" alt="">
-                    </div>
-                    <div class="brand__item">
-                        <img src="{{url('/frontend/assets/img/brand/brand-9.jpg')  }}" alt="">
-                    </div>
-                    <div class="brand__item">
-                        <img src="{{ url('/frontend/assets/img/brand/brand-10.jpg') }}" alt="">
-                    </div>
-                    <div class="brand__item">
-                        <img src="{{url('/frontend/assets/img/brand/brand-11.jpg')  }}" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- brand area end -->
+
 
 <!-- login register modal start -->
 <!-- Modal -->

@@ -10,7 +10,7 @@
             <h3><div style="color: red">{{$error}}</div></h3>
         @endforeach
     @endif
-
+    <div id="divToPrint">
         <div class="form-group">
             <form action="{{route('admin.posted.job.report.search')}}" method="post">
                 @csrf
@@ -59,6 +59,17 @@
 
           </div>
 </div>
+</div>
 
+<button class="btn btn-primary" type="submit" onClick="PrintDiv('divToPrint');" value="Print" >print</button>
+<script language="javascript">
+    function PrintDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 
 @endsection

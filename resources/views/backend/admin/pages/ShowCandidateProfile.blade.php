@@ -8,7 +8,7 @@
 <p class="alert alert-success">{{session()->get('msg')}}</p>
 @endif
 
-
+<h1 class="text-center w-100 py-4">Registered Candidate List</h1>
 {{--search --}}
 
 <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" action="{{route('show.candidate.profile')}}"method="get">
@@ -20,7 +20,7 @@
 
 
 
-<h1 class="text-center w-100 py-4">Registered Candidate List</h1>
+
     <table class="table ">
         <thead>
           <tr>
