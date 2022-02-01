@@ -82,7 +82,7 @@ public function companyProfile(){
         }
 
         $countCompany =  User::where('role', "company")->count();
-        $companyProfileShow = User::orderBy('id','desc')->paginate(5);
+        $companyProfileShow = User::orderBy('id','desc')->paginate(10);
 
         return view('backend.admin.pages.ShowCompanyProfile',compact('companyProfileShow','countCompany'));
     }

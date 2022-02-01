@@ -59,6 +59,73 @@ public function candidateProfileDelete($candidate)
     }
 
 
+
+//update Candidate Profile
+public function updateCandidate(Request $request,$candidate_id){
+
+
+    $imagename = '';
+
+
+if ($request->hasFile('image')) {
+    $image = $request->file('image');
+    $imagename = date('Ymdhms').'.'.$image->getClientOriginalExtension();
+    $image->storeAs('/uploads/candidate/',$imagename);
+
+}
+
+$cvname = '';
+if ($request->hasFile('cv')) {
+    $cv = $request->file('cv');
+    $cvname = date('Ymdhms').'.'.$cv->getClientOriginalExtension();
+    $cv->storeAs('/uploads/cv/',$cvname);
+
+}
+
+
+
+    try{
+        User::find($candidate_id)->update([
+
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>bcrypt($request->password),
+            'mobile'=>$request->mobile,
+            'address'=>$request->address,
+            'image'=>$imagename,
+            'cv'=>$cvname,
+            'gender'=>$request->gender,
+        ]);
+       return redirect()->route('create.candidate.profile')->with('msg', 'candidate list updated!');
+     }
+        catch(Throwable $throw){
+         return redirect()->back()->with('error','Problem!');
+        }
+
+
+   }
+   public function editCandidate($candidate_id){
+      $candidate=User::find($candidate_id);
+  
+      return view('frontend.pages.updateCandidate',compact('candidate'));
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public function candidateProfileStore(Request $request){
     //dd($request->all());
     $request->validate([

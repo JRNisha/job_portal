@@ -8,7 +8,7 @@
 <p class="alert alert-success">{{session()->get('msg')}}</p>
 @endif
 
-<section class="section about-section gray-bg" id="about">
+<section class="section about-section" id="about">
 {{--search --}}
 <h1 class="text-center w-100 py-4">Registered Company List</h1>
 
@@ -29,7 +29,7 @@
             <th scope="col">Email</th>
             <th scope="col">Company Type</th>
             <th scope="col">Address</th>
-            <th scope="col">Status </th>
+            {{-- <th scope="col">Status </th> --}}
 
 
           </tr>
@@ -46,10 +46,10 @@
     <td>{{  $company->email }}</td>
     <td>{{  $company->company_type }}</td>
     <td>{{  $company->address }}</td>
-    <td>
-        {{-- <a href=""class="btn btn-success btn-sm" >Update</a> --}}
+    {{-- <td>
+        <a href=""class="btn btn-success btn-sm" >Update</a>
         <a href="{{route('company.profile.delete',$company->id)}}"class="btn btn-danger btn-sm" style="margin-left: 15px;">Reject</a>
-    </td>
+    </td> --}}
 
   </tr>
   @endif
@@ -71,9 +71,7 @@
         position: relative;
     }
 
-    .gray-bg {
-        background-color:rgb(214, 198, 202);
-    }
+
     </style>
 </div>
 

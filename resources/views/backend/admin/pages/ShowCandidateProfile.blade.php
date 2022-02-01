@@ -33,7 +33,7 @@
             <th scope="col">Upload CV</th>
             <th scope="col">Gender</th>
             <th scope="col">Role</th>
-            <th scope="col">Status </th>
+            {{-- <th scope="col">Status </th> --}}
 
 
           </tr>
@@ -61,13 +61,13 @@
     </td>
     <td>{{  $candidate->gender }}</td>
     <td>{{  $candidate->role }}</td>
-    <td>
+    {{-- <td>
 
-            {{-- <a href=""class="btn btn-success btn-sm" >Update</a> --}}
+            <a href=""class="btn btn-success btn-sm" >Update</a>
             <a href="{{route('candidate.profile.delete',$candidate->id)}}" class="btn btn-danger btn-sm" style="margin-left:50;margin-top: 20px;">Reject</a>
 
 
-    </td>
+    </td> --}}
 
   </tr>
   @endif

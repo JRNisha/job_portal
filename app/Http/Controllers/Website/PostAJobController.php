@@ -141,7 +141,7 @@ public function jobCategoriesDigitalMarketing(){
 public function jobCategoriesCleaningServices(){
     $today=date('Y-m-d');
     $countCleaningJob = PostedJobs::where('category', "Cleaning")->where('deadline','>=',$today)->count();
-    $postJob=PostedJobs::all()->where('deadline','>=',$today)->get();
+    $postJob=PostedJobs::where('deadline','>=',$today)->get();
     return view('frontend.pages.jobCategoriesCleaningServices',compact('postJob','today'));
 }
 
@@ -233,7 +233,7 @@ $post = PostedJobs::find($id);
     $hiredEmployee = jobApplication::where('user_id',$reject->user_id)->where('status','Hired')->first();
 
     if($hiredEmployee){
-        return redirect()->route('job.apply')->with('error', 'The Candidate is already Hired by another Company!');
+        return redirect()->route('job.apply')->with('error', 'The Candidate is already Hired by A Company!');
     }
     if($reject->status == 'Rejected'){
         return redirect()->route('job.apply');
@@ -277,9 +277,9 @@ $post = PostedJobs::find($id);
             'status'=>'Terminated'
          ]);
 
-         return redirect()->route('job.apply')->with('error', 'The Candidate is Terminated!');
+         return redirect()->route('job.apply');
     }
-    return redirect()->route('job.apply')->with('error', 'The Candidate is Terminated!');
+    return redirect()->route('job.apply');
  }
 
 }

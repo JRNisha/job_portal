@@ -24,8 +24,7 @@ class HomeController extends Controller
         $countMedicalJob = PostedJobs::where('category', "Medical & Healths")-> where('deadline','>=',$today)->count();
         $countWebJob = PostedJobs::where('category', "Web Development")-> where('deadline','>=',$today)->count();
         $countItJob = PostedJobs::where('category', "IT")-> where('deadline','>=',$today)->count();
-        $countCleaningJob = PostedJobs::where('category', "Cleaning")->
-                                        where('deadline','>=',$today)->count();
+        $countCleaningJob = PostedJobs::where('category', "Cleaning")->where('deadline','>=',$today)->count();
 
 
         $countDigitalMarketingJob = PostedJobs::where('category', "Digital Marketing")-> where('deadline','>=',$today)->count();
@@ -61,7 +60,7 @@ class HomeController extends Controller
             $category=request()->category;
             $location=request()->location;
             $postJobShow=PostedJobs::Where('category','LIKE','%'.$category.'%')->orWhere('location','LIKE','%'.$location.'%')->where('deadline','>=',$today)->get();
-                                      return view('frontend.pages.findJobs',compact('postJobShow'));
+                                      return view('frontend.pages.findJobs',compact('postJobShow','today'));
 
                                     }
         $postJobShow=PostedJobs::where('deadline','>=',$today)->get();

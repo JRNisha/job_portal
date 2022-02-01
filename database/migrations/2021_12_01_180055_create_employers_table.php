@@ -18,7 +18,7 @@ class CreateEmployersTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('password');
-            $table->integer('mobile');
+            $table->string('mobile');
             $table->string('address');
             $table->timestamps();
         });

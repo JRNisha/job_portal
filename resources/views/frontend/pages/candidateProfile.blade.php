@@ -51,18 +51,18 @@
   </head>
   <body class="bg-light">
     <div class="container">
-  
- 
+
+
 
 
   <div class="row">
-    
+
     <div class="col-md-4 order-md-2 mb-4"style="margin-top:180px">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
         <span class="text-muted">Jobs You Applied</span>
       </h4>
 
-      
+
       <ul class="list-group mb-3">
       @foreach ($jobApplicationView as $key=>$data)
         <li class="list-group-item d-flex justify-content-between lh-condensed">
@@ -72,22 +72,22 @@
             <h5>Company Name : {{$data->company->name }}</h5>
           </div>
           @endforeach
-          
-        
-      
-      
-  
 
-     
+
+
+
+
+
+
 
     </div>
     <div class="col-md-8 order-md-1">
-      
+
 
 
       <div class="py-5 text-center">
     <img class="d-block mx-auto mb-4" src="{{url('/uploads/candidate/'.auth()->user()->image)}}" alt="" width="300px" height="300px">
-    
+
   </div>
   <h4 class="mb-3">About Yourself</h4>
       <form action="{{ route('store.candidate.profile') }}" method="POST" class="row g-3" enctype="multipart/form-data">
@@ -105,7 +105,7 @@
                 <div class="form-group col-4">
                     <label for="exampleFormControlFile1">Gender</label>
                     <input readonly  name="image" type="text" value="{{auth()->user()->gender}}" class="form-control" id="inputAddress" placeholder="candidate image">
-                    
+
                   </div>
 
                 <div class="form-group col-12">
@@ -118,20 +118,24 @@
                   </div>
 
 
-                  
+
                 </div>
 
 
-        
-            
-        
-       
-      
+
+
+
+
+
       </form>
+    </div>
+    <div class="form-group col-12 ">
+        <a href="{{ route('edit.candidate.profile',auth()->user()->id) }}"class="btn btn-primary">Update Your Profile</a>
+       </div>
     </div>
   </div>
 
-  
+
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

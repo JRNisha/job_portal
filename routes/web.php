@@ -104,6 +104,11 @@ Route::post('/create/candidate/profile/store',[CandidateDetailsController::class
 Route::get('/create/candidate/profile/show',[CandidateDetailsController::class,'candidateProfileShow'])->name('show.candidate.profile');
 Route::get('/candidate/profile',[CandidateDetailsController::class,'profile'])->name('profile');
 Route::get('candidate/profile/delete/{id}', [CandidateDetailsController::class, 'candidateProfileDelete'])->name('candidate.profile.delete');
+//update
+Route::put('/Update/candidate/profile{candidate_id}',[CandidateDetailsController::class,'updateCandidate'])->name('update.candidate.profile');
+Route::get('/Edit/candidate/profile{candidate_id}',[CandidateDetailsController::class,'editCandidate'])->name('edit.candidate.profile');
+
+
 
 //employer
 Route::get('/create/employer/profile',[EmployerDetailsController::class,'employerProfileForm'])->name('create.employer.profile');
