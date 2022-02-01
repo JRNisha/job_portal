@@ -3,6 +3,10 @@
  <main>
  <!-- hero-area start -->
  <section class="hero-area pos-rel">
+
+   
+
+
     <div class="hero-shape d-none d-lg-block">
         <span class="circle"></span>
         <span class="circle circle-yellow"></span>

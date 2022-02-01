@@ -68,10 +68,13 @@ Route::get('/job/Categories/digital/marketing',[PostAJobController::class,'jobCa
 Route::get('/job/Categories/it',[PostAJobController::class,'jobCategoriesIt'])->name('job.category.it');
 Route::get('/job/Categories/medical',[PostAJobController::class,'jobCategoriesMedical'])->name('job.category.medical');
 //job Application
+Route::group(['middleware'=>'valid_user'],function (){
 Route::get('/job/application/{id}',[PostAJobController::class,'jobApplication'])->name('job.application');
+});
 Route::post('/job/application/store/{id}',[PostAJobController::class,'jobApplicationStore'])->name('store.job.application');
 Route::get('/admin/job/apply',[PostAJobController::class,'jobApplicationShow'])->name('job.apply');
 Route::get('/admin/job/applicant/details/{id}',[PostAJobController::class,'applicant'])->name('job.applicant');
+
 //hire
 Route::get('/admin/hire/{id}',[PostAJobController::class,'hire'])->name('hire');
 //reject

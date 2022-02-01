@@ -14,7 +14,7 @@
 
                             </div>
                             <div class="footer__widget-content">
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantiu doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis etarchitecto beatae vitae dicta sunt explicabo.</p>
+                                <p>Job Portal is one of the most popular website for finding jobs and for the availability of jobs</p>
                                 <div class="footer__info d-sm-flex justify-content-between pr-40">
                                     <div class="footer__info-item d-flex align-items-center mb-30">
                                         <div class="icon mr-15">
@@ -51,11 +51,10 @@
                                         <div class="footer__link">
                                             <ul>
                                                 <li>Looking For A Job?</li>
-                                                <li>International Jobs</li>
+                                                <li>Jobs available</li>
                                                 <li>Upload Resume</li>
                                                 <li>Setting & Privacy</li>
-                                                <li>Career Advice</li>
-                                                <li>Freelanc Category</li>
+
                                             </ul>
                                         </div>
                                     </div>
