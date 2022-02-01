@@ -36,6 +36,8 @@ use App\Http\Controllers\Admin\UserController as AdminUserController;
 
 //website
 Route::get('/',[HomeController::class,'home'])->name('website');
+//findJobs
+Route::get('/find',[HomeController::class,'findJobs'])->name('find.jobs');
 
 //posted jobs
 Route::get('/post/job/form',[PostAJobController::class,'postJobForm'])->name('post.job');
@@ -74,6 +76,8 @@ Route::get('/admin/job/applicant/details/{id}',[PostAJobController::class,'appli
 Route::get('/admin/hire/{id}',[PostAJobController::class,'hire'])->name('hire');
 //reject
 Route::get('/admin/reject/{id}',[PostAJobController::class,'reject'])->name('reject');
+//terminate
+Route::get('/admin/terminate/{id}',[PostAJobController::class,'terminate'])->name('terminate');
 
 //Login
 
@@ -123,10 +127,6 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function (){
 //admin logout
 Route::get('/logout',[AdminUserController::class,'logout'])->name('admin.logout');
 
-//company
-    // Route::get('/company_list',[CompanyListController::class,'companylist'])->name('company.list');
-    // Route::get('/about_company',[CompanyListController::class,'aboutcompany'])->name('about.company');
-    // Route::post('/company/profile',[CompanyListController::class,'companyprofile'])->name('company.profile');
 
 
 //job category

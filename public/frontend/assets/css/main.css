@@ -2908,7 +2908,7 @@ h6 {
 .hero-slider-caption h2 {
     font-size: 60px;
     margin-bottom: 40px;
-    margin-left: 8px;
+    margin-left: -123px;
     margin-right: -312px;
     margin-top: 55px;
     color: #ffffff;
@@ -2976,7 +2976,7 @@ h6 {
   border-radius: 30px;
   position: relative;
   margin-bottom: 200px;
-  margin-left: 200px;
+  /* margin-left: 200px; */
 }
 .job-hero-form .nice-select {
   border-radius: 36px 0 0 37px;

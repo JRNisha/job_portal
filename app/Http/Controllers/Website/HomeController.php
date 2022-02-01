@@ -50,4 +50,22 @@ class HomeController extends Controller
         return view('frontend.pages.home',compact('postJobShow','count','countJob','countCompany','countCandidate','countMedicalJob','countItJob',
         'countWebJob','today','countCleaningJob','countBankJob','countDigitalMarketingJob','countBusinessJob','countPrivateTutorJob','countGraphicsDesignerJob'));
     }
+
+
+
+
+    public function findJobs(){
+        $today=date('Y-m-d');
+
+        if(request()->category && request()->location ){
+            $category=request()->category;
+            $location=request()->location;
+            $postJobShow=PostedJobs::Where('category','LIKE','%'.$category.'%')->orWhere('location','LIKE','%'.$location.'%')->where('deadline','>=',$today)->get();
+                                      return view('frontend.pages.findJobs',compact('postJobShow'));
+
+                                    }
+        $postJobShow=PostedJobs::where('deadline','>=',$today)->get();
+        return view('frontend.pages.findJobs',compact('postJobShow','today'));
+
+}
 }

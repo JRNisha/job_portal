@@ -2,7 +2,17 @@
 @section('content')
 
 <div class="container" style="margin-top: 20px">
+    @if(session('success'))
+    <div class="alert alert-success">
+        {!! session('success') !!}
+    </div>
+@endif
 
+@if(session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
+</div>
+@endif
 <div>
 <table class="table">
 <h1 class="text-center w-100 py-4">Job Apply Details</h1>

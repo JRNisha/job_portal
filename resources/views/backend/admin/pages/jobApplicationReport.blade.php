@@ -60,7 +60,9 @@
 </div>
 </div>
 
-<button class="btn btn-primary " type="submit" onClick="PrintDiv('divToPrint');" value="Print" >print</button>
+<button class="btn btn-primary" type="submit" onClick="PrintDiv('divToPrint');" value="Print" style="float: right;margin-right: 85px;
+margin-top: 16px;
+margin-bottom: 30px;">print</button>
 <script language="javascript">
     function PrintDiv(divName) {
         var printContents = document.getElementById(divName).innerHTML;

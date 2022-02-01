@@ -37,7 +37,7 @@
                                             <input type="text" placeholder="Locations" name="location">
                                         </div>
 
-                                        <button type="submit">Find Jobs <i class="far fa-arrow-right"></i></button>
+                                       <a href=""> <button type="submit">Find Jobs <i class="far fa-arrow-right"></i></button></a>
                                     </form>
                                 </div>
                             </div>
@@ -204,11 +204,14 @@
                 <div class="section-title">
                     <h2>Recent Jobs Available</h2>
 
+
+
+
                 </div>
             </div>
             <div class="col-xl-7">
                 <div class="section-btn text-left text-md-right">
-                    <a class="b-btn" href="{{ route('browse.jobs') }}">Browse All Jobs <i class="far fa-arrow-right"></i></a>
+                    <a class="b-btn" href="{{route('find.jobs')}}">Browse All Jobs <i class="far fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -247,7 +250,6 @@
                     </div>
                 </div>
             </div>
-
 
 
             @endforeach

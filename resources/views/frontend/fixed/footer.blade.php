@@ -50,12 +50,12 @@
                                     <div class="footer__widget-content">
                                         <div class="footer__link">
                                             <ul>
-                                                <li><a href="#">Looking For A Jobs?</a></li>
-                                                <li><a href="#">International Jobs</a></li>
-                                                <li><a href="#">Upload Resume</a></li>
-                                                <li><a href="#">Setting & Privacy</a></li>
-                                                <li><a href="#">Career Advice</a></li>
-                                                <li><a href="#">Freelanc Category</a></li>
+                                                <li>Looking For A Job?</li>
+                                                <li>International Jobs</li>
+                                                <li>Upload Resume</li>
+                                                <li>Setting & Privacy</li>
+                                                <li>Career Advice</li>
+                                                <li>Freelanc Category</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -69,12 +69,12 @@
                                     <div class="footer__widget-content">
                                         <div class="footer__link">
                                             <ul>
-                                                <li><a href="#">Finance & Banking</a></li>
-                                                <li><a href="#">Business & Consulting</a></li>
-                                                <li><a href="#">Creative Designer</a></li>
-                                                <li><a href="#">Web Developer</a></li>
-                                                <li><a href="#">Digital Marketing</a></li>
-                                                <li><a href="#">Senior Manager</a></li>
+                                                <li>Finance & Banking</li>
+                                                <li>Business & Consulting</li>
+                                                <li>Creative Designer</li>
+                                                <li>Web Developer</li>
+                                                <li>Digital Marketing</li>
+                                                <li>Senior Manager</li>
                                             </ul>
                                         </div>
                                     </div>

@@ -230,20 +230,27 @@ $post = PostedJobs::find($id);
  public function hire($id){
 
     $reject=jobApplication::where('id',$id)->first();
+    $hiredEmployee = jobApplication::where('user_id',$reject->user_id)->where('status','Hired')->first();
+
+    if($hiredEmployee){
+        return redirect()->route('job.apply')->with('error', 'The Candidate is already Hired by another Company!');
+    }
     if($reject->status == 'Rejected'){
         return redirect()->route('job.apply');
     }else{
-
+    if($reject->status == 'pending' || $reject->status == 'Terminated'){
         jobApplication::find($id)->update([
             'status'=>'Hired'
          ]);
 
+         return redirect()->route('job.apply')->with('success', 'The Candidate is Successfully Hired by your Company!');
+    }
          return redirect()->route('job.apply');
     }
 
 
 
- }
+  }
 
  //reject
  public function reject($id){
@@ -256,11 +263,23 @@ $post = PostedJobs::find($id);
             'status'=>'Rejected'
          ]);
 
-         return redirect()->route('job.apply');
+         return redirect()->route('job.apply')->with('error', 'The Candidate is rejected..');
     }
+ }
 
 
+ //terminate
+ public function terminate($id){
+    $reject=jobApplication::where('id',$id)->first();
 
+    if($reject->status == 'Hired'){
+        $reject->update([
+            'status'=>'Terminated'
+         ]);
 
-}
+         return redirect()->route('job.apply')->with('error', 'The Candidate is Terminated!');
+    }
+    return redirect()->route('job.apply')->with('error', 'The Candidate is Terminated!');
+ }
+
 }

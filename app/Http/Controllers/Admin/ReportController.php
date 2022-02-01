@@ -24,9 +24,8 @@ class ReportController extends Controller
 
 
         $postJobShow=PostedJobs::whereBetween('created_at',[$request->from,$request->to])->get();
-
-;
-        return view('backend.admin.pages.PostedJobReport',compact('postJobShow'))->with('error','Please select a validate date');
+// dd($postJobShow);
+        return view('backend.admin.pages.PostedJobReport',compact('postJobShow'));
 
     }
 
@@ -49,8 +48,7 @@ class ReportController extends Controller
 
 
         $jobApplicationView=JobApplication::whereBetween('created_at',[$request->from,$request->to])->get();
-
-;
+// dd($jobApplicationView);
         return view('backend.admin.pages.jobApplicationReport',compact('jobApplicationView'));
 
     }

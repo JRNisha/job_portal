@@ -5,7 +5,7 @@
 
 
 
-
+    
 
 <section class="section about-section gray-bg" id="about">
 
@@ -48,6 +48,7 @@
 
         <a href="{{route('hire',$jobapplication->id)}}"class="btn btn-primary btn-sm" >Hire</a>
         <a href="{{route('reject',$jobapplication->id)}}"class="btn btn-danger btn-sm" style="margin-left: 15px;">Reject</a>
+        <a href="{{route('terminate',$jobapplication->id)}}"class="btn btn-danger btn-sm" style="margin-left: 15px;">Terminate</a>
 
                                 </div>
 
