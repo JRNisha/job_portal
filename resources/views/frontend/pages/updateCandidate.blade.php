@@ -47,7 +47,7 @@
 <div class="row justify-content-center">
 <div class="col-md-8">
 <div class="mb-4">
-<h3 class="text-center w-100 py-4">Create Your
+<h3 class="text-center w-100 py-4">Update Your
   <div>
      <strong>Candidate</strong> Profile</h3>
     </div>
@@ -60,42 +60,42 @@
                 <div class="form-group col-md-12">
                     <input hidden value="Candidate" name="role" type="text" class="form-control" >
                     <label for="inputEmail4" class="form-label">Candidate Name</label>
-                    <input name="name" type="text" class="form-control" id="inputEmail4">
+                    <input name="name" value="{{auth()->user()->name}}" type="text" class="form-control" id="inputEmail4">
                   </div>
 
                 <div class="form-group col-md-6">
-                  <label for="inputEmail4" class="form-label">*Email</label>
-                  <input name="email" type="email" class="form-control" id="inputEmail4">
+                  <label for="inputEmail4" class="form-label">Email</label>
+                  <input name="email" value="{{auth()->user()->email}}" type="email" class="form-control" id="inputEmail4">
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="inputPassword4" class="form-label">*Password</label>
-                  <input name="password" type="password" class="form-control" id="inputPassword4">
+                  <label for="inputPassword4" class="form-label">Password</label>
+                  <input name="password"  value="{{auth()->user()->password}}" type="password" class="form-control" id="inputPassword4">
                 </div>
 
                 <div class="form-group col-12">
-                  <label for="inputMobileNumber" class="form-label">*Mobile Number</label>
-                  <input name="mobile" type="number" class="form-control" id="inputMobileNumber" placeholder="">
+                  <label for="inputMobileNumber" class="form-label">Mobile Number</label>
+                  <input name="mobile"  value="{{auth()->user()->mobile}}" type="number" class="form-control" id="inputMobileNumber" placeholder="">
                 </div>
           <div class="form-group col-12">
                     <label for="inputAddress" class="form-label">Candidate Address</label>
-                    <input name="address" type="text" class="form-control" id="inputAddress" placeholder="">
+                    <input name="address"  value="{{auth()->user()->address}}" type="text" class="form-control" id="inputAddress" placeholder="">
                   </div>
 
                   <div class="form-group col-4">
                     <label for="iamge">Image</label>
-                    <input name="image" type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <input name="image"  value="{{auth()->user()->image}}" type="file" class="form-control-file" id="exampleFormControlFile1">
                   </div>
 
 
                   <div class="form-group col-4">
-                    <label for="exampleFormControlFile1">*Upload CV</label>
-                    <input name="cv" type="file" class="form-control-file" id="exampleFormControlFile2">
+                    <label for="exampleFormControlFile1">Upload CV</label>
+                    <input name="cv"  value="{{auth()->user()->cv}}" type="file" class="form-control-file" id="exampleFormControlFile2">
                   </div>
 
                   <div class="form-group col-4" class="form-label">Gender</label>
 
                     <div class=" form-group col-6 dropdown mt-1">
-                      <select name="gender" class="btn btn dropdown" id="dropdownMenu2" data-toggle="dropdown" placeholder="Select Company Type">
+                      <select name="gender"  value="{{auth()->user()->gender}}" class="btn btn dropdown" id="dropdownMenu2" data-toggle="dropdown" placeholder="Select Company Type">
 
                         <option>Male</option>
                         <option>Female</option>

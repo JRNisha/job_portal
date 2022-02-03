@@ -4,7 +4,7 @@
  <!-- hero-area start -->
  <section class="hero-area pos-rel">
 
-   
+
 
 
     <div class="hero-shape d-none d-lg-block">
@@ -234,8 +234,9 @@
                     <div class="job-instructor-profile mb-30">
                         <div class="job-instructor-title">
                             <h4><a href="">{{  $postedJob->company->name }}</a></h4>
-                            <h4><a href="">Dead Line : {{  $postedJob->deadline }}</a></h4>
-                            <h4><a href="">Category : {{  $postedJob->category }}</a></h4>
+                            <h4 style="color: rgb(196, 92, 92);"Deadline><a href="">Dead Line : {{  $postedJob->deadline }}</a></h4>
+                            <br>
+                            <h5 ><a href="">Category : {{  $postedJob->category }}</a></h5>
                             <span><i class="far fa-map-marker-alt"></i> {{  $postedJob->location }}</span>
                         </div>
                     </div>
@@ -247,10 +248,14 @@
                             <a href="{{ route('job.details.show',$postedJob->id) }}">Job Details <i class="far fa-arrow-right"></i>
                             </a>
                         </div>
+                        @if(auth()->user())
+                        @if(auth()->user()->role == "Candidate")
                         <div>
                         <a href="{{route('job.application',$postedJob->id)}}"class="btn btn-primary">Apply</a>
-
                         </div>
+                        @else
+                        @endif
+                        @endif
                     </div>
                 </div>
             </div>

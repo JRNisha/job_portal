@@ -96,7 +96,7 @@ if ($request->hasFile('cv')) {
             'cv'=>$cvname,
             'gender'=>$request->gender,
         ]);
-       return redirect()->route('create.candidate.profile')->with('msg', 'Your Profile has been updated!');
+       return redirect()->route('profile')->with('msg', 'Your Profile has been updated!');
      }
         catch(Throwable $throw){
          return redirect()->back()->with('error','Problem!');
@@ -105,6 +105,7 @@ if ($request->hasFile('cv')) {
 
    }
    public function editCandidate($candidate_id){
+   
       $candidate=User::find($candidate_id);
 
       return view('frontend.pages.updateCandidate',compact('candidate'));

@@ -4,6 +4,11 @@
 
 <div class="categories-area pt-80 grey-bg pb-50">
 
+
+    @if(session()->has('msg'))
+<p class="alert alert-success">{{session()->get('msg')}}</p>
+@endif
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -98,7 +103,7 @@
                   </div>
 
                 <div class="form-group col-md-6">
-                  <label for="inputEmail4" class="form-label">*Email</label>
+                  <label for="inputEmail4" class="form-label">Email</label>
                   <input readonly name="email" type="email" value="{{auth()->user()->email}}" class="form-control" id="inputEmail4">
                 </div>
 
@@ -109,13 +114,15 @@
                   </div>
 
                 <div class="form-group col-12">
-                  <label for="inputMobileNumber" class="form-label">*Mobile Number</label>
+                  <label for="inputMobileNumber" class="form-label">Mobile Number</label>
                   <input readonly name="mobile" type="number"  value="{{auth()->user()->mobile}}" class="form-control" id="inputMobileNumber" placeholder="">
                 </div>
           <div class="form-group col-12">
                     <label for="inputAddress" class="form-label">Candidate Address</label>
-                    <input readonly  name="address" type="text" value="{{auth()->user()->address}}" class="form-control" id="inputAddress" placeholder="">
+                    <input readonly  name="address" type="text"  value="{{auth()->user()->address}}" class="form-control" id="inputAddress" placeholder="">
                   </div>
+
+
 
 
 

@@ -93,7 +93,7 @@ class PostAJobController extends Controller
         'deadline'=>$request->deadline
 
        ]);
-      return redirect()->route('post.job')->with('msg', 'Job list updated!');
+      return redirect()->route('post.job')->with('msg', 'Job is posted!');
     }
        catch(Throwable $throw){
         //    dd($throw);

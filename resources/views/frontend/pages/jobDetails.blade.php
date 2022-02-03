@@ -10,14 +10,18 @@
 
 
 <div class="text-center w-100 py-4">
-<p>Job Title : {{  $postedJob->title }}</p>
-<p>Job Type : {{  $postedJob->type }}</p>
-<p> Salary : {{  $postedJob->salary }} Tk</p>
-<p>Company Name : {{  $postedJob->company->name }}</p>
-<p>Job Location : {{  $postedJob->location }}</p>
-
+<h3>Job Title : {{  $postedJob->title }}</h3>
+<h4>Job Type : {{  $postedJob->type }}</h4>
+<h4> Salary : {{  $postedJob->salary }} Tk</h4>
+<h4>Company Name : {{  $postedJob->company->name }}</h4>
+<h4>Job Location : {{  $postedJob->location }}</h4>
+<h4 style="color: red">Deadline : {{  $postedJob->deadline }}</h4>
+@if(auth()->user())
+@if(auth()->user()->role == "Candidate")
 <a href="{{route('job.application',$postedJob->id)}}"class="btn btn-primary">Apply</a>
-
+@else
+@endif
+@endif
 
 </div>
 </div>
