@@ -64,8 +64,6 @@
                     Job Apply
                 </a>
 
-
-
                 @endif
         <br>
         <br>

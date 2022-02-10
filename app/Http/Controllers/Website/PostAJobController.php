@@ -40,11 +40,6 @@ class PostAJobController extends Controller
 
 
         $today=date('Y-m-d');
-
-
-
-
-
         $key=null;
         if(request()->search){
             $key=request()->search;
@@ -57,6 +52,7 @@ class PostAJobController extends Controller
 
 
         $countJob = PostedJobs::count();
+
         $postJobShow = PostedJobs::where('deadline','>=',$today)->orderBy('id','desc')->paginate(3);
 
         return view('backend.admin.pages.PostedJob_list',compact('postJobShow','key','countJob'));

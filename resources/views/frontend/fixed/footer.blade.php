@@ -45,15 +45,15 @@
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                                 <div class="footer__widget pl-20 mb-50">
                                     <div class="footer__widget-title mb-20">
-                                        <h3>Information</h3>
+                                        <h3>Procedure</h3>
                                     </div>
                                     <div class="footer__widget-content">
                                         <div class="footer__link">
                                             <ul>
                                                 <li>Looking For A Job?</li>
-                                                <li>Jobs available</li>
-                                                <li>Upload Resume</li>
-                                                <li>Setting & Privacy</li>
+                                                <li>-Jobs available</li>
+                                                <li>-Get Registered</li>
+                                                <li>-Apply for job</li>
 
                                             </ul>
                                         </div>
@@ -63,17 +63,16 @@
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                                 <div class="footer__widget pl-10 mb-50">
                                     <div class="footer__widget-title mb-20">
-                                        <h3>Quick Jobs</h3>
+                                        <h3>Popular Jobs</h3>
                                     </div>
                                     <div class="footer__widget-content">
                                         <div class="footer__link">
                                             <ul>
-                                                <li>Finance & Banking</li>
-                                                <li>Business & Consulting</li>
-                                                <li>Creative Designer</li>
+                                                <li>Banking Jobs</li>
+                                                <li>Graphics Designer</li>
                                                 <li>Web Developer</li>
                                                 <li>Digital Marketing</li>
-                                                <li>Senior Manager</li>
+                                                <li>Private Tutors</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -84,15 +83,15 @@
                     <div class="col-xl-3 col-lg-5 col-md-6">
                         <div class="footer__widget pl-30 mb-50">
                             <div class="footer__widget-title mb-20">
-                                <h3>Newsletters</h3>
+                                <h3>New to our website?</h3>
                             </div>
                             <div class="footer__widget-content">
                                 <div class="footer__subscribe">
-                                    <p>Boluptatem accusantiu dolore laudantium totaaperiam</p>
+
                                     <div class="footer__subscribe-form">
                                         <form action="#">
-                                            <input type="text" placeholder="Enter Your Email">
-                                            <button type="submit" class="b-btn b-btn-green b-btn-white">Subscribe Now <i class="far fa-arrow-right"></i></button>
+
+                                            <button type="submit" class="b-btn b-btn-green b-btn-white">Register Now <i class="far fa-arrow-right"></i></button>
                                         </form>
                                     </div>
                                 </div>
@@ -102,42 +101,12 @@
                 </div>
             </div>
         </div>
-        <div class="footer__copyright black-bg">
+        <div class="footer__copyright black-bg ">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-xl-6 col-lg-6 col-md-7">
+                    <div class="text-align: center">
                         <div class="footer__copyright-text">
                             <p>© Copyright 2021 <a href="index.html">Jannat Rosul Nisha</a> All Rights Reserved.</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-5">
-                        <div class="footer__social theme-social f-right">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-behance"></i>
-                                        <i class="fab fa-behance"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-youtube"></i>
-                                        <i class="fab fa-youtube"></i>
-                                    </a>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>

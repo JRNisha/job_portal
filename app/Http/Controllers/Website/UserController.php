@@ -22,7 +22,7 @@ class UserController extends Controller
 
 
 
-   
+
     public function signInStore(Request $request){
         //dd($request->all());
         $request->validate([
@@ -38,26 +38,26 @@ class UserController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             // $cv = $request->file('cv');
-        
+
             $imagename = date('Ymdhms').'.'.$image->getClientOriginalExtension();
             // $cvname = date('Ymdhms').'.'.$image->getClientOriginalExtension();
             // dd($cvname);
             $image->storeAs('/uploads/candidate/',$imagename);
             // $image->storeAs('/uploads/cv/',$cvname);
-        
+
         }
-        
+
         $cvname = '';
         // for cv
         if ($request->hasFile('cv')) {
             // $image = $request->file('image');
             $cv = $request->file('cv');
-        
+
             // $imagename = date('Ymdhms').'.'.$image->getClientOriginalExtension();
             $cvname = date('Ymdhms').'.'.$cv->getClientOriginalExtension();
             // $image->storeAs('/uploads/candidate/',$imagename);
             $cv->storeAs('/uploads/cv/',$cvname);
-        
+
         }
 
      try{
@@ -71,7 +71,7 @@ class UserController extends Controller
             'image'=>$imagename,
             'cv'=>$cvname,
             'gender'=>$request->gender,
-      
+
 
          ]);
         return redirect()->back()->with('message', 'Registration completed!');
@@ -92,7 +92,7 @@ public function login(Request $request)
 
 
         if(Auth::attempt($userInfo)){
-            return redirect()->back()->with('message','Sign in successful.');
+            return redirect()->back()->with('message','Successfully Logged in...');
         }
         return redirect()->back()->with('error','Invalid user credentials');
 
