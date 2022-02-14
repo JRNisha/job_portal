@@ -105,7 +105,7 @@ if ($request->hasFile('cv')) {
 
    }
    public function editCandidate($candidate_id){
-   
+
       $candidate=User::find($candidate_id);
 
       return view('frontend.pages.updateCandidate',compact('candidate'));
@@ -133,6 +133,8 @@ public function candidateProfileStore(Request $request){
         'email'=>'required',
         'password'=>'required',
         'mobile'=>'required',
+        'cv'=>'required',
+        
 
 
 
