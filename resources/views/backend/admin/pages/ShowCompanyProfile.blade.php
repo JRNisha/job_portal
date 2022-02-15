@@ -1,7 +1,7 @@
 @extends('backend.admin.master')
 @section('content')
 
-<div class="container my-5">
+<div class="container">
 
 {{-- message showing --}}
 @if(session()->has('msg'))

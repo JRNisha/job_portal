@@ -53,7 +53,7 @@ class PostAJobController extends Controller
 
         $countJob = PostedJobs::count();
 
-        $postJobShow = PostedJobs::where('deadline','>=',$today)->orderBy('id','desc')->paginate(3);
+        $postJobShow = PostedJobs::where('deadline','>=',$today)->orderBy('id','desc')->paginate(10);
 
         return view('backend.admin.pages.PostedJob_list',compact('postJobShow','key','countJob'));
     }
@@ -181,7 +181,7 @@ public function jobApplicationShow(){
         ->where('company_id',auth()->user()->id)->orderBy('id','desc')->paginate(5);
 
     }else{
-        $jobApplicationView = JobApplication::with(['user','JobApplication'])->orderBy('id','desc')->paginate(5);
+        $jobApplicationView = JobApplication::with(['user','JobApplication'])->orderBy('id','desc')->paginate(10);
 
     }
 

@@ -77,7 +77,7 @@ public function companyProfile(){
             $key=request()->search;
 
             $companyProfileShow=User::Where('name','LIKE','%'.$key.'%')->orWhere('email','LIKE','%'.$key.'%')
-                                      ->orWhere('mobile','LIKE','%'.$key.'%')->orWhere('address','LIKE','%'.$key.'%')->paginate(3);
+                                      ->orWhere('mobile','LIKE','%'.$key.'%')->orWhere('address','LIKE','%'.$key.'%')->paginate(10);
                                       return view('backend.admin.pages.ShowCompanyProfile',compact('companyProfileShow','key'));
         }
 

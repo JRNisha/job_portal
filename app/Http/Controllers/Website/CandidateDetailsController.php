@@ -32,7 +32,7 @@ public function candidateProfileDelete($candidate)
 
     public function Profile(){
         $jobApplicationView = JobApplication::with(['user','JobApplication'])
-        ->where('user_id',auth()->user()->id)->orderBy('id','desc')->paginate(5);
+        ->where('user_id',auth()->user()->id)->orderBy('id','desc')->paginate(15);
         return view('frontend.pages.candidateProfile',compact('jobApplicationView'));
     }
 
@@ -47,14 +47,14 @@ public function candidateProfileDelete($candidate)
             $key=request()->search;
 
             $candidateProfileShow=User::Where('name','LIKE','%'.$key.'%')->orWhere('email','LIKE','%'.$key.'%')
-                                      ->orWhere('mobile','LIKE','%'.$key.'%')->orWhere('address','LIKE','%'.$key.'%')->paginate(3);
+                                      ->orWhere('mobile','LIKE','%'.$key.'%')->orWhere('address','LIKE','%'.$key.'%')->paginate(15);
                                       return view('backend.admin.pages.ShowCandidateProfile',compact('candidateProfileShow','key'));
         }
 
 
 
         $countCandidate =  User::where('role', "Candidate")->count();
-        $candidateProfileShow = User:: orderBy('id','desc')->paginate(5);
+        $candidateProfileShow = User:: orderBy('id','desc')->paginate(15);
         return view('backend.admin.pages.ShowCandidateProfile',compact('candidateProfileShow','countCandidate'));
     }
 
@@ -134,7 +134,7 @@ public function candidateProfileStore(Request $request){
         'password'=>'required',
         'mobile'=>'required',
         'cv'=>'required',
-        
+
 
 
 
