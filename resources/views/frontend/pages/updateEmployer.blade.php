@@ -25,7 +25,7 @@
     @endif
 
         <div class="row mt-5">
-             <h1 class="text-center w-100 py-4" style="color:slateblue">Create Employer Profile</h1>
+             <h1 class="text-center w-100 py-4" style="color:slateblue">Update Employer Profile</h1>
              <form action="{{ route('update.employer.profile',$employer->id) }}" method="POST" class="row g-3">
                 @method('PATCH')
                 @csrf

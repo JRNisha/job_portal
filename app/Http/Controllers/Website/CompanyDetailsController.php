@@ -77,12 +77,12 @@ public function companyProfile(){
             $key=request()->search;
 
             $companyProfileShow=User::Where('name','LIKE','%'.$key.'%')->orWhere('email','LIKE','%'.$key.'%')
-                                      ->orWhere('mobile','LIKE','%'.$key.'%')->orWhere('address','LIKE','%'.$key.'%')->paginate(10);
+                                      ->orWhere('mobile','LIKE','%'.$key.'%')->orWhere('address','LIKE','%'.$key.'%')->paginate(15);
                                       return view('backend.admin.pages.ShowCompanyProfile',compact('companyProfileShow','key'));
         }
 
         $countCompany =  User::where('role', "company")->count();
-        $companyProfileShow = User::orderBy('id','desc')->paginate(10);
+        $companyProfileShow = User::orderBy('id','desc')->paginate(15);
 
         return view('backend.admin.pages.ShowCompanyProfile',compact('companyProfileShow','countCompany'));
     }

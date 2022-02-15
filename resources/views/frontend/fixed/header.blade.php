@@ -41,7 +41,7 @@
                                         <ul class="sub-menu text-left">
                                             <li><a href="{{ route('create.candidate.profile') }}">Create candidate profile</a>
                                                 <li><a href="{{route('profile')}}">Candidate Profile</a>
-                                                 
+
                                         </ul>
                                     </li>
                                     @else
@@ -54,9 +54,9 @@
 
                                     <li><a href="employer-list.html">Employers <i class="far fa-angle-down"></i></a>
                                         <ul class="sub-menu text-left">
-                                            <li><a href="{{ route('create.employer.profile') }}">Create Employer Profile</a>
+                                            <li><a href="{{ route('create.employer.profile') }}">Add Employer</a>
 
-                                                    <li><a href="">Post a job</a>
+
 
                                         </ul>
                                     </li>
