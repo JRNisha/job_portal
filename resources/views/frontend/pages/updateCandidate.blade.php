@@ -95,7 +95,7 @@
                   <div class="form-group col-4" class="form-label">Gender</label>
 
                     <div class=" form-group col-6 dropdown mt-1">
-                      <select name="gender"  value="{{auth()->user()->gender}}" class="btn btn dropdown" id="dropdownMenu2" data-toggle="dropdown" placeholder="Select Company Type">
+                          <select name="gender"  value="{{auth()->user()->gender}}" class="btn btn dropdown" id="dropdownMenu2" data-toggle="dropdown" placeholder="Select Company Type">
 
                         <option>Male</option>
                         <option>Female</option>

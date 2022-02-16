@@ -32,7 +32,7 @@
         <!-- For Demo Purpose -->
         <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
             <img src="https://bootstrapious.com/i/snippets/sn-registeration/illustration.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
-            <h1>Create an Account</h1>
+            <h1>Update Company Profile</h1>
         </div>
 
         <!-- Registeration Form -->
@@ -59,7 +59,7 @@
                                 <i class="fa fa-user text-muted"></i>
                             </span>
                         </div>
-                        <input name="name" type="text" placeholder="Company Name" class="form-control bg-white border-left-0 border-md">
+                        <input name="name" value="{{auth()->user()->name}}" type="text" placeholder="Company Name" class="form-control bg-white border-left-0 border-md">
                     </div>
 
 
@@ -71,7 +71,7 @@
                                 <i class="fa fa-envelope text-muted"></i>
                             </span>
                         </div>
-                        <input name="email" type="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md">
+                        <input name="email"  value="{{auth()->user()->email}}" type="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md">
                     </div>
 
                      <!-- Password -->
@@ -81,7 +81,7 @@
                                 <i class="fa fa-lock text-muted"></i>
                             </span>
                         </div>
-                        <input name="password" type="password" placeholder="Password" class="form-control bg-white border-left-0 border-md">
+                        <input name="password" value="{{auth()->user()->password}}" type="password" placeholder="Password" class="form-control bg-white border-left-0 border-md">
                     </div>
 
 
@@ -95,14 +95,14 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </span>
                         </div>
-                        <input name="address" type="text" placeholder="Company Address" class="form-control bg-white border-left-0 border-md">
+                        <input name="address" value="{{auth()->user()->address}}" type="text" placeholder="Company Address" class="form-control bg-white border-left-0 border-md">
                     </div>
 
                    <!-- Company Type -->
                    <div class="form-group col-lg-12 mb-4" class="form-label">Company Type</label>
 
                     <div class=" form-group col-lg-12 mb-4">
-                      <select name="company_type" class="btn btn dropdown" id="dropdownMenu2" data-toggle="dropdown" placeholder="Select Company Type">
+                      <select name="company_type" value="{{auth()->user()->company_type}}" class="btn btn dropdown" id="dropdownMenu2" data-toggle="dropdown" placeholder="Select Company Type">
 
                         <option>Government</option>
                         <option>Private</option>
